@@ -1,0 +1,18 @@
+{
+    "name": "jibhaine/gotloop"
+  , "description": "A sound sample contest facebook application"
+  , "version": "0.0.1"
+  , "authors": [{
+      "name": "Benjamin Legrand"
+  }]
+  , "autoload": {
+      "GotLoop": ["src"]
+  }
+  , "require": {
+      "slim/slim": "2.*"
+    , "slim/extras": "dev-master"
+    , "twig/twig": "1.*"
+    , "phpunit/phpunit": "3.7.*"
+    , "facebook/php-sdk": "dev-master"
+  }
+}
