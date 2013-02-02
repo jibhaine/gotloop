@@ -1,34 +1,36 @@
 <?php
-  
+
+require "vendor/autoload.php";
+
 error_reporting(E_ALL);
 ini_set("display_errors","On");
 ini_set("display_startup_errors","On");
 date_default_timezone_set("Europe/Helsinki");
 
+use Facebook;
+use ActiveRecord;
+
+
 
 set_include_path(get_include_path() . PATH_SEPARATOR . "./vendor");
-require "Slim/Slim.php";
 \Slim\Slim::registerAutoloader();
 
 /* Setup Slim */
 $app = new \Slim\Slim();
 $app->add(new Slim\Middleware\SessionCookie());
 $app->config(array(
-    "client_id"     => "126680937488146",
-    "client_secret" => "47011911ec9b48a02d3619611d788dbe",
-    "tab_url"       => "https://www.facebook.com/pages/Loophole/306971553786?sk=app_126680937488146",
-    "host"          => "slim-ar-facebook.taevas.com"
+    "client_id"     => "243135839052209",
+    "client_secret" => "1ec9fb9dc6b4ac4a8233935007f08c52",
+    "tab_url"       => "https://www.facebook.com/pages/gotLoopcom/126670530730111?sk=app_243135839052209",
+    "host"          => "facebook.gotloop.com"
 ));
 
 /* Setup Facebook. Normally you should not commit these publicly. */
 /* This is just an demo app. */
-require "Facebook/facebook.php";
 $facebook = new Facebook(array(
     "appId"  => $app->config("client_id"),
     "secret" => $app->config("client_secret")
 ));
-
-require "ActiveRecord/ActiveRecord.php";
 
 $connections = array(
     "development" => "mysql://example:example@mysql.example.com/example_slim;charset=utf8",
