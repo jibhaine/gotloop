@@ -1,0 +1,2 @@
+<form id="commentForm">
+</form>
