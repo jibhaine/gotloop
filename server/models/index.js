@@ -6,9 +6,13 @@
  * Time: 00:56
  * To change this template use File | Settings | File Templates.
  */
-var Sequelize = require('sequelize'),
-    config    = require('node-yaml-config').load('server/config/config.yaml');  // we use node-config to handle environments
+var Sequelize = require('sequelize')
+    , log4js = require('log4js')
+    , logger = log4js.getLogger()
+    , config    = require('node-yaml-config').load('server/config/config.yaml');  // we use node-config to handle environments
 
+log4js.replaceConsole(logger);
+console.info('Initialize Database...');
 // initialize database connection
 var sequelize = new Sequelize(
     config.db.schema,
@@ -20,7 +24,7 @@ var sequelize = new Sequelize(
         port:   config.db.port
     }
 );
-console.log(sequelize.config);
+    console.debug('Database configuration ',sequelize.config.host,sequelize.config.port,sequelize.config.database);
 // load models
 exports.Config= sequelize.import(__dirname +'/Config');
 exports.Loop = sequelize.import(__dirname +'/Loop');
