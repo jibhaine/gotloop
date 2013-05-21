@@ -1,17 +1,31 @@
 default:
   db:
-    host:
-    name:
-    user:
-    pass:
-    options:
-      {dialect:'postgres'}
+    host: 'localhost'
+    port: 5432
+    schema: 'gotloop'
+    user: 'gotloop'
+    pass: 'gotloop'
+    dialect: 'postgres'
+    protocol: 'postgres'
+  log:
+    level: 'DEBUG'
+  ea:
+    facebook:
+      client_id:       '243135839052209'
+      client_secret:   '1ec9fb9dc6b4ac4a8233935007f08c52'
+      tab_url:         'https://www.facebook.com/pages/gotLoopcom/126670530730111?sk=app_243135839052209'
+      host:            'facebook.gotloop.com'
+    twitter:
+    google:
+    password:
 
-development:
-  db:
-    host:
-    name:
-    user:
-    pass:
-    options:
-      {dialect:'sqlite'}
+#development:
+#  db:
+#    host: 'localhost'
+#    name:
+#    user:
+#    pass:
+ #   dialect: 'sqlite'
+ #   dialect: 'sqlite'
+ #   log:
+ #       level: 'DEBUG'

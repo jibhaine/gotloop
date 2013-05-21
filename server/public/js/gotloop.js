@@ -1,7 +1,7 @@
 define(
     "gotloop",
     [
-        "angular",
+        "backbone",
         "ui-bootstrap",
         "modernizr"
     ]

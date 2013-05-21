@@ -7,16 +7,20 @@
  * To change this template use File | Settings | File Templates.
  */
 var Sequelize = require('sequelize'),
-    config    = require('node-yaml-config').database;  // we use node-config to handle environments
+    config    = require('node-yaml-config').load('server/config/config.yaml');  // we use node-config to handle environments
 
 // initialize database connection
 var sequelize = new Sequelize(
-    config.name,
-    config.username,
-    config.password,
-    config.options
+    config.db.schema,
+    config.db.user,
+    config.db.pass,
+    {
+        dialect:config.db.dialect,
+        protocol: config.db.protocol,
+        port:   config.db.port
+    }
 );
-
+console.log(sequelize.config);
 // load models
 exports.Config= sequelize.import(__dirname +'/Config');
 exports.Loop = sequelize.import(__dirname +'/Loop');
@@ -30,14 +34,15 @@ exports.User = sequelize.import(__dirname +'/User');
     m.Config.belongsTo(m.User);
     m.Loop.belongsTo(m.User);
 
+    m.Loop.hasMany(m.Comment);
     m.Loop.hasMany(m.Tag);
-    m.Tag.hasMany(m.Loop);
+
 
     m.User.hasMany(m.Loop);
-    m.User.hasMany(m.Comment);
     m.Loop.hasOne(m.User);
 })(exports);
 
 // export connection
 exports.sequelize = sequelize;
+
 })(module.exports);

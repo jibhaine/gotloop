@@ -1,2 +1,6 @@
 server/node_modules/
+.idea/
+server/logs/
+bower_components/
+.tmp/
 composer.lock
