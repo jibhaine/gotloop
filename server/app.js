@@ -8,9 +8,17 @@ var express = require('express')
   , models = require('./models')
   , user = require('./routes/users')
   , http = require('http')
-  , path = require('path');
-
-var app = express();
+  , path = require('path')
+  , log4js = require('log4js');
+//logg configuration
+log4js.configure({
+    appenders: [
+        { type: 'console' },
+        { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' }
+    ]}
+);
+var app = express(),
+    logger = log4js.getLogger();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -28,14 +36,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
+  app.use(log4js.connectLogger(logger, { level: log4js.levels.DEBUG }));
   app.use(express.errorHandler());
 }
 
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
 
-models.sequelize.sync();
+var server = http.createServer(app).listen(app.get('port'), function(){
+    console.log('Express server listening on port ' + app.get('port'))
+});
+models.sequelize.sync().error(function(err) {
+    if (err) {
+        logger.error(err);
+        throw err;
+    }
+}).success(function(it) {
+    logger.info(it.length + 'tables successfully modified');
+});

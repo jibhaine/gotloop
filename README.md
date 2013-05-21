@@ -18,8 +18,11 @@ A Web and Mobile Application that will allow user to share short sound samples, 
 ##Technologies##
 
 OpenID auth system.
-HTML5 embeddable audio players
-REST urls, JSON Api
+HTML5
+ audio player/
+ canvas/WebGL visual renderer
+ WebAudio API : http://www.w3.org/TR/webaudio/
+Node.js / Express / REST urls / JSON Api
 
 ##Modules##
  * gotloop/web : the gotloop.com website on appengine
