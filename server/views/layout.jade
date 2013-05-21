@@ -1,0 +1,126 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+    title gotLoop - maquette
+    link(rel='icon', type='image/ico', href='/img/favicon.ico')
+    script(type='text/javascript', src='/js/jquery-1.5.js')
+    script(type='text/javascript', src='/js/jquery.easing.js')
+    script(type='text/javascript', src='/js/gotloop.js')
+    link(type='text/css',rel='stylesheet',href='/stylesheets/style.css');
+
+  body
+
+        #header
+            #logo
+                img(src='/img/gotloop.png', alt='gotLoop')
+                h1(style='display: none;')
+                    span.got got
+                    | Loop
+                p share your riff!
+            ul#menu.lavaLamp.container
+                li.two.columns.alpha
+                    a(href='/news') news
+                li.two.columns
+                    a(href='/loops') loops
+                li.two.columns
+                    a(href='/tags') tags
+                li.two.columns
+                    a(href='/archive') archive
+                li.two.columns
+                    a(href='/realtime') realtime
+                li.two.columns
+                    a(href='/user') user
+                li.two.columns.omega
+                    a(href='/about') about
+        #content.container
+            #main.twelve.columns.offset-by-one.content
+                h2 Icones
+                ul
+                    li
+                        a.ico.com(href='/loop/comments') Comments
+                    li
+                        a.ico.comadd(href='/loop/comments/add') Add a comment
+                    li
+                        a.ico.date(href='/loop') Date
+                    li
+                        a.ico.file(href='#') File
+                    li
+                        a.ico.link(href='#') Link
+                    li
+                        a.ico.load(href='#') Loading...
+                    li
+                        a.ico.next(href='/loops/page/{noPage}') Next Loops
+                    li
+                        a.ico.prev(href='/loops/page/{noPage}') Previous Loops
+                    li
+                        a.ico.rss(href='/rss')
+                            | gotLoop
+                            | RSS
+                    li
+                        a.ico.search(href='/tag/search') Search
+                    li
+                        a.ico.star(href='/loop/vote')
+                            | Vote
+                            | !
+                    li
+                        a.ico.tag(href='/tag/{tag.label}') {tag.label}
+                    li
+                        a.ico.user(href='/user/{idUser}') User
+                .player
+                    h2 Big Button
+                    a.button.off(href='#')
+                    a.button.loading(href='#')
+                    a.button.play(href='#')
+                    a.button.pause(href='#')
+
+                block content
+
+            #sidebar.three.columns.sidebar
+                dl
+                    dt.ico.load last loops
+                    dd
+                        ul
+                            li
+                                a 1 - a
+                            li
+                                a 2 - b
+                            li
+                                a 3 - c
+                dl
+                    dt.ico.date Archive
+                    dd
+                        ul
+                            li
+                                a 1 - a
+                            li
+                                a 2 - b
+                            li
+                                a 3 - c
+                dl
+                    dt.ico.star Best Rated
+                    dd
+                        ul
+                            li
+                                a 1 - a
+                            li
+                                a 2 - b
+                            li
+                                a 3 - c
+                dl
+                    dt.ico.rss rss
+                    dd
+                        ul
+                            li
+                                a 1 - a
+                            li
+                                a 2 - b
+                            li
+                                a 3 - c
+        #footer
+            a(href='/about') gotLoop.com
+            | - design and code
+            | by
+            a(href='http://www.jibhaine.fr') jibHaine

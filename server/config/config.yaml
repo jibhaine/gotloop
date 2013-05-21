@@ -1,0 +1,17 @@
+default:
+  db:
+    host:
+    name:
+    user:
+    pass:
+    options:
+      {dialect:'postgres'}
+
+development:
+  db:
+    host:
+    name:
+    user:
+    pass:
+    options:
+      {dialect:'sqlite'}
