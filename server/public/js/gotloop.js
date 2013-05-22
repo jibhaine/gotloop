@@ -1,3 +1,5 @@
+require.config({baseUrl:'js/',waitSeconds:20,shim:{},paths:{}})
+
 define(
     "gotloop",
     [

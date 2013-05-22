@@ -19,6 +19,7 @@ log4js.configure({
         { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
     ]}
 );
+
 var logger = log4js.getLogger('all');
 logger.setLevel('INFO');
 log4js.replaceConsole(logger);
@@ -46,12 +47,14 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/html5', routes.html5);
 app.get('/users', user.list);
 
 
 var server = http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'))
 });
+/*
 models.sequelize.sync().error(function(err) {
     if (err) {
         logger.error(err);
@@ -60,3 +63,4 @@ models.sequelize.sync().error(function(err) {
 }).success(function(it) {
     logger.info(it.length + 'tables successfully modified');
 });
+*/
