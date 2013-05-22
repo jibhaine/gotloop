@@ -1,8 +1,10 @@
-@import "variables.less";
-@import "mixins.less";
+@import "inc/variables.less";
+@import "inc/mixins.less";
 @import "base.less";
 @import "skeleton.less";
 @import "layout.less";
+
+@import "font/font-awesome.less";
 
 body {
   padding: 50px;
@@ -583,6 +585,8 @@ h4 {
 .rss {
   background-position: 0 -270px;
 }
+.stripes,body{backround:linear-gradient(45deg, #aaaaaa 0%,#999999 25%,#666666 25%,#666666 50%,#aaaaaa 50%,#999999 75%,#666666 75%,#666666 100%);}
+@menuTextColor:#DADADA;
 #menu {
   position: relative;
   text-align:center;
@@ -599,7 +603,12 @@ h4 {
       outline: none;
       text-decoration: none;
       text-transform: uppercase;
-      color: #fff;
+
+      &,i
+      {
+        color: @menuTextColor;
+
+      }
     }
     a:hover {
       text-shadow: 0px 0px 6px #FFF;
