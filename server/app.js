@@ -1,28 +1,31 @@
-
+var log4js = require('log4js');
+//logg configuration
+log4js.configure({
+        appenders: [
+            { type: 'console' },
+            { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' },
+            { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
+        ]}
+);
 /**
  * Module dependencies.
  */
 
 var express = require('express')
-  , log4js = require('log4js')
+  , ascii = require('./utils/ascii').randomLogo()
   , routes = require('./routes')
   , models = require('./models')
   , user = require('./routes/users')
   , http = require('http')
   , fs = require('fs')
   , path = require('path');
-//logg configuration
-log4js.configure({
-    appenders: [
-        { type: 'console' },
-        { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' },
-        { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
-    ]}
-);
 
-var logger = log4js.getLogger('all');
+var logger = log4js.getLogger();
 logger.setLevel('INFO');
+
+;
 log4js.replaceConsole(logger);
+
 
 logger.info('Initializing Express...');
 var app = express();
