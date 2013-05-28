@@ -6,7 +6,7 @@
  * Time: 00:56
  * To change this template use File | Settings | File Templates.
  */
-var Sequelize = require('sequelize')
+var Sequelize = require('sequelize-postgres').sequelize
     , log4js = require('log4js')
     , logger = log4js.getLogger()
     , config    = require('node-yaml-config').load('server/config/config.yaml');  // we use node-config to handle environments
