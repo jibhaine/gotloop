@@ -49,9 +49,19 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+//index of the site, main entry point
 app.get('/', routes.index);
-app.get('/html5', routes.html5);
-app.get('/users', user.list);
+
+//sub site apps / services, accessible via simple html requests.
+app.get('/login', routes.html5);
+app.get('/upload', routes.html5);
+app.get('/cutter', routes.cutter);
+app.get('/boxon', routes.boxon);
+app.get('/admin', routes.admin);
+
+//partials for angular and ajax requests.
+//TODO .jade partials request
+//TODO .json  request
 
 
 var server = http.createServer(app).listen(app.get('port'), function(){
