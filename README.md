@@ -7,6 +7,39 @@ A Web and Mobile Application that will allow user to share short sound samples, 
 
 #GotLoop
 
+##Ideas
+
+first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3.org/TR/webaudio)
+
+* extract a Loop from your pc or the cloud.
+
+  * import from filesystem
+  * import from soundclound/youtube api's
+
+* edit, cut and export the loop to suit any need:
+
+  * set start,
+  * set end
+  * set bpm
+
+* assemble and organize Loops in Collections
+
+  * organize by projects
+  * assign tags
+
+* assemble them in a drag & drop box ui where you can graphically link input and ouput of AudioNode.
+
+  * create box
+  * choose type
+  * fill parameter
+  * link two boxes
+  * edit cable
+  * mobe cable
+  * move box
+
+* Use a library of generator/effects/pattern like boxes to create a Song.
+
+
 ##Functionalities##
 
 * Upload sound samples, directly from your mobile phone or looping pedal.
