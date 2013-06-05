@@ -23,7 +23,6 @@ var express = require('express')
 var logger = log4js.getLogger();
 logger.setLevel('INFO');
 
-;
 log4js.replaceConsole(logger);
 
 
@@ -53,14 +52,15 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 
 //sub site apps / services, accessible via simple html requests.
-app.get('/login', routes.html5);
-app.get('/upload', routes.html5);
-app.get('/cutter', routes.cutter);
-app.get('/boxon', routes.boxon);
-app.get('/admin', routes.admin);
+//app.get('/login', routes.login);
+//app.get('/upload', routes.upload);
+//app.get('/cutter', routes.cutter);
+//app.get('/boxon', routes.boxon);
+//app.get('/admin', routes.admin);
 
 //partials for angular and ajax requests.
 //TODO .jade partials request
+app.get('/partial/:name',routes.partial);
 //TODO .json  request
 
 

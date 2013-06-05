@@ -1,12 +1,10 @@
 
-var User = require('../models').User;
+var Loop = require('../models').Loop;
 /*
  * GET users listing.
  */
 
 exports.findAll = function(req, res){
-
-    User.find({});
 
   res.send("respond with a resource");
 };
