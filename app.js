@@ -20,10 +20,10 @@ log4js.replaceConsole(logger);
  * Module dependencies.
  */
 var express = require('express')
-  , ascii = require('./utils/ascii').randomLogo()
-  , routes = require('./routes')
-  , models = require('./models')
-  , user = require('./routes/users')
+  , ascii = require('./server/utils/ascii').randomLogo()
+  , routes = require('./server/routes')
+  , models = require('./server/models')
+  , user = require('./server/routes/users')
   , http = require('http')
   , fs = require('fs')
   , path = require('path')
@@ -46,7 +46,7 @@ app.use(log4js.connectLogger(logger, { level: log4js.levels.DEBUG }));
 app.set('port', process.env.PORT || '3000');
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
+//app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
