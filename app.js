@@ -8,8 +8,8 @@ log4js.configure(
     {
         appenders: [
             { type: 'console' },
-            { type: 'file', filename: __dirname +'/server/logs/gotloop.log', category: 'all' },
-            { type: 'file', filename: __dirname +'/server/logs/error.log', category: 'error' }
+            { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' },
+            { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
         ]}
 );
 logger.setLevel('INFO');
@@ -36,7 +36,7 @@ var app = express();
 app.use(log4js.connectLogger(logger, { level: log4js.levels.DEBUG }));
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/server/views');
+app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 //app.use(express.favicon());
 app.use(express.logger('dev'));
