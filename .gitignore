@@ -1,6 +1,6 @@
 node_modules/
 .idea/
-logs/
+logs/*.log
 uploads/
 bower_components/
 .tmp/
