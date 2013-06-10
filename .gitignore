@@ -1,6 +1,7 @@
 node_modules/
 .idea/
-server/logs/
+logs/
+uploads/
 bower_components/
 .tmp/
-composer.lock
+temp/

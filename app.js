@@ -20,10 +20,10 @@ log4js.replaceConsole(logger);
  */
 
 var express = require('express')
-  , ascii = require('./server/utils/ascii').randomLogo()
-  , routes = require('./server/routes')
-  , models = require('./server/models')
-  , user = require('./server/routes/users')
+  , ascii = require('./lib/utils/ascii').randomLogo()
+  , routes = require('./lib/routes')
+  , models = require('./lib/models')
+  , user = require('./lib/routes/users')
   , http = require('http')
   , fs = require('fs')
   , path = require('path');
