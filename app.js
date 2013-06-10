@@ -24,6 +24,7 @@ var express = require('express')
   , routes = require('./lib/routes')
   , models = require('./lib/models')
   , user = require('./lib/routes/users')
+  , everyauth = require('everyauth')
   , http = require('http')
   , fs = require('fs')
   , path = require('path')
@@ -54,7 +55,7 @@ app.use(express.cookieParser('i got a looop'));
 app.use(express.session());
 app.use(app.router);
 app.use(everyauth.middleware());
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
+  app.use(require('less-middleware')({ src: __dirname + '/public/stylesheets' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
