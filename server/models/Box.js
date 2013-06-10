@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         //height
         h: DataTypes.INTEGER,
 
-        type:DataTypes.ENUM('INSTRUMENT','EFFECT','PATTERN',''),
+        type:DataTypes.ENUM('INSTRUMENT','EFFECT','PATTERN','DESTINATION'),
         content: DataTypes.STRING
     })
 };

@@ -17,6 +17,7 @@ default:
       host:            'facebook.gotloop.com'
     twitter:
     google:
+    soundcloud:
     password:
 
 #development:
