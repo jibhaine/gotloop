@@ -8,10 +8,9 @@ log4js.configure(
     {
         appenders: [
             { type: 'console' },
-            { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' },
-            { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
-        ]
-    }
+            { type: 'file', filename: __dirname +'/server/logs/gotloop.log', category: 'all' },
+            { type: 'file', filename: __dirname +'/server/logs/error.log', category: 'error' }
+        ]}
 );
 logger.setLevel('INFO');
 log4js.replaceConsole(logger);
@@ -19,34 +18,27 @@ log4js.replaceConsole(logger);
 /**
  * Module dependencies.
  */
+
 var express = require('express')
-  , ascii = require('./utils/ascii').randomLogo()
-  , routes = require('./routes')
-  , models = require('./models')
-  , user = require('./routes/users')
+  , ascii = require('./server/utils/ascii').randomLogo()
+  , routes = require('./server/routes')
+  , models = require('./server/models')
+  , user = require('./server/routes/users')
   , http = require('http')
   , fs = require('fs')
-  , path = require('path')
-  , everyauth = require('everyauth');
+  , path = require('path');
 
 
-/**
- * EveryAuth configuration
- */
 
-
-/**
- * Express configuration
- */
 
 logger.info('Initializing Express...');
 var app = express();
 app.use(log4js.connectLogger(logger, { level: log4js.levels.DEBUG }));
 // all environments
-app.set('port', process.env.PORT || '3000');
-app.set('views', __dirname + '/views');
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/server/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
+//app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());

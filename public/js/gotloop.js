@@ -11,7 +11,7 @@ require.config(
 define(
     "gotloop",
     [
-        "backbone",
+        "../.",
         "ui-bootstrap",
         "modernizr"
     ]
