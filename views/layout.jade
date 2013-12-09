@@ -1,50 +1,15 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/css/style.css')
-    meta(http-equiv='content-type', content='text/html; charset=UTF-8')
-    title gotLoop - maquette
-    link(rel='icon', type='image/ico', href='/favicon.ico')
-    script(type='text/javascript', src='/js/jquery-1.5.js')
-    script(type='text/javascript', src='/js/jquery.easing.js')
-    script(type='text/javascript', src='/js/gotloop.js')
-    link(type='text/css',rel='stylesheet',href='/stylesheets/gotloop.css')
+    head
+        title= title
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Spinnaker', type='text/css')
+        meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+        title gotLoop - maquette
+        link(rel='icon', type='image/ico', href='/favicon.ico')
 
-  body
-
-        #header
-            #logo
-                img(src='/img/gotloop.png', alt='gotLoop')
-                h1(style='display: none;')
-                    span.got got
-                    | Loop
-                p share your riff!
-            ul#menu.lavaLamp.container
-                li.two.alpha
-                    a(href='/loops')
-                        i.icon-undo
-                        span loops
-                li.two
-                    a(href='/tags')
-                        i.icon-tag
-                        span tags
-                li.two
-                    a(href='/archive')
-                        i.icon-calendar
-                        span archive
-                li.two
-                    a(href='/realtime')
-                        i.icon-dashboard
-                        span realtime
-                li.two
-                    a(href='/user')
-                        i.icon-user
-                        span user
-                li.two.omega
-                    a(href='/about')
-                        i.icon-help
-                        span about
+    body
+        include layout/header
         #content.container
             #main.twelve.columns.offset-by-one.content
                 h2 Icones
@@ -129,8 +94,13 @@ html
                                 a 2 - b
                             li
                                 a 3 - c
+
+        include icons.jade
+
         #footer
             a(href='/about') gotLoop.com
             | - design and code
             | by
             a(href='http://www.jibhaine.fr') jibHaine
+
+        script(type='text/javascript', src='/js/libs/require.js', data-main='/js/gotloop.js')

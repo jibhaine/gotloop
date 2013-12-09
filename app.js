@@ -25,6 +25,7 @@ var express = require('express')
   , models = require('./lib/models')
   , user = require('./lib/routes/users')
   , everyauth = require('everyauth')
+  , less = require('less-middleware')
   , http = require('http')
   , fs = require('fs')
   , path = require('path');
@@ -47,7 +48,8 @@ app.use(express.cookieParser('i got a looop'));
 app.use(express.session());
 app.use(app.router);
 app.use(everyauth.middleware());
-  app.use(require('less-middleware')({ src: __dirname + '/public/stylesheets' }));
+//less and static files
+app.use(less({ src: __dirname + '/public',compress:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -82,11 +84,10 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 });
 }
 
-/*
+
 //synchronize ORM with database.
 models.sequelize.sync().error(function(err) {
         logger.error(err);
 }).success(function(it) {
     logger.info(it.length + 'tables successfully modified');
 });
-*/
