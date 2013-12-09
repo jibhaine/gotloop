@@ -4,11 +4,10 @@
 @import "skeleton";
 @import "layout";
 
-@import "font/font-awesome";
+@import "font/batch";
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -54,11 +53,9 @@ aside {
   height:20px;
   padding-left:60px;
   margin-top:-18px;
-  text-shadow: white 0px 0px 4px;
 }
 a:hover {
   color:#6699CC;
-  text-shadow:1px 1px 1px #369;
 }
 h6 {
   font-size:12px;
@@ -82,7 +79,6 @@ h6 {
 #logo:hover {
   p {
     color:#FFF;
-    text-shadow: white 0px 0px 8px;
   }
 }
 .crown {
@@ -222,7 +218,6 @@ input:hover, input:focus {
 }
 a {
   color:#549AC8;
-  text-shadow:1px 1px 3px #CCC;
   outline:none;
 }
 .pause {
@@ -254,7 +249,6 @@ h1,h2,h3,h4,h5,h6,dt,thead {
   color:#069;
   background:transparent;
   border:0;
-  font-family:Arial,sans-serif;
   text-shadow:2px 2px 4px #CCC;
 }
 h1.logo {
@@ -293,9 +287,7 @@ pre {
   overflow-y:scroll;
   overflow-x:hidden;
   margin:20px 0px;
-  -webkit-box-shadow: 0px 1px 4px #666666;
-  -moz-box-shadow: 0px 1px 4px #666666;
-  box-shadow: 0px 1px 4px #666666;
+  .box-shadow( 0px 1px 4px #666666 );
   border:2px solid white;
 }
 #logo {
@@ -373,10 +365,7 @@ input,
 #logo,
 #logo p,
 aside a {
-  -webkit-transition: all 250ms ease-in-out;
-  -moz-transition: all 250ms ease-in-out;
-  -o-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
+  .transition(250ms ease-in-out);
 }
 // border radius to rule them all
 .rounded,
@@ -385,9 +374,7 @@ input,
 textarea,
 #popup article,
 .content article {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+  .border-radius( 8px);
 }
 //table body styles
 tbody {
@@ -408,22 +395,6 @@ tbody {
   tr:nth-child(even) {
     background:#E6E6E6;
   }
-}
-//sprites ?
-.tick {
-  background-position: 0 -702px;
-}
-.megaphone {
-  background-position: 0 -504px;
-}
-.creative-commons {
-  background-position: 0 -162px;
-}
-.star {
-  background-position: 0 -684px;
-}
-.date {
-  background-position: 0 -126px;
 }
 //no style on li
 li {
@@ -495,14 +466,14 @@ footer {
 }
 .loop {
   .button {
-    float:left;
-    text-indent:-3000px;
-    display:block;
+    float:        left;
+    text-indent:  -3000px;
+    display:      block;
   }
   canvas {
-    display:block;
-    height:56px;
-    width:374px;
+    display:  block;
+    height:   56px;
+    width:    374px;
   }
 }
 .palette {
@@ -532,9 +503,7 @@ input {
   border:0px solid #666;
   padding:1px 10px;
   outline:none;
-  -webkit-box-shadow: 0px 0px 5px #CCC;
-  -moz-box-shadow: 0px 0px 5px #CCC;
-  box-shadow: 0px 0px 5px #CCC;
+  .box-shadow(0px 0px 5px #CCC);
 }
 .user {
   background-position: 0 -720px;

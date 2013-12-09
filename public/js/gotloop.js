@@ -1,59 +1,79 @@
 require.config(
     {
         //base url
-        baseUrl:'js/',
-        waitSeconds:20,
-        shim:{},
-        paths:{}
+        baseUrl: 'js/',
+        waitSeconds: 20,
+        shim: {
+
+            "underscore": {
+                "exports": "_"  //attaches "_" to the window object
+            },
+
+            "backbone": {
+                "deps": ["underscore", "jquery"],
+                "exports" : "Backbone"  //attaches "Backbone" to the window object
+            }
+        },
+        paths: {
+            "jquery":         "libs/zepto",
+            "underscore":     "libs/underscore",
+            "backbone":       "libs/backbone"
+        }
     }
 );
 
-define(
-    "gotloop",
+require(
     [
-        "../.",
-        "ui-bootstrap",
+        "jquery",
+        "underscore",
+        "backbone",
         "modernizr"
     ]
-,function(angular){
-        angular.module('gotLoop',function(){});
+    , function ($, _, Backbone, Modernizr) {
 
-	/** HEADER **/
-	
-	/** LOGIN FORM **/
-	//show the login header popin
-	function showLogInField(){
-		
-	}
-	function doLogIn(){
-		
-	}
-	/** SIGNIN FORM **/
+        var gotloop = {
+            /** HEADER **/
 
-	function showSignInField(){
-		
-	}
-	function doSignIn(){
-		
-	}
-	/** LOGOUT **/
-	function doLogOut(){
-		
-	}
-	/** LOOPUPLOAD FORM **/
-	function doLoopUpload(){
-		
-	}
+            /** LOGIN FORM **/
+            //show the login header popin
+            showLogInField: function () {
 
-	/** COMMENT FORM **/
+            },
+            doLogIn: function () {
 
-	/** LOOP LIST NAV **/
+            },
+            /** SIGNIN FORM **/
 
-	/** COMMENTS NAV **/
+            showSignInField: function () {
 
-	/** FOLLOWINGS **/
+            },
+            doSignIn: function () {
 
-	/** FOLLOWERS **/
+            },
+            /** LOGOUT **/
+            doLogOut: function () {
 
-	/** FOLLOW **/
-});
+            },
+            /** LOOPUPLOAD FORM **/
+            doLoopUpload: function () {
+
+            }
+
+            /** COMMENT FORM **/
+
+            /** LOOP LIST NAV **/
+
+            /** COMMENTS NAV **/
+
+            /** FOLLOWINGS **/
+
+            /** FOLLOWERS **/
+
+            /** FOLLOW **/
+        };
+
+        window.gotloop = gotloop;
+
+        return gotloop;
+    }
+);
