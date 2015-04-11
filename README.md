@@ -34,7 +34,7 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
   * fill parameter
   * link two boxes
   * edit cable
-  * mobe cable
+  * move cable
   * move box
 
 * Use a library of generator/effects/pattern like boxes to create a Song.
@@ -59,9 +59,20 @@ Node.js / Express / REST urls / JSON Api
 
 ##Modules##
  * gotloop/web : the gotloop.com website on appengine
- * gotloop/droid : android app
+ * gotloop/mobile : android app
 
 ##How to Get involved?##
 
  * If you don't have one, create a github account and subscribe to this project.
  * Report bugs and evolutions
+
+#Installation#
+
+##Pre requisites
+
+You need to have node.js and a postgresql database installed.
+
+
+You should have bower, gulp and karma installed globally :
+
+    npm install -g bower gulp karma

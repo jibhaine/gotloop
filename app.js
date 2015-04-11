@@ -7,10 +7,11 @@ var log4js = require('log4js'),
 log4js.configure(
     {
         appenders: [
-            { type: 'console' },
-            { type: 'file', filename: __dirname +'/logs/gotloop.log', category: 'all' },
-            { type: 'file', filename: __dirname +'/logs/error.log', category: 'error' }
-        ]}
+            {type: 'console'},
+            {type: 'file', filename: __dirname + '/logs/gotloop.log', category: 'all'},
+            {type: 'file', filename: __dirname + '/logs/error.log', category: 'error'}
+        ]
+    }
 );
 logger.setLevel('INFO');
 log4js.replaceConsole(logger);
@@ -20,45 +21,51 @@ log4js.replaceConsole(logger);
  */
 
 var express = require('express')
-  , ascii = require('./lib/utils/ascii').randomLogo()
-  , routes = require('./lib/routes')
-  , models = require('./lib/models')
-  , user = require('./lib/routes/users')
-  , everyauth = require('everyauth')
-  , less = require('less-middleware')
-  , http = require('http')
-  , fs = require('fs')
-  , path = require('path');
-
-
+    , favicon = require('serve-favicon')
+    , methodOverride = require('method-override')
+    , session = require('express-session')
+    , bodyParser = require('body-parser')
+    , cookieParser = require('cookie-parser')
+    , multer = require('multer')
+    , errorHandler = require('errorhandler')
+    , ascii = require('./lib/utils/ascii').randomLogo()
+    , routes = require('./lib/routes')
+    , models = require('./lib/models')
+    , user = require('./lib/routes/users')
+    , less = require('less-middleware')
+    , http = require('http')
+    , fs = require('fs')
+    , path = require('path');
 
 
 logger.info('Initializing Express...');
 var app = express();
-app.use(log4js.connectLogger(logger, { level: log4js.levels.DEBUG }));
+app.use(log4js.connectLogger(logger, {level: log4js.levels.DEBUG}));
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-//app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
-app.use(express.cookieParser('i got a looop'));
-app.use(express.session());
-app.use(app.router);
-app.use(everyauth.middleware());
-//less and static files
-app.use(less({ src: __dirname + '/public',compress:true}));
+app.use(favicon(__dirname + '/public/favicon.ico'));
+//app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride());
+app.use(cookieParser('i got a looop'));
+app.use(session({resave:false,secret:'i got a looop', saveUninitialized:true}));
+
+//todo replace with passportjs
+//app.use(everyauth.middleware());
+//less and static filess
+app.use(less(path.join(__dirname, 'public'), {compress: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+    app.use(errorHandler());
 }
 
 
- //index of the site, main entry point
+//index of the site, main entry point
 app.get('/', routes.index);
 
 //sub site apps / services, accessible via simple html requests.
@@ -70,24 +77,24 @@ app.get('/', routes.index);
 
 //partials for angular and ajax requests.
 //TODO .jade partials request
-app.get('/partial/:name',routes.partial);
+app.get('/partial/:name', routes.partial);
 
 //TODO .json  request
-app.get('/api/:resource',routes.jsonData);
+app.get('/api/:resource', routes.jsonData);
 
 exports.app = app;
 
-if(process.env !== 'TEST'){
+if (process.env !== 'TEST') {
 //init server.
-var server = http.createServer(app).listen(app.get('port'), function(){
-    console.log('Express server listening on port ' + app.get('port'))
-});
+    var server = http.createServer(app).listen(app.get('port'), function () {
+        console.log('Express server listening on port ' + app.get('port'))
+    });
 }
 
 
 //synchronize ORM with database.
-models.sequelize.sync().error(function(err) {
-        logger.error(err);
-}).success(function(it) {
+models.sequelize.sync().error(function (err) {
+    logger.error(err);
+}).success(function (it) {
     logger.info(it.length + 'tables successfully modified');
 });
