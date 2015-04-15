@@ -28,7 +28,6 @@ var express = require('express')
     , cookieParser = require('cookie-parser')
     , multer = require('multer')
     , errorHandler = require('errorhandler')
-    , ascii = require('./lib/utils/ascii').randomLogo()
     , routes = require('./lib/routes')
     , models = require('./lib/models')
     , user = require('./lib/routes/users')
@@ -60,7 +59,7 @@ app.use(less(path.join(__dirname, 'public'), {compress: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
     app.use(errorHandler());
 }
 
@@ -84,17 +83,15 @@ app.get('/api/:resource', routes.jsonData);
 
 exports.app = app;
 
-if (process.env !== 'TEST') {
-//init server.
-    var server = http.createServer(app).listen(app.get('port'), function () {
-        console.log('Express server listening on port ' + app.get('port'))
-    });
-}
 
-
-//synchronize ORM with database.
-models.sequelize.sync().error(function (err) {
-    logger.error(err);
-}).success(function (it) {
-    logger.info(it.length + 'tables successfully modified');
+//synchronize ORM with database at startup, and launch http server on success.
+models.sequelize.sync().complete(function (err) {
+    if(err){
+        throw err;
+        logger.error(err);
+    }else{
+        http.createServer(app).listen(app.get('port'), function () {
+            console.log('Express server listening on port ' + app.get('port'))
+        });
+    }
 });
