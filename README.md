@@ -1,31 +1,38 @@
-gotLoop()
-=======
+# GotLoop() - work in progress
 
-Sound Sample Application
+<img src="assets/gotloop-icon.png" alt="GotLoop Logo" width="150" height="150" style="float:right"/> 
 
-A Web and Mobile Application that will allow user to share short sound samples, and to comment and vote on them.
+A collaborative sound looper.
 
-#GotLoop
+A Web and Mobile Application that will allow user to share short looping sound samples, and to comment and like on them.
 
-##Ideas
+## Ideas / feature list
 
 first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3.org/TR/webaudio)
 
-* extract a Loop from your pc or the cloud.
+### Sound
+
+* a Sound is the basic data shared accross the app.
+* stored in the cloud as file / raw data
 
   * import from filesystem
   * import from soundclound/youtube api's
+  * record directly from microphone
 
-* edit, cut and export the loop to suit any need:
+### Loop
+
+* edit, cut and export the sound to make a loop
+* a loop encapsulate a sound and add looping info.
 
   * set start,
   * set end
   * set bpm
 
-* assemble and organize Loops in Collections
+### Song
+* assemble and organize Loops in Songs
 
-  * organize by projects
-  * assign tags
+  * organize loops by projects
+  * 
 
 * assemble them in a drag & drop box ui where you can graphically link input and ouput of AudioNode.
 
@@ -40,7 +47,9 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 * Use a library of generator/effects/pattern like boxes to create a Song.
 
 
-##Functionalities##
+### Pattern
+
+## Functionalities
 
 * Upload sound samples, directly from your mobile phone or looping pedal.
 * Edit them, specify start and end point to make a perfect loop.
@@ -50,29 +59,11 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 
 ##Technologies##
 
+Angular / Firebase
 OpenID auth system.
 HTML5
  audio player/
  canvas/WebGL visual renderer
  WebAudio API : http://www.w3.org/TR/webaudio/
-Node.js / Express / REST urls / JSON Api
+ 
 
-##Modules##
- * gotloop/web : the gotloop.com website on appengine
- * gotloop/mobile : android app
-
-##How to Get involved?##
-
- * If you don't have one, create a github account and subscribe to this project.
- * Report bugs and evolutions
-
-#Installation#
-
-##Pre requisites
-
-You need to have node.js and a postgresql database installed.
-
-
-You should have bower, gulp and karma installed globally :
-
-    npm install -g bower gulp karma
