@@ -1,7 +1,7 @@
-node_modules/
-.idea/
-logs/*.log
-uploads/
-bower_components/
 .tmp/
-temp/
+.idea/
+*.iml
+coverage/
+public/
+node_modules/
+*.log
