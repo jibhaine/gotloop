@@ -1,0 +1,99 @@
+html
+  head
+    title GotLoop Prototype
+    link(rel="stylesheet",href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro")
+  body(ng-app="gotLoop")
+    header.page-header
+      svg.header-logo(viewBox="0 0 600 300")
+        path(style="fill:#3384B8",transform="translate(0,-752.36222)",d="m 230.77001,905.49323 95.54747,53.72892 c 0,0 -234.287963,216.68485 -304.089024,-43.9643 -76.752649,-286.60764 205.861194,-72.2784 299.534394,-9.43997 86.19801,57.82392 239.40126,172.74662 236.28284,1.2184 -3.11843,-171.52815 -197.50216,7.36452 -197.50216,7.36452 l -73.17235,-53.17991 c 0,0 343.4182,-243.9894 296.13317,44.40499 C 547.28006,1126.5602 414.21609,990.12354 302.0655,924.79464 189.91491,859.46575 -23.631822,729.96692 53.459093,902.79637 c 46.938467,105.23103 177.310917,2.69686 177.310917,2.69686 z")
+      h1.header-logo-text Gotloop
+      form.header-search(ng-controller="SearchController as search")
+        div(ng-if="search.shown")
+          label(for="q") Search
+          input(id="q")
+          button submit
+      nav.header-links
+        a(href="#loops") Loops
+        a(href="#loop-record") Record
+        a(href="#loop-upload") Upload
+        a(href="#loop-edit") Edit
+        a(href="#settings") Settings
+        a(href="#user") User
+    .messages(ng-controller="MessagesController as vm")
+      .message(class="message-{{vm.level}}")
+    main.page-content
+      section#loops(ng-controller="LoopsController as loopsFeed")
+        h2.title Loops
+        .feed-loops
+          .loop-player.card(ng-repeat="loop in loopsFeed.loops")
+            .card-top.loop-viz(style="background-color:{{loop.author.color.toString(16)}}")
+            .loop-buttons
+              a.loop-play-pause-button.paused Play
+              a.loop-like-button.not-liked Like
+              a.loop-comment-button Comment
+            .card-content
+              .loop-details
+                .loop-name {{loop.name}}
+                .loop-bpm {{loop.bpm}}
+                .loop-loopcount
+                .loop-description {{loop.description}}
+              .loop-comments
+                .loop-comment(ng-repeat="comment in loop.comments",id="{{comment.uuid}}")
+                  .loop-comment-infos {{comment.author.name}} - {{comment.createdAt}}
+                  img.loop-comment-author(src="{{comment.author.avatar}}")
+
+                  .loop-comment-content {{comment.content}}
+              .loop-comment-form_off
+            .card-bottom
+        .loops-loader
+          p Loading...
+          .loader-circle
+          .loader-circle
+          .loader-circle
+          .loader-circle
+        button.round-button.loops-load-more(ng-click="loopsFeed.loadMoreLoops()")
+          | Load more loops
+      section#user(ng-controller="UserProfileController as userProfile")
+        h2.user-name User #42754
+        .user-description
+        .user-loops
+      section#loop-upload(ng-controller="LoopUploadController as loopUpload")
+        h2 Loop upload
+        .loop-upload-zone
+        .loop-upload-buttons.buttons
+      section#loop-record
+        h2 Loop record
+        .card-top
+        .card-content
+        .loop-record-zone
+        .loop-record-buttons.buttons
+        .card-bottom
+      section#loop-edit
+        h2.title Loop edit
+        .card
+        .card-top
+        .card-content
+        .loop-edit-zone
+        .loop-edit-buttons.buttons
+        .card-bottom
+      section#settings
+        h2.title Settings
+        .card
+        .card-top
+        .card-content
+        form#settings
+        fieldset
+        legend Notifications
+        .input-group
+        label(for="notify_comments")
+        input#notify_comments(type="text")
+        legend Interface
+        .input-group
+        label(for="activate_debug")
+        input#activate_debug(type="radio")
+
+        .buttons
+        input.button(type="submit",value="Submit")
+        .card-bottom
+      footer.page-footer
+        p &copy; 2016 jibHaine

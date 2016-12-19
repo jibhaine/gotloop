@@ -1,0 +1,88 @@
+// Variables
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+// Paths
+// ==================================================
+
+$image-path: '../img';
+$font-path: "../font";
+
+// Base palette
+// ==================================================
+$color-primary-0: #3384B8;	// Main Primary color */
+$color-primary-1: #7FB8DD;
+$color-primary-2: #539BC9;
+$color-primary-3: #136FAB;
+$color-primary-4: #085384;
+
+$color-yellow-0: #FFCC3B;	// Main Secondary color (1) */
+$color-yellow-1: #FFE18C;
+$color-yellow-2: #FFD660;
+$color-yellow-3: #FFC00E;
+$color-yellow-4: #CE9800;
+
+$color-red-0: #FF6D3B;	// Main Secondary color (2) */
+$color-red-1: #FFA98C;
+$color-red-2: #FF8960;
+$color-red-3: #FF4C0E;
+$color-red-4: #CE3500;
+
+$color-blue-0: #4349C3;	// Main Secondary color (1) */
+$color-blue-1: #8B8FE2;
+$color-blue-2: #6267D1;
+$color-blue-3: #232AB8;
+$color-blue-4: #141A8F;
+
+$color-green-0: #2DC37B;	// Main Secondary color (2) */
+$color-green-1: #7CE2B1;
+$color-green-2: #4FD293;
+$color-green-3: #0AB864;
+$color-green-4: #008F4A;
+
+//prototype colors
+$color-blue: #3384B8;
+$color-blue-light: #7FB8DD;
+$color-blue-dark: #085384;
+
+$color-yellow: #FFCC3B;
+$color-yellow-light: #FFE18C;
+$color-yellow-dark: #CE9800;
+
+$color-red: #FF6D3B;
+$color-red-light: #FFA98C;
+$color-red-dark: #CE3500;
+
+$color-green: #2DC37B;
+$color-green-light: #7CE2B1;
+$color-green-dark: #008F4A;
+
+// Breakpoints
+$bp-larger-than-mobile    : 400px;
+$bp-larger-than-phablet   : 550px;
+$bp-larger-than-tablet    : 750px;
+$bp-larger-than-desktop   : 1000px;
+$bp-larger-than-desktophd : 1200px;
+
+// Colors
+$light-grey: #e1e1e1;
+$dark-grey: #071620;
+$primary-color: $color-primary-0;
+$secondary-color: lighten($dark-grey, 13.5%);
+$border-color: #bbb;
+$link-color: $color-primary-3;
+$font-color: #222;
+
+// Typography
+$font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Grid Variables
+$container-width: 960px;
+$container-width-larger-than-mobile: 85%;
+$container-width-larger-than-phablet: 80%;
+$total-columns: 12;
+$column-width: 100 / $total-columns; // calculates individual column width based off of # of columns
+$column-margin: 4%; // space between columns
+
+// Misc
+$global-radius: 8px;

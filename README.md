@@ -1,6 +1,6 @@
 # GotLoop() - work in progress
 
-<img src="assets/gotloop-icon.png" alt="GotLoop Logo" width="150" height="150" style="float:right"/> 
+<img src="assets/gotloop-icon.png" alt="GotLoop Logo" width="150" height="150" style="float:right"/>
 
 A collaborative sound looper.
 
@@ -24,15 +24,15 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 * edit, cut and export the sound to make a loop
 * a loop encapsulate a sound and add looping info.
 
-  * set start,
-  * set end
+  * set start time
+  * set end time
   * set bpm
 
 ### Song
 * assemble and organize Loops in Songs
 
   * organize loops by projects
-  * 
+  *
 
 * assemble them in a drag & drop box ui where you can graphically link input and ouput of AudioNode.
 
@@ -59,11 +59,11 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 
 ##Technologies##
 
-Angular / Firebase
-OpenID auth system.
+React / Redux / Firebase
+
 HTML5
  audio player/
  canvas/WebGL visual renderer
  WebAudio API : http://www.w3.org/TR/webaudio/
- 
+
 
