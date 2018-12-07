@@ -1,5 +1,5 @@
 {
-  "name": "gotloop",
+  "name": "@gotloop/client",
   "version": "0.0.1",
   "homepage": "https://github.com/gotloop/gotloop",
   "author": {
