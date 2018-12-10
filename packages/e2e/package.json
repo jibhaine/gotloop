@@ -2,5 +2,9 @@
   "name": "@gotloop/e2e",
   "version": "0.0.0",
   "description": "",
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "@gotloop/api": "~0.0.0",
+    "@gotloop/www": "~0.0.0"
+  }
 }

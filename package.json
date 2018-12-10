@@ -1,9 +1,14 @@
-{{
-  "name": "@gotloop",
+{
   "version": "0.0.0",
   "description": "Main entry point for gotloop projects",
   "scripts": {},
   "devDependencies": {
-    "lerna": "^2.10.2"
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.12",
+    "jest": "^23.6.0",
+    "lerna": "^2.10.2",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
   }
 }
