@@ -1,14 +1,37 @@
 {
   "version": "0.0.0",
-  "description": "Main entry point for gotloop projects",
-  "scripts": {},
+  "description": "Main entry point for gotloop project",
+  "homepage": "https://github.com/gotloop/gotloop",
+  "author": {
+    "name": "Benjamin Legrand",
+    "email": "jibhaine@free.fr",
+    "url": "http://www.jibhaine.fr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gotloop/gotloop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gotloop/gotloop/issues"
+  },
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "init": "lerna bootstrap",
+    "test": "lerna exec --stream -- npm run test",
+    "start": "lerna exec -- npm run start"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.12",
     "jest": "^23.6.0",
     "lerna": "^2.10.2",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "prettier": "^1.15.3",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
     "typescript": "^3.2.2"
   }
 }
