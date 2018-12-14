@@ -8,7 +8,29 @@ A Web and Mobile Application that will allow user to share short looping sound s
 
 ## Ideas / feature list
 
-first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3.org/TR/webaudio)
+first drafts of the apps came when i wanted to  share jamman loops
+
+then while reading the [webaudio W3C APi](http://www.w3.org/TR/webaudio)
+
+and now this... fuck.
+
+## Architecturics
+
+| package | description |
+| - | - |
+| lib | data transfer objects and shared utils |
+| api | rest api for backend |
+| www | main site, angular universal app |
+| e2e | test container, runs integration tests |
+
+## Tech stuffics
+
+- [Angular]()
+- [Nest]()
+- [tone]()
+- [midi](https://galactic.ink/midi-js/)
+
+## Datao Objectics
 
 ### Sound
 
@@ -27,12 +49,17 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
   * set start time
   * set end time
   * set bpm
+  * record
+  * upload
+  * get
+  * delete
 
 ### Song
+
 * assemble and organize Loops in Songs
 
   * organize loops by projects
-  *
+  * make a song: time patterns+ pianoroll
 
 * assemble them in a drag & drop box ui where you can graphically link input and ouput of AudioNode.
 
@@ -46,10 +73,23 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 
 * Use a library of generator/effects/pattern like boxes to create a Song.
 
+### User
+
+  * basic login auth
+  * passportjs?
+
 
 ### Pattern
 
-## Functionalities
+### SoundBox
+
+drag and drop of boxes to connext ebaudio api nodes.
+
+### Visualizer
+
+loop renders
+
+## Functionalitics
 
 * Upload sound samples, directly from your mobile phone or looping pedal.
 * Edit them, specify start and end point to make a perfect loop.
@@ -57,13 +97,22 @@ first drafts of the apps came while reading the [webaudio W3C APi](http://www.w3
 * (optional) Follow other Loop makers on the site.
 * (optional) Assemble sound samples in songs to publish elsewhere.
 
-##Technologies##
+## Technologics
 
-React / Redux / Firebase
+Angular / Nest.js / Typescript / tone.js / WebAudio API
 
 HTML5
  audio player/
  canvas/WebGL visual renderer
  WebAudio API : http://www.w3.org/TR/webaudio/
+
+
+## TODO listics
+
+- [ ] Buld everything.
+- [ ] Deploy app
+- [ ] Finish sccs / pug html igration to angular components
+- [ ] angularclass/hmr
+- [ ] jest everywhere
 
 
