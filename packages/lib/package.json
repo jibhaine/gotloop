@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Common json dto and utils shared between server and client.",
   "scripts": {
+    "build": "tsc ./index.ts",
     "lint": "tslint",
+    "start": "ts-node",
     "test": "jest"
   },
   "private": true,
