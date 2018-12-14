@@ -1,7 +1,20 @@
 {
   "name": "@gotloop/lib",
   "version": "0.0.0",
-  "description": "",
-  "scripts": {},
-  "private": true
+  "description": "Common json dto and utils shared between server and client.",
+  "scripts": {
+    "lint": "tslint",
+    "test": "jest"
+  },
+  "private": true,
+  "dependencies": {
+    "json-typescript-mapper": "^1.1.3"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.2"
+  }
 }

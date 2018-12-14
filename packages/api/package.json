@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "gotloop api",
   "author": "benjilegnard",
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
