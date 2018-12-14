@@ -26,6 +26,7 @@
     "chance": "^1.0.18",
     "core-js": "^2.5.4",
     "ngx-infinite-scroll": "^6.0.1",
+    "ngx-moment": "^3.3.0",
     "ngx-pipes": "^2.3.6",
     "rxjs": "~6.3.3",
     "tone": "^0.12.80",
