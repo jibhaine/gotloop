@@ -1,6 +1,11 @@
 export default Loop;
 
-class Loop {
+export interface Loop {
+  @JsonProperty()
+  title : string;
+}
+
+class ConcreteLoop {
     constructor( {
             title = '',
             description = '',
@@ -25,7 +30,7 @@ class Loop {
 }
     class LoopStates {
 constructor(index){
-    
+
 }
 }
 /*
