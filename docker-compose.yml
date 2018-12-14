@@ -1,0 +1,90 @@
+version: "3.1"
+volumes:
+  mongo-data:
+services:
+  # Database for objects data.
+  dat:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGODB_DATABASE: gotloop
+      VIRTUAL_HOST: dat.gotloop
+    ports:
+      - 27017:27017
+
+  # Cloud storage (like S3) for sound/binary data.
+  bit:
+    image: minio/minio
+    restart: always
+    ports:
+      - 9000:9000
+    environment:
+      VIRTUAL_HOST: bit.gotloop
+      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
+      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    volumes:
+      - ./data/minio/data:/data
+      - ./data/minio/config:/root/.minio
+
+  # REST api
+  api:
+    image: node-lts
+    restart: always
+    environment:
+      VIRTUAL_HOST: api.gotloop
+    volumes:
+      - ./packages/api:/usr/src/app
+    ports:
+      - 4000:4000
+    links:
+      - dat
+      - bit
+
+  # Main server. (web/universal + angular)
+  www:
+    image: node-lts
+    restart: always
+    ports:
+      - 4200:4200
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      VIRTUAL_HOST: www.gotloop
+    volumes:
+      - ./packages/www:/usr/src/app
+    depends_on:
+      - api
+
+
+  # run end-to-end tests and display html reports:
+  e2e:
+    image: node-lts
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      VIRTUAL_HOST: e2e.gotloop
+    volumes:
+      - ./packages/e2e:/usr/src/app
+    depends_on:
+      - www
+
+  #supervision/log layer:
+  elk:
+    image: sebp/elk
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
+
+  # nginx reverse proxy to bind them all
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
