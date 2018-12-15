@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf typeScript/",
+    "clean": "rimraf dist/",
     "clean-build": "npm run clean && npm run build",
     "start": "npm run test",
     "lint": "tslint",
