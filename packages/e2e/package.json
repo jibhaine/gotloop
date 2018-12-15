@@ -9,6 +9,7 @@
     "clean": "rimraf typeScript/",
     "clean-build": "npm run clean && npm run build",
     "start": "npm run test",
+    "lint": "tslint",
     "test": "protractor",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
