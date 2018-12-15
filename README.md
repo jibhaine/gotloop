@@ -14,6 +14,14 @@ then while reading the [webaudio W3C APi](http://www.w3.org/TR/webaudio)
 
 and now this... fuck.
 
+## Functionalitics
+
+* Upload sound samples, directly from your mobile phone or looping pedal.
+* Edit them, specify start and end point to make a perfect loop.
+* Share loops on social networks  (Facebook, Twitter, Soundcloud)
+* (optional) Follow other Loop makers on the site.
+* (optional) Assemble sound samples in songs to publish elsewhere.
+
 ## Architecturics
 
 | package | description |
@@ -23,14 +31,17 @@ and now this... fuck.
 | www | main site, angular universal app |
 | e2e | test container, runs integration tests |
 
-## Tech stuffics
+## Technologics
 
-- [Angular]()
-- [Nest]()
-- [tone]()
+- [Typescript](https://www.typescriptlang.org/docs/home.html)
+- [Angular](https://angular.io/docs)
+- [Nest](https://docs.nestjs.com/)
+- [Jest](https://jestjs.io/docs/)
+- [ToneJS](https://tonejs.github.io/)
 - [midi](https://galactic.ink/midi-js/)
+- [HTML5/WebAudio API](http://www.w3.org/TR/webaudio/)
 
-## Datao Objectics
+## DataModelics
 
 ### Sound
 
@@ -89,23 +100,6 @@ drag and drop of boxes to connext ebaudio api nodes.
 
 loop renders
 
-## Functionalitics
-
-* Upload sound samples, directly from your mobile phone or looping pedal.
-* Edit them, specify start and end point to make a perfect loop.
-* Share loops on social networks  (Facebook, Twitter, Soundcloud)
-* (optional) Follow other Loop makers on the site.
-* (optional) Assemble sound samples in songs to publish elsewhere.
-
-## Technologics
-
-Angular / Nest.js / Typescript / tone.js / WebAudio API
-
-HTML5
- audio player/
- canvas/WebGL visual renderer
- WebAudio API : http://www.w3.org/TR/webaudio/
-
 
 ## TODO listics
 
@@ -115,4 +109,20 @@ HTML5
 - [ ] angularclass/hmr
 - [ ] jest everywhere
 
+
+## Runnitics
+
+0. Install docker
+
+1. fill your /etc/hosts file
+
+    127.0.0.1 *.gotloop
+    127.0.0.1 api.gotloop
+    127.0.0.1 api.gotloop
+    127.0.0.1 api.gotloop
+    127.0.0.1 api.gotloop
+
+2. launch it with docker-compose
+
+    docker-compose up
 
