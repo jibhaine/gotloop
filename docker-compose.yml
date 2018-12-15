@@ -30,7 +30,7 @@ services:
 
   # REST api
   api:
-    image: node-lts
+    image: node
     restart: always
     environment:
       VIRTUAL_HOST: api.gotloop
@@ -44,7 +44,7 @@ services:
 
   # Main server. (web/universal + angular)
   www:
-    image: node-lts
+    image: node
     restart: always
     ports:
       - 4200:4200
@@ -60,7 +60,7 @@ services:
 
   # run end-to-end tests and display html reports:
   e2e:
-    image: node-lts
+    image: node
     restart: always
     ports:
       - 8081:8081
@@ -74,14 +74,14 @@ services:
       - www
 
   #supervision/log layer:
-  elk:
-    image: sebp/elk
-    ports:
-      - "5601:5601"
-      - "9200:9200"
-      - "5044:5044"
-    environment:
-      VIRTUAL_HOST: elk.gotloop
+#  elk:
+#    image: sebp/elk
+#    ports:
+#      - "5601:5601"
+#      - "9200:9200"
+#      - "5044:5044"
+#    environment:
+#      VIRTUAL_HOST: elk.gotloop
 
   # nginx reverse proxy to bind them all
   ngx:
