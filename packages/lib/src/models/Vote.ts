@@ -1,5 +1,3 @@
+class Vote {}
+
 export default Vote;
-
-class Vote {
-
-}

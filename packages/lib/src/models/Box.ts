@@ -1,26 +1,27 @@
 //types
+import { JsonProperty } from "json-typescript-mapper";
 
-export enum BoxType{
+export enum BoxType {
   Generator,
   Filter,
 }
-export interface BoxUI{
+
+export class BoxUI {
   @JsonProperty()
-  x: number;
+  public x: number;
   @JsonProperty()
   y: number;
   @JsonProperty()
   w: number;
   @JsonProperty()
   h: number;
-
 }
 
-export default class Box{
+export default class Box {
+  @JsonProperty()
   id: string;
+  @JsonProperty()
   ui: BoxUI;
+  @JsonProperty()
   type: BoxType;
-    constructor({x,y,w,h,type,content}){
-
-    }
 }

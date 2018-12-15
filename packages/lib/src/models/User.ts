@@ -1,5 +1,5 @@
-export default User;
+import { JsonProperty } from "json-typescript-mapper";
 
-class User{
-    
-}
+class User {}
+
+export default User;
