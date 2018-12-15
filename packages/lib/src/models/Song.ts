@@ -1,7 +1,7 @@
-export default Song;
+import { JsonProperty } from "json-typescript-mapper";
 
 class Song {
-    constructor() {
-
-    }
+  constructor() {}
 }
+
+export default Song;

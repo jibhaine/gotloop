@@ -1,8 +1,7 @@
-export default Sound
+import { JsonProperty } from "json-typescript-mapper";
 
-class Sound{
-    constructor({url,data}){
-        this.url = url;
-        this.data = data;
-    }
+class Sound {
+  id: string;
+  data: any[];
 }
+export default Sound;

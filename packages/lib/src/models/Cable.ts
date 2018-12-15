@@ -1,5 +1,7 @@
-export default Cable;
+import { JsonProperty } from "json-typescript-mapper";
 
-class Cable{
-    id: string;
+class Cable {
+  id: string;
 }
+
+export default Cable;
