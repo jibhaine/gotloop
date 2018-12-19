@@ -1,60 +1,20 @@
 
-$main-color:#3384B8;
-$back-color:#E8E8F8;
-$head-color:#071620;
-//uncomment for light theme
-//$head-color:white;
-$main-color-light:#7FB8DD;
-// color palette
-// http://paletton.com/#uid=33v0u0koACierPbjXIhufyHx7pS
-$color-blue: #3384B8;
-$color-blue-light: #7FB8DD;
-$color-blue-dark: #085384;
-$color-yellow: #FFCC3B;
-$color-yellow-light: #FFE18C;
-$color-yellow-dark: #CE9800;
-$color-red: #FF6D3B;
-$color-red-light: #FFA98C;
-$color-red-dark: #CE3500;
-$color-green: #2DC37B;
-$color-green-light: #7CE2B1;
-$color-green-dark: #008F4A;
-$header-height:3em;
-$common-margin:.5em;
-$shadow-alpha:0.25;
-$header-text-height:$header-height - $common-margin*2;
-// mixins
-@mixin rounded($size, $color) {
-  width: $size;
-  height: $size;
-  line-height: $size;
-  border-radius: $size/2;
-  padding: 0;
-  text-align: center;
-  background-color: transparent;
-  border: solid 1px $color;
-  color: $color;
-  box-shadow: 0 .25em .5em rgba($color,.5);
-}
-
-@mixin rounded-full($size, $color) {
-  width: $size;
-  height: $size;
-  line-height: $size;
-  border-radius: $size/2;
-  padding: 0;
-  background-color: $color;
-  border: solid 1px $color;
-  color: white;
-  box-shadow: 0 .25em .5em rgba($color,.5);
-}
-
 //base
 body,
 html {
   height: 100%;
   font-family: 'Source Sans Pro', Verdana, sans-serif;
-  background: $back-color;
+  margin:0; padding:0;
+}
+body {
+  background:
+  linear-gradient(0deg, rgba(255,255,255,0.5) 2px, rgba(0,0,0,0) 2px),
+  linear-gradient(90deg, rgba(255,255,255,0.5) 2px, rgba(0,0,0,0) 2px),
+  linear-gradient(0deg, rgba(255,255,255,0.25) 1px, rgba(0,0,0,0) 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.25) 1px, rgba(0,0,0,0) 1px),
+  rgb(34, 102, 153);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-repeat: repeat;
 }
 
 h1,
@@ -73,66 +33,6 @@ h6,
 
 .title {
   margin-bottom: 1em;
-}
-
-.page-header {
-  background: $head-color;
-  height: $header-height - $common-margin*2;
-  padding: $common-margin;
-  position: fixed;
-  z-index:9001;
-  top: 0;
-  width: 100%;
-  display: flex;
-  line-height: $header-text-height;
-  box-shadow: 0 0 1em rgba($main-color, .25);
-  > * {
-    color: $main-color;
-  }
-  .header-logo {
-    height: 2em;
-    margin-right: $common-margin;
-  }
-  .header-search {
-    flex: 1;
-    padding: 0 $common-margin;
-    display: flex;
-    label {
-      margin: 0 $common-margin;
-    }
-    input[type="text"] {
-      flex: 1;    border-radius: 1em 0 0 1em;
-      border-right: 0;
-    }
-    button {
-      margin-left: -1px;
-      &:hover,
-      &:focus {
-        color: $head-color;
-        background-color: $main-color;
-      }
-    }
-  }
-  .header-links {
-    display: flex;
-    margin-right: 1em;
-    a {
-      color: $main-color;
-      display: block;
-      margin-right: $common-margin*2;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: background-position 1s ease-in-out;
-      &:hover,
-      &:focus {
-        color: $main-color-light;
-      }
-    }
-  }
-  li {
-    padding: none;
-    list-style-type: none;
-  }
 }
 
 .page-content {
@@ -184,81 +84,6 @@ input {
   }
 }
 
-$loader-size:120px;
-$loader-border-width:1px;
-.loops-load-more {
-  margin: 0 auto;
-  display: block;
-}
-
-.loops-loader {
-  display: flex;
-  margin: 0 auto 1em;
-  width: $loader-size;
-  height: $loader-size;
-  position: relative;
-  p {
-    position: absolute;
-    color: $main-color;
-    top: 53px;
-    left: 30px;
-    text-align: center;
-    margin: 0;
-  }
-  .loader-circle {
-    background-color: transparent;
-    border: solid 1px $main-color;
-    color: $main-color;
-    width: $loader-size;
-    height: $loader-size;
-    border-radius: $loader-size/2;
-    transform-origin: $loader-size/2 $loader-size/2;
-    transform: scale(1);
-    animation: circle-grow 3s infinite;
-    position: absolute;
-    left: 0;
-    @for $i from 1 through 4 {
-      &:nth-child(#{$i}) {
-        animation-delay:#{$i/2}s;
-      }
-    }
-  }
-}
-
-@keyframes circle-grow {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.card {
-  height: auto;
-  border-radius: 1em;
-  margin: 0 0 2em 0;
-  background-color: white;
-  box-shadow: 0 0 1em rgba($main-color, .25);
-  .card-top {
-    border-radius: 1em 1em 0 0;
-    background-color: $head-color;
-    width: 100%;
-    min-height: 2em;
-  }
-  .card-content{
-    margin:0 1em;
-  }
-  .card-bottom {
-    border-radius: 0 0 1em 1em;
-    background-color: white;
-    min-height: 1em;
-  }
-}
-
 .loop-player {
   color: $main-color;
   &.is-playing{
@@ -297,6 +122,7 @@ $loader-border-width:1px;
     margin-left: auto;
   }
 }
+
 .loop-comment{
   display:flex;
   flex-flow: row wrap;
@@ -311,7 +137,7 @@ $loader-border-width:1px;
   }
   .loop-comment-content{
     flex:auto;
-    @include rounded(1em,grey);
+    @include rounded(1em,#808080);
     padding:.5em 1em;
     min-height:3em;
     height:auto;
