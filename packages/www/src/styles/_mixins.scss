@@ -1,0 +1,26 @@
+// mixins
+@mixin rounded($size, $color) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  border-radius: $size/2;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  //border: solid 1px $color;
+  color: $color;
+  box-shadow: 0 .25em .5em rgba($color,.5);
+}
+
+@mixin rounded-full($size, $color) {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  border-radius: $size/2;
+  transform-origin: $size/2 $size/2;
+  padding: 0;
+  background-color: $color;
+  // border: solid 1px $color;
+  color: white;
+  box-shadow: 0 .25em .5em rgba($color,.5);
+}
