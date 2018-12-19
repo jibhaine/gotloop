@@ -1,0 +1,54 @@
+@import "styles/settings";
+
+$loader-size:120px;
+$loader-border-width:1px;
+.loops-load-more {
+  margin: 0 auto;
+  display: block;
+}
+
+.loops-loader {
+  display: flex;
+  margin: 0 auto 1em;
+  width: $loader-size;
+  height: $loader-size;
+  position: relative;
+  p {
+    position: absolute;
+    color: $main-color;
+    top: 53px;
+    left: 30px;
+    text-align: center;
+    margin: 0;
+  }
+  .loader-circle {
+    background-color: transparent;
+    border: solid 1px $main-color;
+    color: $main-color;
+    width: $loader-size;
+    height: $loader-size;
+    border-radius: $loader-size/2;
+    transform-origin: $loader-size/2 $loader-size/2;
+    transform: scale(1);
+    animation: circle-grow 3s infinite;
+    position: absolute;
+    left: 0;
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay:#{$i/2}s;
+      }
+    }
+  }
+}
+
+@keyframes circle-grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
