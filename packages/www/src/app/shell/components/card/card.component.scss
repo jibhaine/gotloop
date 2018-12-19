@@ -1,0 +1,23 @@
+@import "styles/settings";
+
+.card {
+  height: auto;
+  border-radius: 1em;
+  margin: 0 0 2em 0;
+  background-color: white;
+  box-shadow: 0 0 1em rgba($main-color, .25);
+  .card-top {
+    border-radius: 1em 1em 0 0;
+    background-color: $head-color;
+    width: 100%;
+    min-height: 2em;
+  }
+  .card-content{
+    margin:0 1em;
+  }
+  .card-bottom {
+    border-radius: 0 0 1em 1em;
+    background-color: white;
+    min-height: 1em;
+  }
+}

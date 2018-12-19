@@ -1,0 +1,45 @@
+@import "../../../../styles/settings";
+
+.gotloop-header {
+  background: $head-color;
+  height: $header-height - $common-margin*2;
+  padding: $common-margin;
+  position: fixed;
+  z-index:9001;
+  top: 0;
+  width: 100%;
+  display: flex;
+  line-height: $header-text-height;
+  box-shadow: 0 0 1em rgba($main-color, .25);
+  > * {
+    color: $main-color;
+  }
+  .header-logo {
+    height: 2em;
+    width: 4em;
+    margin-right: $common-margin;
+
+    flex: 0 0 auto;
+  }
+  .header-links {
+    flex: 0 0 auto;
+    display: flex;
+    margin-right: 1em;
+    a {
+      color: $main-color;
+      display: block;
+      margin-right: $common-margin*2;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-position 1s ease-in-out;
+      &:hover,
+      &:focus {
+        color: $main-color-light;
+      }
+    }
+  }
+  li {
+    padding: none;
+    list-style-type: none;
+  }
+}
