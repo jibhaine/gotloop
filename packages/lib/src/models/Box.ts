@@ -7,21 +7,21 @@ export enum BoxType {
 }
 
 export class BoxUI {
-  @JsonProperty()
+  @JsonProperty("x")
   public x: number;
-  @JsonProperty()
+  @JsonProperty("y")
   y: number;
-  @JsonProperty()
+  @JsonProperty("w")
   w: number;
-  @JsonProperty()
+  @JsonProperty("h")
   h: number;
 }
 
 export default class Box {
-  @JsonProperty()
+  @JsonProperty("i")
   id: string;
-  @JsonProperty()
+  @JsonProperty("ui")
   ui: BoxUI;
-  @JsonProperty()
+  @JsonProperty("t")
   type: BoxType;
 }
