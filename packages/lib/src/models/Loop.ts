@@ -1,21 +1,21 @@
 import { JsonProperty } from "json-typescript-mapper";
 
 export class Loop {
-  @JsonProperty()
+  @JsonProperty("title")
   title: string;
-  @JsonProperty()
+  @JsonProperty("desc")
   description: string;
-  @JsonProperty()
+  @JsonProperty("bpm")
   bpm: number;
-  @JsonProperty()
+  @JsonProperty("dur")
   duration: number;
-  @JsonProperty()
+  @JsonProperty("tags")
   tags: string[];
-  @JsonProperty()
+  @JsonProperty("com")
   isCommentable: boolean;
-  @JsonProperty()
+  @JsonProperty("shar")
   isSharable: boolean;
-  @JsonProperty()
+  @JsonProperty("dat")
   creationDate: number;
 }
 
