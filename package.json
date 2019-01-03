@@ -19,7 +19,8 @@
   "scripts": {
     "init": "lerna bootstrap",
     "test": "lerna exec --stream -- npm run test",
-    "start": "lerna exec -- npm run start"
+    "start": "lerna exec -- npm run start",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
