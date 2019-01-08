@@ -1,12 +1,16 @@
 import { TestBed, async } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
+import { CoreModule } from './core/core.module';
+import { ShellModule } from './shell/shell.module';
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        CoreModule,
+        ShellModule,
       ],
       declarations: [
         AppComponent
@@ -20,7 +24,7 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'www'`, () => {
+  it(`should have as title 'Gotloop'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual("www");
@@ -30,6 +34,6 @@ describe("AppComponent", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector("h1").textContent).toContain("Welcome to www!");
+    expect(compiled.querySelector("h1").textContent).toContain("Gotloop");
   });
 });
