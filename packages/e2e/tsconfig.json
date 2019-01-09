@@ -11,7 +11,8 @@
     "skipLibCheck": true,
     "outDir": "dist",
     "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "cucumber"]
+    "types": ["node", "cucumber"],
+    "lib": ["es2015"]
   },
   "exclude": ["node_modules", "typescript"]
 }

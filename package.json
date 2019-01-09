@@ -19,7 +19,7 @@
   "scripts": {
     "init": "lerna bootstrap",
     "test": "lerna exec --stream -- npm run test",
-    "start": "lerna exec -- npm run start",
+    "start": "lerna run --scope api start && lerna run --scope www start",
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {

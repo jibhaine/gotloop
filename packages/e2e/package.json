@@ -10,7 +10,7 @@
     "clean-build": "npm run clean && npm run build",
     "start": "npm run test",
     "lint": "tslint",
-    "test": "protractor",
+    "test": "tsc protractor.config.ts && protractor protractor.config.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
   },

@@ -1,3 +1,5 @@
+import { Config } from "protractor";
+
 exports.config = {
   // set to "custom" instead of cucumber.
   framework: "custom",
@@ -7,13 +9,13 @@ exports.config = {
 
   // require feature files
   specs: [
-    "path/to/feature/files/**/*.feature", // accepts a glob
+    "src/features/**/*.feature", // accepts a glob
   ],
 
   cucumberOpts: {
     // require step definitions
     require: [
-      "path/to/step/definitions/**/*.steps.js", // accepts a glob
+      "src/step-defs/**/*.steps.js", // accepts a glob
     ],
   },
-};
+} as Config;
