@@ -2,7 +2,6 @@ export * from "./Box";
 export * from "./Cable";
 export * from "./Comment";
 export * from "./Loop";
-export * from "./People";
 export * from "./Preset";
 export * from "./Settings";
 export * from "./Song";
