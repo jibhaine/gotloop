@@ -1,5 +1,8 @@
 import { JsonProperty } from "json-typescript-mapper";
 
+/**
+ * Loop is our main model class.
+ */
 export class Loop {
   @JsonProperty("title")
   title: string;
