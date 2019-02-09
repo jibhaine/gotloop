@@ -1,3 +1,3 @@
-import * as models from "./src/models";
+import * as models from './src/models';
 
 export default models;

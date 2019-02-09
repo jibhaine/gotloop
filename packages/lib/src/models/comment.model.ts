@@ -1,4 +1,4 @@
-import { JsonProperty } from "json-typescript-mapper";
+import { JsonProperty } from 'json-typescript-mapper';
 
 class Comment {
   date: Date;

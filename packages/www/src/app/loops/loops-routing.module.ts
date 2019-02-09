@@ -1,6 +1,6 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { LoopListComponent } from "./components/loop-list/loop-list.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LoopListComponent } from './components/loop-list/loop-list.component';
 
 const routes: Routes = [
   {

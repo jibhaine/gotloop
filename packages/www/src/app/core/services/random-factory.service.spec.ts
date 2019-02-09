@@ -1,17 +1,17 @@
-import { TestBed } from "@angular/core/testing";
+import { TestBed } from '@angular/core/testing';
 
-import { RandomFactoryService } from "./random-factory.service";
+import { RandomFactoryService } from './random-factory.service';
 
-describe("RandomFactoryService", () => {
+describe('RandomFactoryService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  it("should be created", () => {
+  it('should be created', () => {
     const service: RandomFactoryService = TestBed.get(RandomFactoryService);
     expect(service).toBeTruthy();
   });
 
   const seeds: string[] = [
-    "ABCD", "YOLO", "TEST"
+    'ABCD', 'YOLO', 'TEST'
   ];
 
   seeds.forEach(seed => {
