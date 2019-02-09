@@ -4,27 +4,27 @@ import { Routes, RouterModule } from "@angular/router";
 const routes: Routes = [
   /*{
     path: '/',
-    component: HomePage
-  }*/
+    component: HomePage,
+  },*/
   {
     path: "loops",
-    loadChildren: "./loops/loops.module"
+    loadChildren: "./loops/loops.module#LoopsModule",
   },
   {
     path: "user",
-    loadChildren: "./user/user.module"
+    loadChildren: "./user/user.module#UserModule",
   },
   {
     path: "loop",
-    loadChildren: "./loop/loop.module"
+    loadChildren: "./loop/loop.module#LoopModule",
   },
   {
     path: "noizr",
-    loadChildren: "./noizr/noizr.module"
+    loadChildren: "./noizr/noizr.module#NoizerModule",
   },
   {
     path: "",
-    redirectTo: "",
+    redirectTo: "loops",
     pathMatch: "full",
   }
 ];
