@@ -5,11 +5,13 @@ import { NoizerPageComponent } from "./components/noizer-page/noizer-page.compon
 const routes: Routes = [
   {
     path: "",
-   component: NoizerPageComponent}
+   component: NoizerPageComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  entryComponents: [NoizerPageComponent],
 })
 export class NoizerRoutingModule { }

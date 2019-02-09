@@ -10,3 +10,20 @@
   background-repeat: repeat;
 
 }
+
+.noizer-title {
+  margin: 0 1em;
+  padding: 1em 0;
+
+  color:black;
+  text-shadow:
+   1px 1px 0 white,
+  -1px -1px 0 white,
+  -1px 1px 0 white,
+   1px -1px 0 white,
+   
+   2px 2px 0 #bbb,
+   3px 3px 0 #999,
+   4px 4px 0 #666,
+   5px 5px 0 #333;
+}

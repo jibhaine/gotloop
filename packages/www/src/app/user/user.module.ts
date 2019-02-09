@@ -10,4 +10,4 @@ import { UserDetailsRoutingModule } from "./user-routing.module";
     UserDetailsRoutingModule
   ]
 })
-export class UserDetailsModule { }
+export class UserModule { }
