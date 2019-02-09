@@ -1,5 +1,5 @@
 //types
-import { JsonProperty } from "json-typescript-mapper";
+import { JsonProperty } from 'json-typescript-mapper';
 
 export enum BoxType {
   Generator,
@@ -7,21 +7,21 @@ export enum BoxType {
 }
 
 export class BoxUI {
-  @JsonProperty("x")
+  @JsonProperty('x')
   public x: number;
-  @JsonProperty("y")
+  @JsonProperty('y')
   y: number;
-  @JsonProperty("w")
+  @JsonProperty('w')
   w: number;
-  @JsonProperty("h")
+  @JsonProperty('h')
   h: number;
 }
 
 export default class Box {
-  @JsonProperty("i")
+  @JsonProperty('i')
   id: string;
-  @JsonProperty("ui")
+  @JsonProperty('ui')
   ui: BoxUI;
-  @JsonProperty("t")
+  @JsonProperty('t')
   type: BoxType;
 }

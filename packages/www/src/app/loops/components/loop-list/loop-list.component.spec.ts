@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoopListComponent } from "./loop-list.component";
+import { LoopListComponent } from './loop-list.component';
 
-describe("LoopListComponent", () => {
+describe('LoopListComponent', () => {
   let component: LoopListComponent;
   let fixture: ComponentFixture<LoopListComponent>;
 
@@ -19,7 +19,7 @@ describe("LoopListComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

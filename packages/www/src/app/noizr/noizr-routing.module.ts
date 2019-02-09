@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { NoizerPageComponent } from "./components/noizer-page/noizer-page.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { NoizerPageComponent } from './components/noizer-page/noizer-page.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
    component: NoizerPageComponent
   }
 ];

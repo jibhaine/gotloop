@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "glp-icon",
-  templateUrl: "./icon.component.html",
-  styleUrls: ["./icon.component.scss"]
+  selector: 'glp-icon',
+  templateUrl: './icon.component.html',
+  styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
 

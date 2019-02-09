@@ -1,31 +1,31 @@
-import { JsonProperty } from "json-typescript-mapper";
+import { JsonProperty } from 'json-typescript-mapper';
 
 /**
  * Loop is our main model class.
  */
 export class Loop {
-  @JsonProperty("title")
+  @JsonProperty('title')
   title: string;
-  @JsonProperty("desc")
+  @JsonProperty('desc')
   description: string;
-  @JsonProperty("bpm")
+  @JsonProperty('bpm')
   bpm: number;
-  @JsonProperty("dur")
+  @JsonProperty('dur')
   duration: number;
-  @JsonProperty("tags")
+  @JsonProperty('tags')
   tags: string[];
-  @JsonProperty("com")
+  @JsonProperty('com')
   isCommentable: boolean;
-  @JsonProperty("shar")
+  @JsonProperty('shar')
   isSharable: boolean;
-  @JsonProperty("dat")
+  @JsonProperty('dat')
   creationDate: number;
 }
 
 export function loopFactory(): Loop {
   return {
-    title: "",
-    description: "",
+    title: '',
+    description: '',
     bpm: 123,
     duration: 0.0,
     tags: [],

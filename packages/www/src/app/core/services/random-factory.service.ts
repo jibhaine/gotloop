@@ -1,9 +1,9 @@
-import { Chance } from "chance";
-import { Injectable } from "@angular/core";
-import { v4 } from "uuid";
+import { Chance } from 'chance';
+import { Injectable } from '@angular/core';
+import { v4 } from 'uuid';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class RandomFactoryService {
   constructor() { }
