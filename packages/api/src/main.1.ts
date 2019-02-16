@@ -8,8 +8,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   const options = new DocumentBuilder()
-    .setTitle('Gotloop API')
-    .setDescription('A loop sharing site (based on Realworld API)')
+    .setTitle('NestJS Realworld Example App')
+    .setDescription('The Realworld API description')
     .setVersion('1.0')
     .setBasePath('api')
     .addBearerAuth()
