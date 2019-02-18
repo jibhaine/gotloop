@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -15,6 +16,7 @@ import { ContentPageComponent } from './components/content-page/content-page.com
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
   ],
 })
 export class ShellModule { }

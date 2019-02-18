@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IconCode } from './icon-code.enum';
 
 @Component({
   selector: 'glp-icon',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconComponent implements OnInit {
 
+  @Input()
+  public icon: string;
+
+  public iconCode: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.iconCode = IconCode[this.icon];
+    console.log(this.icon, IconCode);
   }
 
 }
