@@ -5,7 +5,21 @@
     left: 0;
     right: 0;
 }
+
+@import "sass-breakpoints/index";
+
 .gotloop-main {
     margin-top: 3em;
     height: 100%;
+    @include breakpoint("sm", "md") {
+        margin-top: 0;
+        padding-left: 7em;
+        // background: green;
+    }
+    @include breakpoint("md") {
+        // background: red;
+    }
+    @include breakpoint("lg") {
+        // background: blue;
+    }
 }

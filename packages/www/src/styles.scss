@@ -3,6 +3,10 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+@import "sass-breakpoints/index";
+@import "sass-ems/index";
+
+
 //base
 body,
 html {
@@ -94,7 +98,9 @@ h6,
 
 
 //forms
-fieldset {}
+fieldset {
+  border:none;
+}
 
 input,
 input[type="reset"],
@@ -269,4 +275,20 @@ $loader-border-width:1px;
       margin-left:-1px;
     }
   }
+}
+
+
+
+
+// icons
+
+@font-face{
+  font-family:'Batch';
+  src:url('assets/font/batch-icons-webfont.eot');
+  src:url('assets/font/batch-icons-webfont.eot?#iefix') format('embedded-opentype'),
+    url('assets/font/batch-icons-webfont.woff') format('woff'),
+    url('assets/font/batch-icons-webfont.ttf') format('truetype'),
+    url('assets/font/batch-icons-webfont.svg#batchregular') format('svg');
+  font-weight:normal;
+  font-style:normal;
 }
