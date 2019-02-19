@@ -5,7 +5,7 @@ import { NoizerPageComponent } from './components/noizer-page/noizer-page.compon
 const routes: Routes = [
   {
     path: '',
-   component: NoizerPageComponent
+    component: NoizerPageComponent
   }
 ];
 

@@ -1,3 +1,6 @@
+:host{
+  height: 100%;
+}
 .noizer{
 
   background:
@@ -9,6 +12,7 @@
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-repeat: repeat;
 
+  height: 100%;
 }
 
 .noizer-title {
