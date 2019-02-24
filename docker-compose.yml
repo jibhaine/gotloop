@@ -1,7 +1,8 @@
-version: "3.1"
-volumes:
-  mongo-data:
+version: '3.1'
+
 services:
+  # external data sources
+
   # Database for objects data.
   dat:
     image: mongo
@@ -13,80 +14,94 @@ services:
       MONGODB_DATABASE: gotloop
     ports:
       - 27017:27017
+    volumes:
+      - data:/data/db
 
   # Cloud storage (like S3) for sound/binary data.
-  bit:
+  bin:
     image: minio/minio
     restart: always
-    ports:
-      - 9000:9000
+    command: server /export
     environment:
-      VIRTUAL_HOST: bit.gotloop
+      VIRTUAL_HOST: bin.gotloop
       MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
       MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    ports:
+      - '9001:9000'
     volumes:
-      - ./data/minio/data:/data
+      - binary:/export
       - ./data/minio/config:/root/.minio
+
+  # internal node services
 
   # REST api
   api:
-    image: node
+    build: ./docker/gotloop-node
     restart: always
     environment:
       VIRTUAL_HOST: api.gotloop
     volumes:
       - ./packages/api:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: npm run start:dev
     ports:
-      - 4000:4000
+      - 6060:4000
     links:
       - dat
-      - bit
+      - bin
 
   # Main server. (web/universal + angular)
   www:
-    image: node
+    build: ./docker/gotloop-node
     restart: always
     ports:
-      - 4200:4200
+      - 6070:4200
     environment:
       VIRTUAL_HOST: www.gotloop
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    entrypoint: ng serve --hmr
+    working_dir: /usr/src/app
     volumes:
       - ./packages/www:/usr/src/app
     depends_on:
       - api
 
-
   # run end-to-end tests and display html reports:
   e2e:
-    image: node
+    build: ./docker/gotloop-node
     restart: always
     ports:
-      - 8081:8081
+      - 6080:8081
+    entrypoint: npm run start
     environment:
       VIRTUAL_HOST: e2e.gotloop
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
     volumes:
       - ./packages/e2e:/usr/src/app
+    working_dir: /usr/src/app
     depends_on:
       - www
 
-  #supervision/log layer:
-#  elk:
-#    image: sebp/elk
-#    ports:
-#      - "5601:5601"
-#      - "9200:9200"
-#      - "5044:5044"
-#    environment:
-#      VIRTUAL_HOST: elk.gotloop
+  # run end-to-end tests and display html reports:
+  prf:
+    build: ./docker/gotloop-node
+    ports:
+      - 6090:3000
+    environment:
+      VIRTUAL_HOST: prf.gotloop
+    working_dir: /usr/src/app
+    volumes:
+      - ./packages/prf:/usr/src/app
+    working_dir: /usr/src/app
 
   # nginx reverse proxy to bind them all
   ngx:
     image: jwilder/nginx-proxy
     ports:
-      - "80:80"
+      - '80:80'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+
+volumes:
+  data:
+    driver: local
+  binary:
+    driver: local
