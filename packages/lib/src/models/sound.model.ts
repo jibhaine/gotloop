@@ -1,7 +1,6 @@
 import { JsonProperty } from 'json-typescript-mapper';
 
-class Sound {
-  id: string;
-  data: any[];
+export class SoundModel {
+  public id: string;
+  public data: any[];
 }
-export default Sound;

@@ -1,7 +1,6 @@
 import { JsonProperty } from 'json-typescript-mapper';
+import { LoopModel } from './loop.model';
 
-class Song {
-  constructor() {}
+export class SongModel {
+  public loops: LoopModel[];
 }
-
-export default Song;
