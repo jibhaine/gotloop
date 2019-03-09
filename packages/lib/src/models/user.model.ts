@@ -1,5 +1,6 @@
 import { JsonProperty } from 'json-typescript-mapper';
 
-class User {}
-
-export default User;
+export class UserModel {
+  @JsonProperty('name')
+  public name: string;
+}
