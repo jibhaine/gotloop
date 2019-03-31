@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'glp-card',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  contentRef: TemplateRef<any>;
   constructor() { }
 
   ngOnInit() {
