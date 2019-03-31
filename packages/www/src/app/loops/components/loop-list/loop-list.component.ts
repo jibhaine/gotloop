@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoopsService } from '../../services/loops.service';
 
 @Component({
   selector: 'glp-loop-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoopListComponent implements OnInit {
 
-  constructor() { }
+  public loops: any[];
+
+  constructor(private loopsService: LoopsService) {
+
+   }
 
   ngOnInit() {
+    this.loopsService.loops$.subscribe((loops: any[]) => {
+      this.loops = loops;
+    });
   }
 
 }

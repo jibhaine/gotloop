@@ -6,6 +6,7 @@ import { LoopRecordComponent } from './components/loop-record/loop-record.compon
 
 @NgModule({
   declarations: [LoopPlayerComponent, LoopCommentComponent, LoopRecordComponent],
+  exports: [LoopPlayerComponent, LoopRecordComponent],
   imports: [
     CommonModule
   ]
