@@ -7,18 +7,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { LoopModule } from './loop/loop.module';
-import { UserModule } from './user/user.module';
-import { ProfileModule } from './profile/profile.module';
-import { TagModule } from './tag/tag.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
     DatabaseModule,
     LoopModule,
+    /*
     UserModule,
     ProfileModule,
     TagModule,
+    */
   ],
   controllers: [
     AppController,
