@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, BeforeInsert, JoinTable, ManyToMany, OneToMany} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, JoinTable, ManyToMany, OneToMany } from 'typeorm';
 import { IsEmail, Validate } from 'class-validator';
 import * as crypto from 'crypto';
 import { LoopEntity } from '../loop/loop.entity';

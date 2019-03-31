@@ -10,7 +10,7 @@ import { ValidationPipe } from '../shared/pipes/validation.pipe';
 
 import {
   ApiUseTags,
-  ApiBearerAuth
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 
 @ApiBearerAuth()
@@ -52,6 +52,6 @@ export class UserController {
     const token = await this.userService.generateJWT(_user);
     const {email, username, bio, image} = _user;
     const user = {email, token, username, bio, image};
-    return {user}
+    return {user};
   }
 }
