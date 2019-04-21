@@ -4,9 +4,15 @@
     "outDir": "../out-tsc/app",
     "types": ["node"]
   },
+  "include":[
+    "./**/*.ts",
+    "../node_modules/@gotloop/lib/**/*.ts",
+    "../node_modules/@gotloop/lib/node_modules/json-typescript-mapper/libs/utils.ts"
+  ],
   "exclude": [
     "setupJest.ts",
     "setupKarma.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "../node_modules/@gotloop/lib/**/*.spec.ts"
   ]
 }
