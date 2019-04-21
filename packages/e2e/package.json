@@ -15,9 +15,7 @@
     "webdriver-start": "webdriver-manager start"
   },
   "dependencies": {
-    "@gotloop/api": "~0.0.0",
-    "@gotloop/lib": "~0.0.0",
-    "@gotloop/www": "~0.0.0"
+    "@gotloop/lib": "~0.0.0"
   },
   "devDependencies": {
     "@types/cucumber": "^4.0.4",
