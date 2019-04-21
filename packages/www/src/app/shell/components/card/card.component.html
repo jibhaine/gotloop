@@ -1,9 +1,11 @@
 <article class="card">
-  <header class="card-top"></header>
-  <section class="card-body"><ng-container></ng-container></section>
-  <footer
-   class="card-bottom"></footer>
-
+  <header class="card-header">
+    <ng-container *ngTemplateOutlet="headerRef"></ng-container>
+  </header>
+  <div class="card-middle">
+    <ng-container *ngTemplateOutlet="middleRef"></ng-container>
+  </div>
+  <footer class="card-footer">
+    <ng-template *ngTemplateOutlet="footerRef"></ng-template>
+  </footer>
 </article>
-
-<main></main>

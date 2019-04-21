@@ -10,9 +10,11 @@ export class LoopListComponent implements OnInit {
 
   public loops: any[];
 
+  public isLoading: boolean;
+
   constructor(private loopsService: LoopsService) {
 
-   }
+  }
 
   ngOnInit() {
     this.loopsService.loops$.subscribe((loops: any[]) => {

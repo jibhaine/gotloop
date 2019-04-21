@@ -14,6 +14,10 @@ export class LoopsService {
   private loops: any[] = [];
 
   constructor(private rng: RandomFactoryService) {
+
+    for (let i = 0; i < 10; i++) {
+      this.loops.push(this.rng.randomLoop());
+    }
     this.loops$ =  new BehaviorSubject<any[]>(this.loops);
   }
 

@@ -9,9 +9,10 @@ import { IconComponent } from './components/icon/icon.component';
 import { HeaderSearchComponent } from './components/header-search/header-search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentPageComponent } from './components/content-page/content-page.component';
+import { PartDirective } from './directives/part.directive';
 
 @NgModule({
-  declarations: [CardComponent, HeaderComponent, IconComponent, HeaderSearchComponent, FooterComponent, ContentPageComponent],
+  declarations: [CardComponent, HeaderComponent, IconComponent, HeaderSearchComponent, FooterComponent, ContentPageComponent, PartDirective],
   exports: [CardComponent, HeaderComponent, IconComponent, FooterComponent],
   imports: [
     CommonModule,
