@@ -5,7 +5,8 @@
     "types": ["node"]
   },
   "exclude": [
-    "test.ts",
+    "setupJest.ts",
+    "setupKarma.ts",
     "**/*.spec.ts"
   ]
 }

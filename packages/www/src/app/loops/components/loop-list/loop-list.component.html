@@ -1,2 +1,5 @@
-<glp-loops-loader></glp-loops-loader>
-<glp-loop-player *ngFor="let loop of loops"></glp-loop-player>
+<glp-loop-player
+    *ngFor="let loop of loops"
+    [loop]="loop"
+></glp-loop-player>
+<glp-loops-loader *ngIf="isLoading"></glp-loops-loader>

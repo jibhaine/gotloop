@@ -1,3 +1,17 @@
-<p>
-  loop-player works!
-</p>
+<div class="card-top">
+    <div class="loop-viz"></div>
+    <div class="loop-buttons">
+        <a class="loop-play-pause-button paused">Play</a>
+        <a class="loop-like-button not-liked">Like</a>
+        <a class="loop-comment-button">Comment</a>
+    </div>
+    <div class="card-content">
+        <div class="loop-details">
+            <div class="loop-name">{{loop.title}}</div>
+            <div class="loop-bpm">{{loop.bpm}}</div>
+            <div class="loop-loopcount"></div>
+            <div class="loop-description">{{loop.description}}</div>
+        </div>
+        <glp-loop-comments [comments]="loop.comments"></glp-loop-comments>
+    </div>
+</div>

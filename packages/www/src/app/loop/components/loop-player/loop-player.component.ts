@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { LoopModel } from '@gotloop/lib';
 
 @Component({
   selector: 'glp-loop-player',
@@ -7,24 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoopPlayerComponent implements OnInit {
 
+  @Input()
+  public loop: LoopModel;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   play() {
-    //todo Webaudio play sample
+    // todo Webaudio play sample
   }
 
   pause() {
-    //webaudio pause
+    // webaudio pause
   }
 
   like() {
-    //todo call loopService.like()
+    // todo call loopService.like()
   }
 
   comment() {
-    //todo unfold comment form
+    // todo unfold comment form
   }
 }
