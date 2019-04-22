@@ -12,4 +12,7 @@ export class TagEntity {
   @Column()
   tag: string;
 
+  constructor(tag: string) {
+    this.tag = tag;
+  }
 }
