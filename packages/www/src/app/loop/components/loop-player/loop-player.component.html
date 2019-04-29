@@ -1,20 +1,37 @@
 <glp-card>
-    <ng-template glpPart="header">
-        <div class="loop-viz"></div>
+    <glp-card-header>
+        <h2 class="sr-only">{{ loop.title }}</h2>
+        <canvas
+            #loopViz
+            class="loop-viz"
+            width="100%"
+            height="30px"
+        ></canvas>
         <div class="loop-buttons">
-            <a class="loop-play-pause-button paused" i18n>Play</a>
-            <a class="loop-like-button not-liked" i18n>Like</a>
-            <a class="loop-comment-button" i18n>Comment</a>
+            <a
+                class="loop-play-pause-button paused"
+                i18n
+            >Play</a>
+            <a
+                class="loop-like-button not-liked"
+                i18n
+            >Like</a>
+            <a
+                class="loop-comment-button"
+                i18n
+            >Comment</a>
         </div>
-    </ng-template>
-    <ng-template glpPart="middle">
+    </glp-card-header>
+    <glp-card-content>
         <div class="loop-details">
             <div class="loop-name">{{ loop.title }}</div>
             <div class="loop-bpm">{{ loop.bpm }}</div>
-            <div class="loop-loopcount"></div>
+            <div class="loop-loopcount">{{ loop.count }}</div>
             <div class="loop-description">{{ loop.description }}</div>
         </div>
         <glp-loop-comments [comments]="loop.comments"></glp-loop-comments>
-    </ng-template>
-    <ng-template glpPart="footer"></ng-template>
+    </glp-card-content>
+    <glp-card-footer>
+
+    </glp-card-footer>
 </glp-card>

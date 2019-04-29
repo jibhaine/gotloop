@@ -12,4 +12,7 @@ export class NoizerPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  createSettings() {
+
+  }
 }

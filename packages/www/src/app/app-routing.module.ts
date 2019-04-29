@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IconsPageComponent } from './core/components/icons-page/icons-page.component';
+import { ErrorPageComponent } from './core/components/error-page/error-page.component';
+import { NotFoundPageComponent } from './core/components/not-found-page/not-found-page.component';
+import { HomePageComponent } from './core/components/home-page/home-page.component';
 
 const routes: Routes = [
   /*{
@@ -23,8 +27,20 @@ const routes: Routes = [
     loadChildren: './noizr/noizr.module#NoizerModule',
   },
   {
+    path: 'icons',
+    component: IconsPageComponent,
+  },
+  {
+    path: 'error',
+    component: ErrorPageComponent,
+  },
+  {
+    path: 'not-found',
+    component: NotFoundPageComponent,
+  },
+  {
     path: '',
-    redirectTo: 'loops',
+    component: HomePageComponent,
     pathMatch: 'full',
   }
 ];
