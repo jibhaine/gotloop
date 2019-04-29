@@ -8,9 +8,9 @@ import { PartDirective } from '../../directives/part.directive';
 @Component({
   template: `
     <glp-card>
-      <ng-template glpPart="header">Header</ng-template>
-      <ng-template glpPart="middle">Content</ng-template>
-      <ng-template glpPart="footer">Footer</ng-template>
+      <glp-card-header>Header</glp-card-header>
+      <glp-card-content>Content</glp-card-content>
+      <glp-card-footer">Footer</glp-card-footer>
     </glp-card>
   `,
 })

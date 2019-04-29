@@ -12,6 +12,8 @@ export class LoopModel {
   public description: string;
   @JsonProperty('bpm')
   public bpm: number;
+  @JsonProperty('count')
+  public count: number;
   @JsonProperty('dur')
   public duration: number;
   @JsonProperty('tags')
@@ -32,6 +34,7 @@ export function loopFactory(): LoopModel {
     creationDate: Date.now(),
     description: '',
     duration: 0.0,
+    count: 0,
     isCommentable: true,
     comments: [],
     isSharable: true,

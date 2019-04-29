@@ -1,11 +1,11 @@
 <article class="card">
-  <header class="card-header">
-    <ng-container *ngTemplateOutlet="headerRef"></ng-container>
-  </header>
-  <div class="card-middle">
-    <ng-container *ngTemplateOutlet="middleRef"></ng-container>
-  </div>
-  <footer class="card-footer">
-    <ng-template *ngTemplateOutlet="footerRef"></ng-template>
-  </footer>
+    <header class="card-header">
+        <ng-content select="glp-card-header"></ng-content>
+    </header>
+    <div class="card-middle">
+        <ng-content select="glp-card-content"></ng-content>
+    </div>
+    <footer class="card-footer">
+        <ng-content select="glp-card-footer"></ng-content>
+    </footer>
 </article>

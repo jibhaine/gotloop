@@ -1,0 +1,16 @@
+@import 'styles/settings';
+@import 'styles/mixins';
+
+.loop-player {
+    color: $main-color;
+    &.is-playing{
+      margin:-.5em -1em 2em ;
+      transition:margin .3s ease-in;
+    }
+    .loop-viz {
+      height: 4em;
+    }
+    .loop-details {
+      min-height: 4em;
+    }
+  }

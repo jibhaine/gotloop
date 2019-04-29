@@ -10,14 +10,35 @@ import { HeaderSearchComponent } from './components/header-search/header-search.
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentPageComponent } from './components/content-page/content-page.component';
 import { PartDirective } from './directives/part.directive';
+import { CardContentComponent } from './components/card/card-content.component';
+import { CardFooterComponent } from './components/card/card-footer.component';
+import { CardHeaderComponent } from './components/card/card-header.component';
 
 @NgModule({
-  declarations: [CardComponent, HeaderComponent, IconComponent, HeaderSearchComponent, FooterComponent, ContentPageComponent, PartDirective],
-  exports: [CardComponent, HeaderComponent, IconComponent, FooterComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
+  declarations: [
+    CardComponent,
+    CardContentComponent,
+    CardFooterComponent,
+    CardHeaderComponent,
+    HeaderComponent,
+    IconComponent,
+    HeaderSearchComponent,
+    FooterComponent,
+    ContentPageComponent,
+    PartDirective,
   ],
+  exports: [
+    CardComponent,
+    CardContentComponent,
+    CardFooterComponent,
+    CardHeaderComponent,
+    HeaderComponent,
+    IconComponent,
+    HeaderSearchComponent,
+    FooterComponent,
+    ContentPageComponent,
+    PartDirective,
+  ],
+  imports: [CommonModule, FormsModule, RouterModule],
 })
-export class ShellModule { }
+export class ShellModule {}
