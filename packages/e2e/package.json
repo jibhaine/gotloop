@@ -1,7 +1,7 @@
 {
   "name": "@gotloop/e2e",
+  "description": "contains all integration end to end and performance test for the project",
   "version": "0.0.0",
-  "description": "",
   "main": "dist/index.js",
   "private": true,
   "scripts": {

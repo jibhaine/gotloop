@@ -15,4 +15,16 @@ export class NoizerPageComponent implements OnInit {
   createSettings() {
 
   }
+
+  openSettings() {
+
+  }
+
+  deleteSettings() {
+
+  }
+
+  updateSettings() {
+
+  }
 }

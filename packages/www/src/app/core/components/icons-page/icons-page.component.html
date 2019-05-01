@@ -1,3 +1,12 @@
-<p>
-  icons-page works!
-</p>
+<h2>Icons</h2>
+<div class="icons-container">
+  <div
+    class="item-wrapper"
+    *ngFor="let icon of iconKeys"
+  >
+  <span class="item-icon">
+    <glp-icon [icon]="icon"></glp-icon>
+  </span>
+    <span class="item-text">{{ icon }}</span>
+  </div>
+</div>

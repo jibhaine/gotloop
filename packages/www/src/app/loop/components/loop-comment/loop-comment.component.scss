@@ -15,6 +15,10 @@
     flex: 0 0 100%;
     margin-bottom: 0.5em;
   }
+  .loop-comment-date{
+    color: gray;
+    font-size: .75em;
+  }
   .loop-comment-content {
     flex: auto;
     @include rounded(1em, grey);

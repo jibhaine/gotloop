@@ -9,7 +9,7 @@ import { IconComponent } from './components/icon/icon.component';
 import { HeaderSearchComponent } from './components/header-search/header-search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContentPageComponent } from './components/content-page/content-page.component';
-import { PartDirective } from './directives/part.directive';
+
 import { CardContentComponent } from './components/card/card-content.component';
 import { CardFooterComponent } from './components/card/card-footer.component';
 import { CardHeaderComponent } from './components/card/card-header.component';
@@ -25,7 +25,6 @@ import { CardHeaderComponent } from './components/card/card-header.component';
     HeaderSearchComponent,
     FooterComponent,
     ContentPageComponent,
-    PartDirective,
   ],
   exports: [
     CardComponent,
@@ -37,7 +36,6 @@ import { CardHeaderComponent } from './components/card/card-header.component';
     HeaderSearchComponent,
     FooterComponent,
     ContentPageComponent,
-    PartDirective,
   ],
   imports: [CommonModule, FormsModule, RouterModule],
 })

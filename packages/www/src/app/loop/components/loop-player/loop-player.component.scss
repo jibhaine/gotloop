@@ -8,18 +8,24 @@
     transition: margin 0.3s ease-in;
   }
   .loop-viz {
-    height: 4em;
+    height: 2.5em;
   }
   .loop-details {
-    min-height: 4em;
+    min-height: 2.5em;
+    margin-top: 2.5em;
   }
 }
 
 .loop-buttons {
-  position: relative;
+  position: absolute;
+
+  right: 0;
+  left: 0;
+  top: 0;
+  padding: 10px 20px;
+
   display: flex;
   align-items: center;
-
   .loop-play-pause-button {
     @include rounded-full(4em, $color-green);
     //background-color:white;
@@ -35,6 +41,10 @@
     @include rounded-full(2em, $color-blue-dark);
     padding: 0 1em;
     width: auto;
-    margin-left: auto;
+    margin-left: 1em;
+    flex: 0 1 auto;
+  }
+  .loop-button-spacer {
+    flex: 1 1 auto;
   }
 }
