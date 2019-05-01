@@ -7,6 +7,10 @@ import { BoxComponent } from './components/box/box.component';
 import { CableComponent } from './components/cable/cable.component';
 import { NoizerPageComponent } from './components/noizer-page/noizer-page.component';
 import { ShellModule } from '../shell/shell.module';
+import { StoreModule } from '@ngrx/store';
+import * as fromNoizr from './reducers/noizr.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { NoizrEffects } from './effects/noizr.effects';
 
 @NgModule({
   declarations: [BoxComponent, CableComponent, NoizerPageComponent],
@@ -15,6 +19,8 @@ import { ShellModule } from '../shell/shell.module';
     NoizerRoutingModule,
     ShellModule,
     AngularDraggableModule,
+    StoreModule.forFeature('noizr', fromNoizr.reducer),
+    EffectsModule.forFeature([NoizrEffects]),
   ],
   entryComponents: [NoizerPageComponent],
 })
