@@ -1,13 +1,13 @@
-@import "styles/settings";
+@import 'styles/settings';
 
 .gotloop-footer {
   width: 100%;
   bottom: 0;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   position: fixed;
   text-align: center;
   height: $header-height;
   min-height: 10px;
-  background-image: linear-gradient( 0deg, white, rgba(0, 0, 0, 0))
+  background-image: linear-gradient(0deg, $back-color, rgba(0, 0, 0, 0));
 }
