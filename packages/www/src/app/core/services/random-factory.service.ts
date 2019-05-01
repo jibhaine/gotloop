@@ -46,6 +46,8 @@ export class RandomFactoryService {
     return {
       uuid: faker.random.uuid() || v4(),
       name: faker.internet.userName(),
+      title: faker.lorem.sentence(faker.random.number(10)),
+      description: faker.lorem.sentence(),
       author: this.randomUser(),
       bpm: Math.floor(faker.random.number(192)) + 42,
       comments: tempComments,

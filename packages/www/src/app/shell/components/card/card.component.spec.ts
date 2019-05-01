@@ -1,16 +1,25 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { PartDirective } from '../../directives/part.directive';
+
+import { CardHeaderComponent } from './card-header.component';
+import { CardFooterComponent } from './card-footer.component';
+import { CardContentComponent } from './card-content.component';
 
 @Component({
   template: `
     <glp-card>
       <glp-card-header>Header</glp-card-header>
       <glp-card-content>Content</glp-card-content>
-      <glp-card-footer">Footer</glp-card-footer>
+      <glp-card-footer>Footer</glp-card-footer>
     </glp-card>
   `,
 })
@@ -18,7 +27,13 @@ class CardTestComponent {}
 describe('CardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CardComponent, CardTestComponent, PartDirective],
+      declarations: [
+        CardComponent,
+        CardHeaderComponent,
+        CardFooterComponent,
+        CardContentComponent,
+        CardTestComponent,
+      ],
     }).compileComponents();
   }));
 

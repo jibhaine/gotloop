@@ -3,7 +3,12 @@
   [attr.id]="comment ? 'comment-' + comment.uuid : undefined"
 >
   <div class="loop-comment-infos">
-    {{ comment.author.name }} - {{ comment.createdAt }}
+    <span class="loop-comment-author-name">
+      {{ comment.author.name }}
+    </span>
+    <span class="loop-comment-date">
+      {{ comment.createdAt }}
+    </span>
   </div>
   <img
     class="loop-comment-author"

@@ -11,10 +11,15 @@ import { LoopCommentFormComponent } from './components/loop-comment-form/loop-co
 import { ShellModule } from '../shell/shell.module';
 
 @NgModule({
-  declarations: [LoopPlayerComponent, LoopCommentComponent, LoopRecordComponent, LoopPlayerVizComponent, LoopCommentsComponent, LoopCommentFormComponent],
+  declarations: [
+    LoopPlayerComponent,
+    LoopCommentComponent,
+    LoopRecordComponent,
+    LoopPlayerVizComponent,
+    LoopCommentsComponent,
+    LoopCommentFormComponent,
+  ],
   exports: [LoopPlayerComponent, LoopRecordComponent],
-  imports: [
-    CommonModule, ShellModule,
-  ]
+  imports: [CommonModule, ShellModule],
 })
-export class LoopModule { }
+export class LoopModule {}
