@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 
 import { LoopPlayerComponent } from './components/loop-player/loop-player.component';
 import { LoopCommentComponent } from './components/loop-comment/loop-comment.component';
-import { LoopRecordComponent } from './components/loop-record/loop-record.component';
 import { LoopPlayerVizComponent } from './components/loop-player-viz/loop-player-viz.component';
 import { LoopCommentsComponent } from './components/loop-comments/loop-comments.component';
 import { LoopCommentFormComponent } from './components/loop-comment-form/loop-comment-form.component';
@@ -18,12 +17,11 @@ import { LoopEffects } from './effects/loop.effects';
   declarations: [
     LoopPlayerComponent,
     LoopCommentComponent,
-    LoopRecordComponent,
     LoopPlayerVizComponent,
     LoopCommentsComponent,
     LoopCommentFormComponent,
   ],
-  exports: [LoopPlayerComponent, LoopRecordComponent],
+  exports: [LoopPlayerComponent],
   imports: [CommonModule, ShellModule, StoreModule.forFeature('loop', fromLoop.reducer), EffectsModule.forFeature([LoopEffects])],
 })
 export class LoopModule {}
