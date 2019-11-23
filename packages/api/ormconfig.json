@@ -1,9 +1,9 @@
 {
     "type": "mysql",
-    "host": "localhost",
+    "host": "dat",
     "port": 3306,
-    "username": "your-mysql-username",
-    "password": "your-mysql-password",
+    "username": "gotloop",
+    "password": "gotloop",
     "database": "gotloop",
     "entities": [
         "src/**/**.entity{.ts,.js}"
