@@ -1,0 +1,107 @@
+version: '3.1'
+
+services:
+  # external data sources
+
+  # Database for objects data.
+  dat:
+    image: mongo
+    restart: always
+    environment:
+      VIRTUAL_HOST: dat.gotloop
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGODB_DATABASE: gotloop
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data/db
+
+  # Cloud storage (like S3) for sound/binary data.
+  bin:
+    image: minio/minio
+    restart: always
+    command: server /export
+    environment:
+      VIRTUAL_HOST: bin.gotloop
+      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
+      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    ports:
+      - '9001:9000'
+    volumes:
+      - binary:/export
+      - ./data/minio/config:/root/.minio
+
+  # internal node services
+
+  # REST api
+  api:
+    build: ./docker/gotloop-node
+    restart: always
+    environment:
+      VIRTUAL_HOST: api.gotloop
+    volumes:
+      - ./packages/api:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: npm run start:dev
+    ports:
+      - 6060:4000
+    links:
+      - dat
+      - bin
+
+  # Main server. (web/universal + angular)
+  www:
+    build: ./docker/gotloop-node
+    restart: always
+    ports:
+      - 6070:4200
+    environment:
+      VIRTUAL_HOST: www.gotloop
+    entrypoint: ng serve --hmr
+    working_dir: /usr/src/app
+    volumes:
+      - ./packages/www:/usr/src/app
+    depends_on:
+      - api
+
+  # run end-to-end tests and display html reports:
+  e2e:
+    build: ./docker/gotloop-node
+    restart: always
+    ports:
+      - 6080:8081
+    entrypoint: npm run start
+    environment:
+      VIRTUAL_HOST: e2e.gotloop
+    volumes:
+      - ./packages/e2e:/usr/src/app
+    working_dir: /usr/src/app
+    depends_on:
+      - www
+
+  # run end-to-end tests and display html reports:
+  prf:
+    build: ./docker/gotloop-node
+    ports:
+      - 6090:3000
+    environment:
+      VIRTUAL_HOST: prf.gotloop
+    working_dir: /usr/src/app
+    volumes:
+      - ./packages/prf:/usr/src/app
+    working_dir: /usr/src/app
+
+  # nginx reverse proxy to bind them all
+  ngx:
+    image: jwilder/nginx-proxy
+    ports:
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+volumes:
+  data:
+    driver: local
+  binary:
+    driver: local

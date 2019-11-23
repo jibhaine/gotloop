@@ -1,0 +1,82 @@
+@import "../../../../styles/settings";
+@import "sass-ems/index";
+@import "sass-breakpoints/index";
+
+.gotloop-header {
+  background: $head-color;
+  height: $header-height - $common-margin*2;
+  padding: $common-margin;
+  position: fixed;
+  z-index:9001;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: $header-text-height;
+  box-shadow: 0 0 1em rgba($main-color, .25);
+  > * {
+    color: $main-color;
+  }
+  @include breakpoint("sm", "md") {
+    height: 100%;
+    width: 6em;
+    left:0;
+    bottom:0;
+    flex-direction: column;
+  }
+}
+
+.header-logo {
+  height: 2em;
+  width: 4em;
+  margin-right: $common-margin;
+
+  flex: 0 0 auto;
+
+}
+  @include breakpoint("sm", "md") {
+    .header-logo-text{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+  .header-logo{
+    font-size:1.5em;
+  }
+}
+.header-links {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  margin-right: 1em;
+  @include breakpoint("sm", "md") {
+    flex-direction: column;
+    .header-link{
+      margin-right:0;
+    }
+  }
+}
+.spacer {
+  flex: 1 1 auto;
+  @include breakpoint("sm", "md") {
+    flex: 0 0 auto;
+  }
+}
+.header-link:not(:last-child){
+  margin-right: $common-margin*2;
+}
+.header-link {
+  color: $main-color;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-position 1s ease-in-out;
+  
+  &:visited{
+    color: $main-color;
+  }
+  
+  &:hover,
+  &:focus {
+    color: $main-color-light;
+  }
+}

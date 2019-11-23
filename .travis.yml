@@ -1,3 +1,20 @@
 language: node_js
+
 node_js:
-  - 'stable'
+  - "10"
+
+cache: npm
+
+#services:
+#  - docker
+
+before_script:
+#  - sudo apt-get update
+  - npm i -g lerna @angular/cli
+  - lerna bootstrap
+
+script:
+#  - docker-compose pull
+  - lerna exec --stream -- npm run build
+  - lerna exec --stream -- npm run test
+
