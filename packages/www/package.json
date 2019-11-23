@@ -35,7 +35,7 @@
     "faker": "^4.1.0",
     "matter-js": "^0.14.2",
     "moment": "^2.24.0",
-    "ngx-infinite-scroll": "^6.0.1",
+    "ngx-infinite-scroll": "^8.0.1",
     "ngx-moment": "^3.3.0",
     "ngx-pipes": "^2.3.6",
     "rxjs": "~6.5.3",
