@@ -22,6 +22,11 @@ import { LoopEffects } from './effects/loop.effects';
     LoopCommentFormComponent,
   ],
   exports: [LoopPlayerComponent],
-  imports: [CommonModule, ShellModule, StoreModule.forFeature('loop', fromLoop.reducer), EffectsModule.forFeature([LoopEffects])],
+  imports: [
+    CommonModule,
+    ShellModule,
+    StoreModule.forFeature('loop', fromLoop.reducer),
+    EffectsModule.forFeature([LoopEffects]),
+  ],
 })
 export class LoopModule {}

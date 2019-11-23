@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoopRecordComponent } from './components/loop-record/loop-record.component';
+
+import { LoopEditorComponent } from './components/loop-editor/loop-editor.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'record',
+    component: LoopEditorComponent,
   },
-  {
-    path: 'record',
-    component: LoopRecordComponent,
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class LoopRoutingModule { }
+export class LoopEditorRoutingModule { }

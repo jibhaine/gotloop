@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { LoopEditorEffects } from './effects/loop-editor.effects';
 import { LoopFormComponent } from './components/loop-form/loop-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoopEditorRoutingModule } from './loop-editor-routing.module';
 
 @NgModule({
   declarations: [LoopCutterComponent, LoopUploadComponent, LoopRecordComponent, LoopEditorComponent, LoopFormComponent],
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    LoopEditorRoutingModule,
     StoreModule.forFeature('loopEditor', fromLoopEditor.reducer),
     EffectsModule.forFeature([LoopEditorEffects])
   ]

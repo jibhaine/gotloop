@@ -19,8 +19,12 @@ const routes: Routes = [
     loadChildren: './user/user.module#UserModule',
   },
   {
-    path: 'loop',
-    loadChildren: './loop/loop.module#LoopModule',
+    path: 'loop/:id',
+    loadChildren: './loop-detail/loop-detail.module#LoopDetailModule',
+  },
+  {
+    path: 'loop/:id/edit',
+    loadChildren: './loop-editor/loop-editor.module#LoopEditorModule',
   },
   {
     path: 'noizr',

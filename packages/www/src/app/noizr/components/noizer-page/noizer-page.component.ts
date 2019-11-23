@@ -24,7 +24,7 @@ export class NoizerPageComponent implements OnInit {
 
   }
 
-  updateSettings() {
+  handleAddSource() {
 
   }
 }
