@@ -1,3 +1,20 @@
-<p>
-  loop-comment works!
-</p>
+<div
+  class="loop-comment"
+  [attr.id]="comment ? 'comment-' + comment.uuid : undefined"
+>
+  <div class="loop-comment-infos">
+    <span class="loop-comment-author-name">
+      {{ comment.author.name }}
+    </span>
+    <span class="loop-comment-date">
+      {{ comment.createdAt }}
+    </span>
+  </div>
+  <img
+    class="loop-comment-author"
+    [src]="comment.author.avatar"
+  />
+  <div class="loop-comment-content">
+    {{ comment.content }}
+  </div>
+</div>

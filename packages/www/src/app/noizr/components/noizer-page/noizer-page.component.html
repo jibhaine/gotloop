@@ -1,4 +1,22 @@
 <div class="noizer">
-    <h2 class="noizer-title">NOiZR</h2>
+    <nav class="noizer-toolbar">
+        <h2 class="noizer-title">NOiZR</h2>
+        <button
+            class="noizer-button"
+            type="button"
+            (click)="createSettings()"
+        >
+            <glp-icon icon="add"></glp-icon>
+            Create New AudioGraph
+        </button>
+        <button
+            class="noizer-button"
+            type="button"
+            (click)="handleAddSource()"
+        >
+            <glp-icon icon="add"></glp-icon>
+            Add Source
+        </button>
+    </nav>
     <svg></svg>
 </div>

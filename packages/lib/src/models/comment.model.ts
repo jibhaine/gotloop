@@ -1,9 +1,23 @@
 import { JsonProperty } from 'json-typescript-mapper';
 
-class Comment {
-  date: Date;
-  author: string;
-  content: string;
+import { UserModel } from './user.model';
+
+/**
+ * Modelize a user comment on a loop.
+ */
+export class CommentModel {
+  @JsonProperty('uuid')
+  public uuid: string;
+
+  @JsonProperty('date')
+  public createdAt: Date;
+
+  @JsonProperty('author')
+  public author: UserModel;
+
+  @JsonProperty('content')
+  public content: string;
+
 }
 
 export default Comment;

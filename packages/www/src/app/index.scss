@@ -63,7 +63,9 @@ section h2 {
 }
 
 //forms
-fieldset {}
+fieldset {
+  border: 0;
+}
 
 input,
 input[type="reset"],
@@ -84,19 +86,6 @@ input {
   }
 }
 
-.loop-player {
-  color: $main-color;
-  &.is-playing{
-    margin:-.5em -1em 2em ;
-    transition:margin .3s ease-in;
-  }
-  .loop-viz {
-    height: 4em;
-  }
-  .loop-details {
-    min-height: 4em;
-  }
-}
 
 .loop-buttons {
   position:relative;
@@ -120,47 +109,5 @@ input {
     padding: 0 1em;
     width:auto;
     margin-left: auto;
-  }
-}
-
-.loop-comment{
-  display:flex;
-  flex-flow: row wrap;
-  margin-bottom:2em;
-  .loop-comment-author{
-    @include rounded(3em,transparent);
-  }
-  .loop-comment-infos{
-    width:100%;
-    flex: 0 0 100%;
-    margin-bottom:.5em;
-  }
-  .loop-comment-content{
-    flex:auto;
-    @include rounded(1em,#808080);
-    padding:.5em 1em;
-    min-height:3em;
-    height:auto;
-    margin-left:1em;
-    position:relative;
-    text-align:left;
-    //arrow
-    &:before,&:after{
-      position:absolute;
-      left:-1em;
-      top:1em;content:' ';
-      display:block;
-      width:0;
-      height:0;
-      border:solid .5em transparent;
-    }
-    &:after{
-      border-right-color:white;
-      //margin-right:-1px;
-    }
-    &:before{
-      border-right-color:grey ;
-      margin-left:-1px;
-    }
   }
 }

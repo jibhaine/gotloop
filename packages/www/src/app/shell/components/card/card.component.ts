@@ -1,16 +1,12 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'glp-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+  constructor() {}
 
-  contentRef: TemplateRef<any>;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

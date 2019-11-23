@@ -3,19 +3,20 @@
 .card {
   height: auto;
   border-radius: 1em;
-  margin: 0 0 2em 0;
+  margin: 20px;
   background-color: white;
   box-shadow: 0 0 1em rgba($main-color, .25);
-  .card-top {
+  .card-header {
     border-radius: 1em 1em 0 0;
     background-color: $head-color;
     width: 100%;
     min-height: 2em;
+    position: relative;
   }
-  .card-content{
-    margin:0 1em;
+  .card-middle{
+    margin:0 20px;
   }
-  .card-bottom {
+  .card-footer {
     border-radius: 0 0 1em 1em;
     background-color: white;
     min-height: 1em;

@@ -36,6 +36,17 @@ h6,
   margin-bottom: 1em;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 .page-header {
   background: $head-color;
   height: $header-height - $common-margin*2;
@@ -173,110 +184,6 @@ $loader-border-width:1px;
     transform: scale(1);
   }
 }
-
-.card {
-  height: auto;
-  border-radius: 1em;
-  margin: 0 0 2em 0;
-  background-color: white;
-  box-shadow: 0 0 1em rgba($main-color, .25);
-  .card-top {
-    border-radius: 1em 1em 0 0;
-    background-color: $head-color;
-    width: 100%;
-    min-height: 2em;
-  }
-  .card-content{
-    margin:0 1em;
-  }
-  .card-bottom {
-    border-radius: 0 0 1em 1em;
-    background-color: white;
-    min-height: 1em;
-  }
-}
-
-.loop-player {
-  color: $main-color;
-  &.is-playing{
-    margin:-.5em -1em 2em ;
-    transition:margin .3s ease-in;
-  }
-  .loop-viz {
-    height: 4em;
-  }
-  .loop-details {
-    min-height: 4em;
-  }
-}
-
-.loop-buttons {
-  position:relative;
-  display:flex;
-  align-items:center;
-  margin: -2em 1em 0;
-
-  .loop-play-pause-button {
-    @include rounded-full(4em, $color-green);
-    //background-color:white;
-    text-align:center;
-    text-transform:uppercase;
-  }
-  .loop-like-button {
-    @include rounded-full(3em, $color-red-dark);
-    margin-left:1em;
-    text-align:center;
-  }
-  .loop-comment-button {
-    @include rounded-full(2em, $color-blue-dark);
-    padding: 0 1em;
-    width:auto;
-    margin-left: auto;
-  }
-}
-
-.loop-comment{
-  display:flex;
-  flex-flow: row wrap;
-  margin-bottom:2em;
-  .loop-comment-author{
-    @include rounded(3em,transparent);
-  }
-  .loop-comment-infos{
-    width:100%;
-    flex: 0 0 100%;
-    margin-bottom:.5em;
-  }
-  .loop-comment-content{
-    flex:auto;
-    @include rounded(1em,grey);
-    padding:.5em 1em;
-    min-height:3em;
-    height:auto;
-    margin-left:1em;
-    position:relative;
-    text-align:left;
-    //arrow
-    &:before,&:after{
-      position:absolute;
-      left:-1em;
-      top:1em;content:' ';
-      display:block;
-      width:0;
-      height:0;
-      border:solid .5em transparent;
-    }
-    &:after{
-      border-right-color:white;
-      //margin-right:-1px;
-    }
-    &:before{
-      border-right-color:grey ;
-      margin-left:-1px;
-    }
-  }
-}
-
 
 
 

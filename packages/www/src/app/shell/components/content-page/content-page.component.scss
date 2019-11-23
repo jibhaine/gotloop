@@ -1,7 +1,16 @@
-@import "styles/settings";
+@import 'styles/settings';
+@import 'sass-breakpoints/index';
 
 .content-page {
   margin: 0 auto;
-  width: 640px;
   color: $head-color;
+  padding-bottom: 4em;
+  @include breakpoint('md') {
+    width: 640px;
+  }
+
+  @include breakpoint('lg') {
+    width: 768px;
+  }
+
 }

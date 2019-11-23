@@ -1,4 +1,5 @@
 {
+  "name": "gotloop",
   "version": "0.0.0",
   "description": "Main entry point for gotloop project",
   "homepage": "https://github.com/gotloop/gotloop",
@@ -23,16 +24,16 @@
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.12",
-    "jest": "^23.6.0",
-    "lerna": "^2.10.2",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^10.14.5",
+    "jest": "^24.7.1",
+    "lerna": "^3.13.1",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.2",
-    "prettier": "^1.15.3",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.2.2"
+    "prettier": "^1.17.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
   }
 }

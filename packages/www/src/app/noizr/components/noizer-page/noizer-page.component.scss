@@ -1,14 +1,16 @@
-:host{
+:host {
   height: 100%;
 }
-.noizer{
-
-  background:
-  linear-gradient(0deg, rgba(255,255,255,0.5) 2px, rgba(0,0,0,0) 2px),
-  linear-gradient(90deg, rgba(255,255,255,0.5) 2px, rgba(0,0,0,0) 2px),
-  linear-gradient(0deg, rgba(255,255,255,0.25) 1px, rgba(0,0,0,0) 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.25) 1px, rgba(0,0,0,0) 1px),
-  rgb(34, 102, 153);
+.noizer {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 2px,
+      rgba(0, 0, 0, 0) 2px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 2px, rgba(0, 0, 0, 0) 2px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px),
+    rgb(34, 102, 153);
   background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   background-repeat: repeat;
 
@@ -16,18 +18,28 @@
 }
 
 .noizer-title {
-  margin: 0 1em;
-  padding: 1em 0;
+  margin: 0 0.5em;
+  padding: 0.5em 0;
 
-  color:black;
-  text-shadow:
-   1px 1px 0 white,
-  -1px -1px 0 white,
-  -1px 1px 0 white,
-   1px -1px 0 white,
-   
-   2px 2px 0 #bbb,
-   3px 3px 0 #999,
-   4px 4px 0 #666,
-   5px 5px 0 #333;
+  color: black;
+  text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white,
+    1px -1px 0 white, 2px 2px 0 #bbb, 3px 3px 0 #999, 4px 4px 0 #666,
+    5px 5px 0 #333;
+}
+
+.noizer-toolbar {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0.5em black;
+  height: 3em;
+  display: flex;
+}
+.noizer-button {
+  margin: 0.75em;
+  text-transform: uppercase;
+  /* font-weight: bold; */
+  &:hover {
+    color: white;
+    background: #3384b8;
+    border-color: white;
+  }
 }

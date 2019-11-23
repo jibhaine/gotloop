@@ -9,7 +9,7 @@
       "projectType": "application",
       "prefix": "glp",
       "schematics": {
-        "@schematics/angular:component": {
+        "@ngrx/schematics:component": {
           "styleext": "scss"
         }
       },
@@ -22,6 +22,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
+            "preserveSymlinks": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -149,5 +150,8 @@
       }
     }
   },
-  "defaultProject": "www"
+  "defaultProject": "www",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

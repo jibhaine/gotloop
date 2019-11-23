@@ -12,4 +12,19 @@ export class NoizerPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  createSettings() {
+
+  }
+
+  openSettings() {
+
+  }
+
+  deleteSettings() {
+
+  }
+
+  handleAddSource() {
+
+  }
 }

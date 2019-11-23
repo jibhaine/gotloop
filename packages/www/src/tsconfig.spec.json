@@ -9,11 +9,14 @@
     ]
   },
   "files": [
-    "test.ts",
+    "setupJest.ts",
     "polyfills.ts"
   ],
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"
+  ],
+  "exclude": [
+    "setupKarma.ts"
   ]
 }

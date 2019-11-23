@@ -10,8 +10,8 @@ export interface SettingsLink {
 }
 export class Settings {
     public uuid: string;
-    public nodes: NoizerNode[] = [];
-    public connections: NoizerConnection = [];
+    public nodes: SettingsNode[] = [];
+    public connections: SettingsLink = [];
 }
 
 export default Settings;

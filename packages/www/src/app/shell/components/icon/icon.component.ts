@@ -17,7 +17,6 @@ export class IconComponent implements OnInit {
 
   ngOnInit() {
     this.iconCode = IconCode[this.icon];
-    console.log(this.icon, IconCode);
   }
 
 }
