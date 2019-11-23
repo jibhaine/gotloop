@@ -2,8 +2,6 @@ import { Action } from '@ngrx/store';
 
 export enum LoopEditorActionTypes {
   LoadLoopEditors = '[LoopEditor] Load LoopEditors',
-  
-  
 }
 
 export class LoadLoopEditors implements Action {
