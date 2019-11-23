@@ -12,23 +12,23 @@ const routes: Routes = [
   },*/
   {
     path: 'loops',
-    loadChildren: './loops/loops.module#LoopsModule',
+    loadChildren: () => import('./loops/loops.module').then(m => m.LoopsModule),
   },
   {
     path: 'user',
-    loadChildren: './user/user.module#UserModule',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
   },
   {
     path: 'loop/:id',
-    loadChildren: './loop-detail/loop-detail.module#LoopDetailModule',
+    loadChildren: () => import('./loop-detail/loop-detail.module').then(m => m.LoopDetailModule),
   },
   {
     path: 'loop/:id/edit',
-    loadChildren: './loop-editor/loop-editor.module#LoopEditorModule',
+    loadChildren: () => import('./loop-editor/loop-editor.module').then(m => m.LoopEditorModule),
   },
   {
     path: 'noizr',
-    loadChildren: './noizr/noizr.module#NoizerModule',
+    loadChildren: () => import('./noizr/noizr.module').then(m => m.NoizerModule),
   },
   {
     path: 'icons',
