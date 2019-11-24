@@ -1,5 +1,3 @@
-import { JsonProperty } from 'json-typescript-mapper';
-
 export interface SettingsNode {
     inputs?: SettingsLink[];
     outputs?: SettingsLink[];
