@@ -1,6 +1,5 @@
 import { HttpException } from '@nestjs/common/exceptions/http.exception';
 import {
-  Middleware,
   NestMiddleware,
   HttpStatus,
   Injectable,
@@ -16,7 +15,7 @@ import { UserService } from './user.service';
 export class AuthMiddleware implements NestMiddleware {
   constructor(private readonly userService: UserService) {}
 
-  resolve(): (req: Request, res: Response, next: NextFunction) => void {
+  use(): (req: Request, res: Response, next: NextFunction) => void {
     return async (req: Request, res: Response, next: NextFunction) => {
       if (
         req.headers.authorization &&
