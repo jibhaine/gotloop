@@ -1,5 +1,10 @@
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
-class Preset {}
-
-export default Preset;
+@JsonObject()
+export class PresetModel {
+    @JsonProperty()
+    public id: string;
+    constructor(from: Partial<PresetModel>) {
+        Object.assign(this, from);
+    }
+}

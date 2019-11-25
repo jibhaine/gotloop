@@ -1,17 +1,27 @@
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
-export interface SettingsNode {
+@JsonObject()
+export class SettingsNode {
     inputs?: SettingsLink[];
     outputs?: SettingsLink[];
+    params: [];
 }
 
-export interface SettingsLink {
+@JsonObject()
+export class SettingsLink {
 
 }
+
+@JsonObject()
+export class SettingsParam {
+    key:string;
+    val: string;
+}
+
+@JsonObject()
 export class Settings {
+    @JsonProperty()
     public uuid: string;
     public nodes: SettingsNode[] = [];
     public connections: SettingsLink = [];
 }
-
-export default Settings;

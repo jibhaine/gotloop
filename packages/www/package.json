@@ -69,10 +69,10 @@
   "jest": {
     "preset": "jest-preset-angular",
     "moduleNameMapper": {
-      "json-typescript-mapper": "<rootDir>/node_modules/json-typescript-mapper"
+      "json2typescript": "<rootDir>/node_modules/json2typescript"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(@ngrx|json-typescript-mapper|@gotloop))"
+      "node_modules/(?!(@ngrx|json2typescript|@gotloop))"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/setupJest.ts"
