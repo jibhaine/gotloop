@@ -1,11 +1,12 @@
 //types
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
 export enum BoxType {
   Generator,
   Filter,
 }
 
+@JsonObject()
 export class BoxUI {
   @JsonProperty('x')
   public x: number;

@@ -6,8 +6,7 @@
   },
   "include":[
     "./**/*.ts",
-    "../node_modules/@gotloop/lib/**/*.ts",
-    "../node_modules/@gotloop/lib/node_modules/json-typescript-mapper/libs/utils.ts"
+    "../node_modules/@gotloop/lib/**/*.ts"
   ],
   "exclude": [
     "setupJest.ts",

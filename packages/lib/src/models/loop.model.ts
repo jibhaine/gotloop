@@ -1,10 +1,11 @@
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
 import { CommentModel } from './comment.model';
 
 /**
  * Loop is our main model class.
  */
+@JsonObject()
 export class LoopModel {
   @JsonProperty('title')
   public title: string;
