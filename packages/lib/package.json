@@ -34,8 +34,5 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "__processed_by_ivy_ngcc__": {
-    "main": "8.2.14"
   }
 }
