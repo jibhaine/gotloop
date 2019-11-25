@@ -1,7 +1,7 @@
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
-class Cable {
-  id: string;
+@JsonObject()
+export class CableModel {
+@JsonProperty()
+id: string;
 }
-
-export default Cable;

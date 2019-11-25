@@ -1,5 +1,6 @@
-import { JsonProperty } from 'json-typescript-mapper';
+import { JsonProperty, JsonObject } from 'json2typescript';
 
+@JsonObject()
 export class UserModel {
   @JsonProperty('name')
   public name: string;

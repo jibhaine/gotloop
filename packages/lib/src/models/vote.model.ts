@@ -1,3 +1,11 @@
-class Vote {}
+import { JsonObject, JsonProperty } from 'json2typescript';
 
-export default Vote;
+@JsonObject()
+class VoteModel {
+    
+    @JsonProperty()
+    public id: string;
+
+}
+
+export default VoteModel;
