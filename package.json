@@ -26,7 +26,11 @@
     "dep-graph": "nx dep-graph",
     "workspace-schematic": "nx workspace-schematic",
     "help": "nx help",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js"
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points && node ./decorate-angular-cli.js",
+    "dev:ssr": "ng run www:serve-ssr",
+    "serve:ssr": "node dist/apps/www-server/main.js",
+    "build:ssr": "ng build --prod && ng run www:server:production",
+    "prerender": "ng run www:prerender"
   },
   "private": true,
   "dependencies": {
@@ -88,6 +92,7 @@
     "@nestjs/schematics": "^7.0.1",
     "@nestjs/testing": "^7.4.2",
     "@ngrx/schematics": "^9.2.0",
+    "@nguniversal/builders": "^10.0.0",
     "@nrwl/angular": "10.0.10",
     "@nrwl/cypress": "10.0.10",
     "@nrwl/jest": "10.0.10",
