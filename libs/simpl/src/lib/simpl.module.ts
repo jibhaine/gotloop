@@ -7,6 +7,11 @@ import { RoundButtonDirective } from './directives/round-button.directive';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [TextFieldDirective, CheckboxDirective, RadioButtonDirective, RoundButtonDirective],
+  declarations: [
+    TextFieldDirective,
+    CheckboxDirective,
+    RadioButtonDirective,
+    RoundButtonDirective,
+  ],
 })
 export class SimplModule {}
