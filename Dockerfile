@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 
 # Install common tools
 RUN npm i -g nodemon ts-node typescript @angular/cli @nestjs/cli @nrwl/cli pm2 serverless http-server
