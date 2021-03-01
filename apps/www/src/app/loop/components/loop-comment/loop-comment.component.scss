@@ -9,6 +9,7 @@
   .loop-comment-author {
     margin-top: 5px;
     @include rounded(3em, transparent);
+    box-shadow: 0 -0.5em 0.25em white, 0 0.25em 0.5em rgba(0, 0, 0, 0.25);
   }
   .loop-comment-infos {
     width: 100%;
@@ -29,6 +30,7 @@
     position: relative;
     text-align: left;
     z-index: 0;
+    background: white;
     //arrow
     &:after {
       position: absolute;

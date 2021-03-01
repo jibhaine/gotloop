@@ -14,7 +14,7 @@ export class SettingsLink {
 
 @JsonObject('SettingsParam')
 export class SettingsParam {
-    key:string;
+    key: string;
     val: string;
 }
 
