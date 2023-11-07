@@ -9,18 +9,13 @@
     ".eslintrc.json": "*"
   },
   "projects": {
-    "www": {
-      "tags": ["type:app"]
+    "adm": {
+      "tags": ["type:app"],
+      "implicitDependencies": ["api-model"]
     },
-    "www-e2e": {
+    "adm-e2e": {
       "tags": ["type:e2e"],
-      "implicitDependencies": ["www"]
-    },
-    "api-model": {
-      "tags": []
-    },
-    "simpl": {
-      "tags": []
+      "implicitDependencies": ["adm"]
     },
     "api": {
       "tags": []
@@ -29,16 +24,21 @@
       "tags": ["type:e2e"],
       "implicitDependencies": ["adm"]
     },
+    "api-model": {
+      "tags": []
+    },
+    "simpl": {
+      "tags": []
+    },
     "ssr": {
       "tags": []
     },
-    "adm": {
-      "tags": ["type:app"],
-      "implicitDependencies": ["api-model"]
+    "www": {
+      "tags": ["type:app"]
     },
-    "adm-e2e": {
+    "www-e2e": {
       "tags": ["type:e2e"],
-      "implicitDependencies": ["adm"]
+      "implicitDependencies": ["www"]
     }
   },
   "tasksRunnerOptions": {
@@ -51,5 +51,13 @@
   },
   "affected": {
     "defaultBase": "master"
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }
