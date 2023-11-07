@@ -34,9 +34,9 @@
             },
             "scripts": [],
             "allowedCommonJsDependencies": [
-               "@angularclass/hmr",
-               "json2typescript",
-               "faker"
+              "@angularclass/hmr",
+              "json2typescript",
+              "faker"
             ]
           },
           "configurations": {
@@ -50,7 +50,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -82,7 +81,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -138,7 +138,8 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/sass"]
             }
-          }
+          },
+          "outputs": ["coverage/apps/www"]
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -195,9 +196,7 @@
           "options": {
             "browserTarget": "www:build:production",
             "serverTarget": "www:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
@@ -276,9 +275,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/api-model/jest.config.js",
-            "tsConfig": "libs/api-model/tsconfig.spec.json"
-          }
+            "jestConfig": "libs/api-model/jest.config.js"
+          },
+          "outputs": ["coverage/libs/api-model"]
         }
       }
     },
@@ -301,10 +300,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/simpl/jest.config.js",
-            "tsConfig": "libs/simpl/tsconfig.spec.json",
-            "setupFile": "libs/simpl/src/test-setup.ts"
-          }
+            "jestConfig": "libs/simpl/jest.config.js"
+          },
+          "outputs": ["coverage/libs/simpl"]
         }
       },
       "schematics": {
@@ -341,7 +339,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -362,9 +361,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/api/jest.config.js",
-            "tsConfig": "apps/api/tsconfig.spec.json"
-          }
+            "jestConfig": "apps/api/jest.config.js"
+          },
+          "outputs": ["coverage/apps/api"]
         }
       }
     },
@@ -396,7 +395,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -417,9 +417,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/ssr/jest.config.js",
-            "tsConfig": "apps/ssr/tsconfig.spec.json"
-          }
+            "jestConfig": "apps/ssr/jest.config.js"
+          },
+          "outputs": ["coverage/apps/ssr"]
         }
       }
     },
@@ -454,7 +454,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -473,7 +472,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -505,10 +505,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/adm/jest.config.js",
-            "tsConfig": "apps/adm/tsconfig.spec.json",
-            "setupFile": "apps/adm/src/test-setup.ts"
-          }
+            "jestConfig": "apps/adm/jest.config.js"
+          },
+          "outputs": ["coverage/apps/adm"]
         }
       }
     },

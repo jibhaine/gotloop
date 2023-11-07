@@ -91,7 +91,6 @@ services:
     working_dir: /usr/src/app
     volumes:
       - ./packages/prf:/usr/src/app
-    working_dir: /usr/src/app
 
   # nginx reverse proxy to bind them all
   ngx:

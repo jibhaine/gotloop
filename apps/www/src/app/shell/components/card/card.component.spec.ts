@@ -1,10 +1,4 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed,
-  fakeAsync,
-  tick,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
 import { Component, DebugElement } from '@angular/core';
@@ -25,7 +19,7 @@ import { CardContentComponent } from './card-content.component';
 })
 class CardTestComponent {}
 describe('CardComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         CardComponent,
@@ -41,7 +35,7 @@ describe('CardComponent', () => {
     let component: CardTestComponent;
     let fixture: ComponentFixture<CardTestComponent>;
     let debugElement: DebugElement;
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       fixture = TestBed.createComponent(CardTestComponent);
       component = fixture.componentInstance;
       debugElement = fixture.debugElement;

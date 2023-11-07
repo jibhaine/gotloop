@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoopCutterComponent } from './loop-cutter.component';
 
@@ -6,7 +6,7 @@ describe('LoopCutterComponent', () => {
   let component: LoopCutterComponent;
   let fixture: ComponentFixture<LoopCutterComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoopCutterComponent],
     }).compileComponents();

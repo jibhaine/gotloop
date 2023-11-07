@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoopFormComponent } from './loop-form.component';
 
@@ -6,7 +6,7 @@ describe('LoopFormComponent', () => {
   let component: LoopFormComponent;
   let fixture: ComponentFixture<LoopFormComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoopFormComponent ]
     })
