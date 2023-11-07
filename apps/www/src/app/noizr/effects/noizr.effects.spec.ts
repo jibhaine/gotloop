@@ -10,11 +10,9 @@ describe('NoizrEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        NoizrEffects,
-        provideMockActions(() => actions$)
-      ]
-    });
+    providers: [NoizrEffects, provideMockActions(() => actions$)],
+    teardown: { destroyAfterEach: false }
+});
 
     effects = TestBed.get(NoizrEffects);
   });

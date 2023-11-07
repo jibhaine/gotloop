@@ -9,10 +9,10 @@ describe('HeaderSearchComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderSearchComponent ],
-      imports: [ FormsModule ],
-    })
-    .compileComponents();
+    declarations: [HeaderSearchComponent],
+    imports: [FormsModule],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

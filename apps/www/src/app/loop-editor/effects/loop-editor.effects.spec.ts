@@ -10,11 +10,9 @@ describe('LoopEditorEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        LoopEditorEffects,
-        provideMockActions(() => actions$)
-      ]
-    });
+    providers: [LoopEditorEffects, provideMockActions(() => actions$)],
+    teardown: { destroyAfterEach: false }
+});
 
     effects = TestBed.get(LoopEditorEffects);
   });

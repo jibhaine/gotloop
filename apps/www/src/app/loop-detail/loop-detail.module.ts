@@ -6,9 +6,6 @@ import { LoopDetailComponent } from './components/loop-detail/loop-detail.compon
 
 @NgModule({
   declarations: [LoopDetailComponent],
-  imports: [
-    CommonModule,
-    LoopDetailRoutingModule
-  ]
+  imports: [CommonModule, LoopDetailRoutingModule],
 })
-export class LoopDetailModule { }
+export class LoopDetailModule {}

@@ -1,12 +1,10 @@
 {
-    "type": "mysql",
-    "host": "dat",
-    "port": 3306,
-    "username": "gotloop",
-    "password": "gotloop",
-    "database": "gotloop",
-    "entities": [
-        "src/**/**.entity{.ts,.js}"
-    ],
-    "synchronize": true
+  "type": "mysql",
+  "host": "dat",
+  "port": 3306,
+  "username": "gotloop",
+  "password": "gotloop",
+  "database": "gotloop",
+  "entities": ["src/**/**.entity{.ts,.js}"],
+  "synchronize": true
 }

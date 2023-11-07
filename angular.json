@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
   "projects": {
     "adm": {
       "projectType": "application",
@@ -86,19 +85,6 @@
             "browserTarget": "adm:build"
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/adm/tsconfig.app.json",
-              "apps/adm/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/adm/**/*"
-            ]
-          }
-        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
@@ -108,7 +94,13 @@
             "coverage/apps/adm"
           ]
         }
-      }
+      },
+      "tags": [
+        "type:app"
+      ],
+      "implicitDependencies": [
+        "api-model"
+      ]
     },
     "adm-e2e": {
       "root": "apps/adm-e2e",
@@ -127,20 +119,14 @@
               "devServerTarget": "adm:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/adm-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/adm-e2e/**/*"
-            ]
-          }
         }
-      }
+      },
+      "tags": [
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "adm"
+      ]
     },
     "api": {
       "root": "apps/api",
@@ -150,7 +136,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
@@ -178,22 +164,9 @@
           ]
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "api:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/api/tsconfig.app.json",
-              "apps/api/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/api/**/*"
-            ]
           }
         },
         "test": {
@@ -205,7 +178,8 @@
             "coverage/apps/api"
           ]
         }
-      }
+      },
+      "tags": []
     },
     "api-e2e": {
       "root": "e2e/",
@@ -223,17 +197,14 @@
               "devServerTarget": "www:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
-      }
+      },
+      "tags": [
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "adm"
+      ]
     },
     "api-model": {
       "root": "libs/api-model",
@@ -241,19 +212,6 @@
       "projectType": "library",
       "schematics": {},
       "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/api-model/tsconfig.lib.json",
-              "libs/api-model/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-model/**/*"
-            ]
-          }
-        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
@@ -263,7 +221,8 @@
             "coverage/libs/api-model"
           ]
         }
-      }
+      },
+      "tags": []
     },
     "simpl": {
       "projectType": "library",
@@ -271,19 +230,6 @@
       "sourceRoot": "libs/simpl/src",
       "prefix": "gotloop",
       "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/simpl/tsconfig.lib.json",
-              "libs/simpl/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/simpl/**/*"
-            ]
-          }
-        },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
@@ -298,7 +244,8 @@
         "@nrwl/angular:component": {
           "styleext": "scss"
         }
-      }
+      },
+      "tags": []
     },
     "ssr": {
       "root": "apps/ssr",
@@ -308,7 +255,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "options": {
             "outputPath": "dist/apps/ssr",
             "main": "apps/ssr/src/main.ts",
@@ -336,22 +283,9 @@
           ]
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "ssr:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/ssr/tsconfig.app.json",
-              "apps/ssr/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/ssr/**/*"
-            ]
           }
         },
         "test": {
@@ -363,7 +297,8 @@
             "coverage/apps/ssr"
           ]
         }
-      }
+      },
+      "tags": []
     },
     "www": {
       "root": "apps/www",
@@ -527,18 +462,6 @@
             "coverage/apps/www"
           ]
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/www/tsconfig.app.json",
-              "apps/www/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
@@ -595,7 +518,10 @@
             "production": {}
           }
         }
-      }
+      },
+      "tags": [
+        "type:app"
+      ]
     },
     "www-e2e": {
       "root": "e2e/",
@@ -613,30 +539,14 @@
               "devServerTarget": "www:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
-      }
-    }
-  },
-  "defaultProject": "www",
-  "cli": {
-    "defaultCollection": "@ngrx/schematics"
-  },
-  "schematics": {
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      },
+      "tags": [
+        "type:e2e"
+      ],
+      "implicitDependencies": [
+        "www"
+      ]
     }
   }
 }

@@ -41,6 +41,12 @@ import { ShellEffects } from './effects/shell.effects';
     FooterComponent,
     ContentPageComponent,
   ],
-  imports: [CommonModule, FormsModule, RouterModule, StoreModule.forFeature('shell', fromShell.reducer), EffectsModule.forFeature([ShellEffects])],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    StoreModule.forFeature('shell', fromShell.reducer),
+    EffectsModule.forFeature([ShellEffects]),
+  ],
 })
 export class ShellModule {}

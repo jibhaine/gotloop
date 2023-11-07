@@ -8,18 +8,12 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { ShellModule } from '../shell/shell.module';
 
 @NgModule({
-  declarations: [
-    IconsPageComponent,
-    NotFoundPageComponent,
-    ErrorPageComponent,
-    HomePageComponent,
-  ],
-  imports: [CommonModule, ShellModule],
-  entryComponents: [
-    IconsPageComponent,
-    NotFoundPageComponent,
-    ErrorPageComponent,
-    HomePageComponent,
-  ],
+    declarations: [
+        IconsPageComponent,
+        NotFoundPageComponent,
+        ErrorPageComponent,
+        HomePageComponent,
+    ],
+    imports: [CommonModule, ShellModule]
 })
 export class CoreModule {}

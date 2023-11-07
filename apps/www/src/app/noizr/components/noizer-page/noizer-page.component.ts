@@ -7,29 +7,20 @@ import { CreateSetting } from '../../actions/noizr.actions';
 @Component({
   selector: 'glp-noizer-page',
   templateUrl: './noizer-page.component.html',
-  styleUrls: ['./noizer-page.component.scss']
+  styleUrls: ['./noizer-page.component.scss'],
 })
 export class NoizerPageComponent implements OnInit {
+  constructor(private readonly store: Store<fromNoizrPage.State>) {}
 
-  constructor(private readonly store: Store<fromNoizrPage.State>) { }
-
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   createSettings() {
     this.store.dispatch(new CreateSetting());
   }
 
-  openSettings() {
+  openSettings() {}
 
-  }
+  deleteSettings() {}
 
-  deleteSettings() {
-
-  }
-
-  handleAddSource() {
-
-  }
+  handleAddSource() {}
 }

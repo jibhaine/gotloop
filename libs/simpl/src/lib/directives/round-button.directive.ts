@@ -1,10 +1,8 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[gotloopRoundButton]'
+  selector: '[gotloopRoundButton]',
 })
 export class RoundButtonDirective {
-
-  constructor() { }
-
+  constructor() {}
 }

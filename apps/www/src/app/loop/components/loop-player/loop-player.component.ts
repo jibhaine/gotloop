@@ -5,17 +5,15 @@ import { LoopModel } from '@gotloop/api-model';
 @Component({
   selector: 'glp-loop-player',
   templateUrl: './loop-player.component.html',
-  styleUrls: ['./loop-player.component.scss']
+  styleUrls: ['./loop-player.component.scss'],
 })
 export class LoopPlayerComponent implements OnInit {
-
   @Input()
   public loop: LoopModel;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   play() {
     // todo Webaudio play sample

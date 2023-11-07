@@ -1,4 +1,3 @@
-
 import { LoopActions, LoopActionTypes } from '../actions/loop.actions';
 import { LoopModel } from '@gotloop/api-model';
 
@@ -9,13 +8,10 @@ export interface State {
   createStep?: 'record' | 'import' | 'edit' | 'upload';
 }
 
-export const initialState: State = {
-
-};
+export const initialState: State = {};
 
 export function reducer(state = initialState, action: LoopActions): State {
   switch (action.type) {
-
     case LoopActionTypes.LoadLoops:
       return state;
 

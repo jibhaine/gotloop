@@ -14,14 +14,20 @@ import { LoopEditorEffects } from './effects/loop-editor.effects';
 import * as fromLoopEditor from './reducers/loop-editor.reducer';
 
 @NgModule({
-  declarations: [LoopCutterComponent, LoopUploadComponent, LoopRecordComponent, LoopEditorComponent, LoopFormComponent],
+  declarations: [
+    LoopCutterComponent,
+    LoopUploadComponent,
+    LoopRecordComponent,
+    LoopEditorComponent,
+    LoopFormComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     LoopEditorRoutingModule,
     StoreModule.forFeature('loopEditor', fromLoopEditor.reducer),
-    EffectsModule.forFeature([LoopEditorEffects])
-  ]
+    EffectsModule.forFeature([LoopEditorEffects]),
+  ],
 })
-export class LoopEditorModule { }
+export class LoopEditorModule {}

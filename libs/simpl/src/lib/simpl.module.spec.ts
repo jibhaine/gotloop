@@ -5,6 +5,7 @@ describe('SimplModule', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [SimplModule],
+      teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));
 

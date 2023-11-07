@@ -18,11 +18,9 @@ import { LoopModule } from './loop/loop.module';
     TagModule,
     */
   ],
-  controllers: [
-    AppController,
-  ],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {
-  constructor(private readonly connection: Connection) { }
+  constructor(private readonly connection: Connection) {}
 }

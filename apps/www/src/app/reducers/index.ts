@@ -3,7 +3,7 @@ import {
   ActionReducerMap,
   createFeatureSelector,
   createSelector,
-  MetaReducer
+  MetaReducer,
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import * as fromLoops from '../loops/reducers/loops.reducer';
@@ -14,7 +14,6 @@ import * as fromLoop from '../loop/reducers/loop.reducer';
 import * as fromLoopEditor from '../loop-editor/reducers/loop-editor.reducer';
 
 export interface State {
-
   loops: fromLoops.State;
   noizr: fromNoizr.State;
   shell: fromShell.State;
@@ -24,7 +23,6 @@ export interface State {
 }
 
 export const reducers: ActionReducerMap<State> = {
-
   loops: fromLoops.reducer,
   noizr: fromNoizr.reducer,
   shell: fromShell.reducer,
@@ -33,5 +31,6 @@ export const reducers: ActionReducerMap<State> = {
   loopEditor: fromLoopEditor.reducer,
 };
 
-
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production
+  ? []
+  : [];

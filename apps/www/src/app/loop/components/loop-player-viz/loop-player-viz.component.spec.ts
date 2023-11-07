@@ -8,9 +8,9 @@ describe('LoopPlayerVizComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoopPlayerVizComponent ]
-    })
-    .compileComponents();
+    declarations: [LoopPlayerVizComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

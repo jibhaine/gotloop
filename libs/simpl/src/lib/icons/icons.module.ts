@@ -3,16 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { BatchIconComponent } from './components/batch-icon/batch-icon.component';
 
-
-
 @NgModule({
   declarations: [BatchIconComponent],
   exports: [BatchIconComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class IconsModule { }
+export class IconsModule {}
 
 // rexport icons
 export * from './batch-icons';

@@ -10,11 +10,9 @@ describe('UserEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        UserEffects,
-        provideMockActions(() => actions$)
-      ]
-    });
+    providers: [UserEffects, provideMockActions(() => actions$)],
+    teardown: { destroyAfterEach: false }
+});
 
     effects = TestBed.get(UserEffects);
   });

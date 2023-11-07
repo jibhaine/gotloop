@@ -1,11 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, JoinTable, ManyToMany, OneToMany } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BeforeInsert,
+  JoinTable,
+  ManyToMany,
+  OneToMany,
+} from 'typeorm';
 import { IsEmail, Validate } from 'class-validator';
 import * as crypto from 'crypto';
 import { LoopEntity } from '../loop/loop.entity';
 
 @Entity('user')
 export class UserEntity {
-
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -16,10 +23,10 @@ export class UserEntity {
   @IsEmail()
   email: string;
 
-  @Column({default: ''})
+  @Column({ default: '' })
   bio: string;
 
-  @Column({default: ''})
+  @Column({ default: '' })
   image: string;
 
   @Column()
@@ -30,10 +37,10 @@ export class UserEntity {
     this.password = crypto.createHmac('sha256', this.password).digest('hex');
   }
 
-  @ManyToMany(type => LoopEntity)
+  @ManyToMany((type) => LoopEntity)
   @JoinTable()
   favorites: LoopEntity[];
 
-  @OneToMany(type => LoopEntity, loop => loop.author)
+  @OneToMany((type) => LoopEntity, (loop) => loop.author)
   loops: LoopEntity[];
 }

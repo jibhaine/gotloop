@@ -10,11 +10,9 @@ describe('ShellEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        ShellEffects,
-        provideMockActions(() => actions$)
-      ]
-    });
+    providers: [ShellEffects, provideMockActions(() => actions$)],
+    teardown: { destroyAfterEach: false }
+});
 
     effects = TestBed.get(ShellEffects);
   });

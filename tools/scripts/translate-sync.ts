@@ -14,7 +14,7 @@ exec('ng xi18n --output-file messages.xlf', (err, stdout, stderr) => {
   console.log(stdout);
   const file = promises
     .readFile(join(process.cwd(), 'messages.xlf'))
-    .then(file => {
+    .then((file) => {
       console.log('received file', String(file));
       xliff.xliff2js('messages.xlf', () => {});
     });

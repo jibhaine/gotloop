@@ -2,6 +2,6 @@ module.exports = {
   navigation: {},
   loops: {},
   loop: {
-    isPlaying: false
-  }
+    isPlaying: false,
+  },
 };

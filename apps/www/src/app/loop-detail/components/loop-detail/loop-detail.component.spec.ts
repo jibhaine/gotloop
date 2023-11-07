@@ -8,9 +8,9 @@ describe('LoopDetailComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoopDetailComponent ]
-    })
-    .compileComponents();
+    declarations: [LoopDetailComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

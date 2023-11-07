@@ -2,12 +2,12 @@
 @import 'mixins';
 
 .loop-player {
-    color: $main-color;
-    &.is-playing{
-      margin:-.5em -1em 2em ;
-      transition:margin .3s ease-in;
-    }
-    .loop-viz {
-      height: 4em;
-    }
+  color: $main-color;
+  &.is-playing {
+    margin: -0.5em -1em 2em;
+    transition: margin 0.3s ease-in;
   }
+  .loop-viz {
+    height: 4em;
+  }
+}

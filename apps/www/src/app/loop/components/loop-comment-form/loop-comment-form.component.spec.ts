@@ -8,9 +8,9 @@ describe('LoopCommentFormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoopCommentFormComponent ]
-    })
-    .compileComponents();
+    declarations: [LoopCommentFormComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

@@ -4,8 +4,6 @@ import { SynthNodeComponent } from './components/synth-node/synth-node.component
 
 @NgModule({
   declarations: [SynthNodeComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class AudioModule { }
+export class AudioModule {}

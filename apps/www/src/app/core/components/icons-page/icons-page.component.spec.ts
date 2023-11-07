@@ -9,9 +9,9 @@ describe('IconsPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ IconsPageComponent, IconComponent ]
-    })
-    .compileComponents();
+    declarations: [IconsPageComponent, IconComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

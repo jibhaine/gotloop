@@ -20,7 +20,7 @@ import { LoopsEffects } from './effects/loops.effects';
     LoopModule,
     LoopsRoutingModule,
     StoreModule.forFeature('loops', fromLoops.reducer),
-    EffectsModule.forFeature([LoopsEffects])
+    EffectsModule.forFeature([LoopsEffects]),
   ],
 })
-export class LoopsModule { }
+export class LoopsModule {}

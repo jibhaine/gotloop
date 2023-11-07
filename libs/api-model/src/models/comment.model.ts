@@ -18,5 +18,4 @@ export class CommentModel {
 
   @JsonProperty('content')
   public content: string;
-
 }

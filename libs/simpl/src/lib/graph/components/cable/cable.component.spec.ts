@@ -8,9 +8,9 @@ describe('CableComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CableComponent ]
-    })
-    .compileComponents();
+      declarations: [CableComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

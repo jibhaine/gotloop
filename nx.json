@@ -8,44 +8,17 @@
     "nx.json": "*",
     ".eslintrc.json": "*"
   },
-  "projects": {
-    "adm": {
-      "tags": ["type:app"],
-      "implicitDependencies": ["api-model"]
-    },
-    "adm-e2e": {
-      "tags": ["type:e2e"],
-      "implicitDependencies": ["adm"]
-    },
-    "api": {
-      "tags": []
-    },
-    "api-e2e": {
-      "tags": ["type:e2e"],
-      "implicitDependencies": ["adm"]
-    },
-    "api-model": {
-      "tags": []
-    },
-    "simpl": {
-      "tags": []
-    },
-    "ssr": {
-      "tags": []
-    },
-    "www": {
-      "tags": ["type:app"]
-    },
-    "www-e2e": {
-      "tags": ["type:e2e"],
-      "implicitDependencies": ["www"]
-    }
-  },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "parallel": 1
       }
     }
   },
@@ -59,5 +32,18 @@
         "projects": "dependencies"
       }
     ]
+  },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  },
+  "defaultProject": "www",
+  "generators": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
   }
 }

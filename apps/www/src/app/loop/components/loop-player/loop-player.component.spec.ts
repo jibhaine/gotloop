@@ -16,8 +16,9 @@ describe('LoopPlayerComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [LoopModule],
-    }).compileComponents();
+    imports: [LoopModule],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

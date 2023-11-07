@@ -10,8 +10,9 @@ describe('LoopCommentsComponent', () => {
   const comments: CommentModel[] = [];
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [LoopCommentsComponent, LoopCommentComponent],
-    }).compileComponents();
+    declarations: [LoopCommentsComponent, LoopCommentComponent],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

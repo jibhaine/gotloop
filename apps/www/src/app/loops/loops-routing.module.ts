@@ -5,12 +5,12 @@ import { LoopListComponent } from './components/loop-list/loop-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoopListComponent
-  }
+    component: LoopListComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LoopsRoutingModule { }
+export class LoopsRoutingModule {}

@@ -9,9 +9,10 @@ describe('HomePageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
-      imports: [ShellModule],
-    }).compileComponents();
+    declarations: [HomePageComponent],
+    imports: [ShellModule],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

@@ -8,9 +8,9 @@ describe('BoxComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoxComponent ]
-    })
-    .compileComponents();
+      declarations: [BoxComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

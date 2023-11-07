@@ -20,6 +20,6 @@ if (environment.hmr) {
   }
 } else {
   document.addEventListener('DOMContentLoaded', () => {
-    bootstrap().catch(err => console.error(err));
+    bootstrap().catch((err) => console.error(err));
   });
 }
