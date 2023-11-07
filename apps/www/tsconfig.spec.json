@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": ["jest", "node"],
-    "target": "es2020"
+    "target": "ES2022",
+    "useDefineForClassFields": false
   },
   "files": ["setupJest.ts", "polyfills.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"],

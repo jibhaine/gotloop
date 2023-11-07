@@ -1,0 +1,88 @@
+{
+  "name": "adm",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {},
+  "sourceRoot": "apps/adm/src",
+  "prefix": "gotloop",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/adm",
+        "index": "apps/adm/src/index.html",
+        "main": "apps/adm/src/main.ts",
+        "polyfills": "apps/adm/src/polyfills.ts",
+        "tsConfig": "apps/adm/tsconfig.app.json",
+        "aot": false,
+        "assets": ["apps/adm/src/favicon.ico", "apps/adm/src/assets"],
+        "styles": ["apps/adm/src/styles.css"],
+        "scripts": [],
+        "vendorChunk": true,
+        "extractLicenses": false,
+        "buildOptimizer": false,
+        "sourceMap": true,
+        "optimization": false,
+        "namedChunks": true
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/adm/src/environments/environment.ts",
+              "with": "apps/adm/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "aot": true,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        }
+      },
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": ""
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "adm:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "adm:build:production"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "adm:build"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/adm/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/apps/adm"]
+    }
+  },
+  "tags": ["type:app"],
+  "implicitDependencies": ["api-model"]
+}
