@@ -5,21 +5,16 @@
     "package.json": "*",
     "tsconfig.json": "*",
     "tslint.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    ".eslintrc.json": "*"
   },
   "projects": {
     "www": {
-      "tags": [
-        "type:app"
-      ]
+      "tags": ["type:app"]
     },
     "www-e2e": {
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "www"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["www"]
     },
     "api-model": {
       "tags": []
@@ -31,43 +26,26 @@
       "tags": []
     },
     "api-e2e": {
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "adm"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["adm"]
     },
     "ssr": {
       "tags": []
     },
     "adm": {
-      "tags": [
-        "type:app"
-      ],
-      "implicitDependencies": [
-        "api-model"
-      ]
+      "tags": ["type:app"],
+      "implicitDependencies": ["api-model"]
     },
     "adm-e2e": {
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "adm"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["adm"]
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },

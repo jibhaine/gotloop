@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoopListComponent } from './loop-list.component';
 import { LoopModule } from 'src/app/loop/loop.module';
@@ -10,7 +10,7 @@ describe('LoopListComponent', () => {
   let component: LoopListComponent;
   let fixture: ComponentFixture<LoopListComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoopListComponent, LoopsLoaderComponent],
       imports: [LoopModule, ShellModule],

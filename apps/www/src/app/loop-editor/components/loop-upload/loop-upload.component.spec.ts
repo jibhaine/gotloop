@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoopUploadComponent } from './loop-upload.component';
 
@@ -6,7 +6,7 @@ describe('LoopUploadComponent', () => {
   let component: LoopUploadComponent;
   let fixture: ComponentFixture<LoopUploadComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoopUploadComponent ]
     })

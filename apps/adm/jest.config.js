@@ -1,9 +1,9 @@
 module.exports = {
-  name: 'adm',
-  preset: '../../jest.config.js',
+  preset: '../../jest.preset.js',
   coverageDirectory: '../../coverage/apps/adm',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js',
   ],
+  displayName: 'adm',
 };

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NoizerPageComponent } from './noizer-page.component';
 import { ShellModule } from 'src/app/shell/shell.module';
@@ -7,7 +7,7 @@ describe('NoizerPageComponent', () => {
   let component: NoizerPageComponent;
   let fixture: ComponentFixture<NoizerPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ NoizerPageComponent ],
       imports: [ShellModule],

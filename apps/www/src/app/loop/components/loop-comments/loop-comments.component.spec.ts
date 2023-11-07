@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoopCommentsComponent } from './loop-comments.component';
 import { LoopCommentComponent } from '../loop-comment/loop-comment.component';
@@ -8,7 +8,7 @@ describe('LoopCommentsComponent', () => {
   let component: LoopCommentsComponent;
   let fixture: ComponentFixture<LoopCommentsComponent>;
   const comments: CommentModel[] = [];
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoopCommentsComponent, LoopCommentComponent],
     }).compileComponents();

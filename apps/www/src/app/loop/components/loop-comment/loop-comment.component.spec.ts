@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { v4 } from 'uuid';
 
 import { CommentModel } from '@gotloop/api-model';
@@ -17,7 +17,7 @@ describe('LoopCommentComponent', () => {
     content: 'tralala pouet pouet',
     createdAt: new Date(Date.now()),
   };
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoopCommentComponent],
     }).compileComponents();
