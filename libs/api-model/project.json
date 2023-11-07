@@ -1,0 +1,17 @@
+{
+  "name": "api-model",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-model/src",
+  "projectType": "library",
+  "generators": {},
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/api-model/jest.config.ts"
+      },
+      "outputs": ["{workspaceRoot}/coverage/libs/api-model"]
+    }
+  },
+  "tags": []
+}
