@@ -1,4 +1,10 @@
-import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+  waitForAsync,
+} from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
 import { Component, DebugElement } from '@angular/core';
@@ -21,14 +27,15 @@ class CardTestComponent {}
 describe('CardComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [
+    declarations: [
         CardComponent,
         CardHeaderComponent,
         CardFooterComponent,
         CardContentComponent,
         CardTestComponent,
-      ],
-    }).compileComponents();
+    ],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   describe('Usage with templates', () => {

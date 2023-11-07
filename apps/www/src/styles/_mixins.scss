@@ -9,7 +9,7 @@
   background-color: transparent;
   //border: solid 1px $color;
   color: $color;
-  box-shadow: 0 .25em .5em rgba($color,.5);
+  box-shadow: 0 0.25em 0.5em rgba($color, 0.5);
 }
 
 @mixin rounded-full($size, $color) {
@@ -22,5 +22,5 @@
   background-color: $color;
   // border: solid 1px $color;
   color: white;
-  box-shadow: 0 .25em .5em rgba($color,.5);
+  box-shadow: 0 0.25em 0.5em rgba($color, 0.5);
 }

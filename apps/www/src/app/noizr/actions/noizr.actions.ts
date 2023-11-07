@@ -29,5 +29,4 @@ export class CreateCable implements Action {
   readonly type = NoizrActionTypes.CreateCable;
 }
 
-
 export type NoizrActions = LoadSettings;

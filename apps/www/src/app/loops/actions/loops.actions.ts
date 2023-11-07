@@ -8,5 +8,4 @@ export class LoadLoopss implements Action {
   readonly type = LoopsActionTypes.LoadLoopss;
 }
 
-
 export type LoopsActions = LoadLoopss;

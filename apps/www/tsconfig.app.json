@@ -2,16 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "./**/*.d.ts",
-    "../node_modules/@gotloop/lib/**/*.ts"
-  ]
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["./**/*.d.ts", "../node_modules/@gotloop/lib/**/*.ts"]
 }

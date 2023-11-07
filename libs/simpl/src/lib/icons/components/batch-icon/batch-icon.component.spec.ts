@@ -8,9 +8,9 @@ describe('BatchIconComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BatchIconComponent ]
-    })
-    .compileComponents();
+      declarations: [BatchIconComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

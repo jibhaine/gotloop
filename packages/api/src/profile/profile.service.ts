@@ -23,7 +23,9 @@ export class ProfileService {
   async findOne(options?: DeepPartial<UserEntity>): Promise<ProfileRO> {
     const user = await this.userRepository.findOne(options);
     delete user.id;
-    if (user) { delete user.password; }
+    if (user) {
+      delete user.password;
+    }
     return { profile: user };
   }
 
@@ -32,7 +34,9 @@ export class ProfileService {
       username: followingUsername,
     });
 
-    if (!_profile) { return; }
+    if (!_profile) {
+      return;
+    }
 
     const profile: ProfileData = {
       username: _profile.username,

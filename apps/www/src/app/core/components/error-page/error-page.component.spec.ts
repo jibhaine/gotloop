@@ -9,10 +9,10 @@ describe('ErrorPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorPageComponent ],
-      imports: [ShellModule],
-    })
-    .compileComponents();
+    declarations: [ErrorPageComponent],
+    imports: [ShellModule],
+    teardown: { destroyAfterEach: false }
+}).compileComponents();
   }));
 
   beforeEach(() => {

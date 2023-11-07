@@ -6,5 +6,4 @@ export class UserModel {
   public name: string;
   @JsonProperty('avatar')
   public avatar: string;
-
 }

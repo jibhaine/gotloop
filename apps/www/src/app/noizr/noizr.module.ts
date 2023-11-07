@@ -14,16 +14,15 @@ import { NoizrEffects } from './effects/noizr.effects';
 import { GraphModule } from '@gotloop/simpl';
 
 @NgModule({
-  declarations: [NoizerPageComponent],
-  imports: [
-    CommonModule,
-    NoizerRoutingModule,
-    ShellModule,
-    AngularDraggableModule,
-    GraphModule,
-    StoreModule.forFeature('noizr', fromNoizr.reducer),
-    EffectsModule.forFeature([NoizrEffects]),
-  ],
-  entryComponents: [NoizerPageComponent],
+    declarations: [NoizerPageComponent],
+    imports: [
+        CommonModule,
+        NoizerRoutingModule,
+        ShellModule,
+        AngularDraggableModule,
+        GraphModule,
+        StoreModule.forFeature('noizr', fromNoizr.reducer),
+        EffectsModule.forFeature([NoizrEffects]),
+    ]
 })
 export class NoizerModule {}

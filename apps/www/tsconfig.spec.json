@@ -2,20 +2,9 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "jest",
-      "node"
-    ]
+    "types": ["jest", "node"]
   },
-  "files": [
-    "setupJest.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ],
-  "exclude": [
-    "setupKarma.ts"
-  ]
+  "files": ["setupJest.ts", "polyfills.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"],
+  "exclude": ["setupKarma.ts"]
 }

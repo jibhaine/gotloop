@@ -4,19 +4,17 @@ import { IconCode } from './icon-code.enum';
 @Component({
   selector: 'glp-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss']
+  styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent implements OnInit {
-
   @Input()
   public icon: string;
 
   public iconCode: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.iconCode = IconCode[this.icon];
   }
-
 }

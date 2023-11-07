@@ -12,23 +12,31 @@ const routes: Routes = [
   },*/
   {
     path: 'loops',
-    loadChildren: () => import('./loops/loops.module').then(m => m.LoopsModule),
+    loadChildren: () =>
+      import('./loops/loops.module').then((m) => m.LoopsModule),
   },
   {
     path: 'user',
-    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   {
     path: 'loop/:id',
-    loadChildren: () => import('./loop-detail/loop-detail.module').then(m => m.LoopDetailModule),
+    loadChildren: () =>
+      import('./loop-detail/loop-detail.module').then(
+        (m) => m.LoopDetailModule,
+      ),
   },
   {
     path: 'loop/:id/edit',
-    loadChildren: () => import('./loop-editor/loop-editor.module').then(m => m.LoopEditorModule),
+    loadChildren: () =>
+      import('./loop-editor/loop-editor.module').then(
+        (m) => m.LoopEditorModule,
+      ),
   },
   {
     path: 'noizr',
-    loadChildren: () => import('./noizr/noizr.module').then(m => m.NoizerModule),
+    loadChildren: () =>
+      import('./noizr/noizr.module').then((m) => m.NoizerModule),
   },
   {
     path: 'icons',
@@ -46,14 +54,16 @@ const routes: Routes = [
     path: '',
     component: HomePageComponent,
     pathMatch: 'full',
-  }
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled',
-    relativeLinkResolution: 'legacy'
-})],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+      relativeLinkResolution: 'legacy',
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

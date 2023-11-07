@@ -13,13 +13,13 @@ An AudioParam interface, for controlling an individual aspect of an AudioNode's 
 An GainNode interface, for explicit gain control. Because inputs to AudioNodes support multiple connections (as a unity-gain summing junction), mixers can be easily built with GainNodes.
 A BiquadFilterNode interface, an AudioNode for common low-order filters such as:
 Low Pass
-       High Pass
-       Band Pass
-       Low Shelf
-       High Shelf
-       Peaking
-       Notch
-       Allpass
+High Pass
+Band Pass
+Low Shelf
+High Shelf
+Peaking
+Notch
+Allpass
 A DelayNode interface, an AudioNode which applies a dynamically adjustable variable delay.
 An PannerNode interface, for spatializing / positioning audio in 3D space.
 An AudioListener interface, which works with an PannerNode for spatialization.

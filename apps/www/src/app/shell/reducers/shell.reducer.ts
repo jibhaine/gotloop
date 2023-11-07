@@ -16,10 +16,10 @@ export const initialState: State = {
 export function reducer(state = initialState, action: ShellActions): State {
   switch (action.type) {
     case ShellActionTypes.SearchChange:
-      return {...state, search: {term: action.term} };
+      return { ...state, search: { term: action.term } };
 
     case ShellActionTypes.EnableTopbar:
-    return {...state, topbar: {enabled: action.isEnabled} };
+      return { ...state, topbar: { enabled: action.isEnabled } };
 
     default:
       return state;

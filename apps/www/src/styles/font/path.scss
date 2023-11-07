@@ -5,11 +5,12 @@
 @font-face {
   font-family: 'Batch';
   src: url('#{$font-path}/batch-icons-webfont.eot');
-  src: url('#{$font-path}/batch-icons-webfont.eot?#iefix') format('embedded-opentype'),
-  url('#{$font-path}/batch-icons-webfont.woff') format('woff'),
-  url('#{$font-path}/batch-icons-webfont.ttf') format('truetype'),
-  url('#{$font-path}/batch-icons-webfont.svg') format('svg');
-//  src: url('@{FontAwesomePath}/FontAwesome.otf') format('opentype'); // used when developing fonts
+  src: url('#{$font-path}/batch-icons-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('#{$font-path}/batch-icons-webfont.woff') format('woff'),
+    url('#{$font-path}/batch-icons-webfont.ttf') format('truetype'),
+    url('#{$font-path}/batch-icons-webfont.svg') format('svg');
+  //  src: url('@{FontAwesomePath}/FontAwesome.otf') format('opentype'); // used when developing fonts
 
   font-weight: normal;
   font-style: normal;

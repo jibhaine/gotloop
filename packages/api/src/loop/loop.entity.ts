@@ -44,10 +44,10 @@ export class LoopEntity {
   @Column('simple-array')
   tagList: string[];
 
-  @ManyToOne(type => UserEntity, user => user.loops)
+  @ManyToOne((type) => UserEntity, (user) => user.loops)
   author: UserEntity;
 
-  @OneToMany(type => Comment, comment => comment.loop, { eager: true })
+  @OneToMany((type) => Comment, (comment) => comment.loop, { eager: true })
   @JoinColumn()
   comments: Comment[];
 

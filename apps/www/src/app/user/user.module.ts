@@ -14,6 +14,6 @@ import { UserEffects } from './effects/user.effects';
     UserDetailsRoutingModule,
     StoreModule.forFeature('user', fromUser.reducer),
     EffectsModule.forFeature([UserEffects]),
-  ]
+  ],
 })
-export class UserModule { }
+export class UserModule {}

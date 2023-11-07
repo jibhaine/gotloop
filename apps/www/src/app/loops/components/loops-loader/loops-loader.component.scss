@@ -1,7 +1,7 @@
-@import "styles/settings";
+@import 'styles/settings';
 
-$loader-size:120px;
-$loader-border-width:1px;
+$loader-size: 120px;
+$loader-border-width: 1px;
 .loops-load-more {
   margin: 0 auto;
   display: block;
@@ -35,7 +35,7 @@ $loader-border-width:1px;
     left: 0;
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
-        animation-delay:#{$i/2}s;
+        animation-delay: #{$i/2}s;
       }
     }
   }

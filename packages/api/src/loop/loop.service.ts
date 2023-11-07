@@ -46,7 +46,7 @@ export class LoopService {
       const author = await this.userRepository.findOne({
         username: query.favorited,
       });
-      const ids = author.favorites.map(el => el.id);
+      const ids = author.favorites.map((el) => el.id);
       qb.andWhere('loop.authorId IN (:ids)', { ids });
     }
 
@@ -69,7 +69,7 @@ export class LoopService {
 
   async findFeed(userId: number, query): Promise<LoopsRO> {
     const follows = await this.followsRepository.find({ followerId: userId });
-    const ids = follows.map(el => el.followingId);
+    const ids = follows.map((el) => el.followingId);
 
     const qb = await getRepository(LoopEntity)
       .createQueryBuilder('loop')
@@ -115,7 +115,7 @@ export class LoopService {
 
     const comment = await this.commentRepository.findOne(id);
     const deleteIndex = loop.comments.findIndex(
-      eachComment => eachComment.id === comment.id,
+      (eachComment) => eachComment.id === comment.id,
     );
 
     if (deleteIndex >= 0) {
@@ -133,7 +133,7 @@ export class LoopService {
     const user = await this.userRepository.findOne(id);
 
     const isNewFavorite =
-      user.favorites.findIndex(eachLoop => eachLoop.id === loop.id) < 0;
+      user.favorites.findIndex((eachLoop) => eachLoop.id === loop.id) < 0;
     if (isNewFavorite) {
       user.favorites.push(loop);
       loop.favoriteCount++;
@@ -150,7 +150,7 @@ export class LoopService {
     const user = await this.userRepository.findOne(id);
 
     const deleteIndex = user.favorites.findIndex(
-      eachLoop => eachLoop.id === loop.id,
+      (eachLoop) => eachLoop.id === loop.id,
     );
 
     if (deleteIndex >= 0) {

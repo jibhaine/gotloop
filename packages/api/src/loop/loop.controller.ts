@@ -134,10 +134,7 @@ export class LoopController {
   @ApiResponse({ status: 200, description: 'Return loop feed.' })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
   @Get('feed')
-  async getFeed(
-    @User('id') userId: number,
-    @Query() query,
-  ): Promise<LoopsRO> {
+  async getFeed(@User('id') userId: number, @Query() query): Promise<LoopsRO> {
     return await this.loopService.findFeed(userId, query);
   }
 }

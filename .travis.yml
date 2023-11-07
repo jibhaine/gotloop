@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "10"
+  - '10'
 
 cache: npm
 
@@ -9,12 +9,11 @@ cache: npm
 #  - docker
 
 before_script:
-#  - sudo apt-get update
+  #  - sudo apt-get update
   - npm i -g lerna @angular/cli
   - lerna bootstrap
 
 script:
-#  - docker-compose pull
+  #  - docker-compose pull
   - lerna exec --stream -- npm run build
   - lerna exec --stream -- npm run test
-
