@@ -18,13 +18,8 @@
             "polyfills": "apps/adm/src/polyfills.ts",
             "tsConfig": "apps/adm/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/adm/src/favicon.ico",
-              "apps/adm/src/assets"
-            ],
-            "styles": [
-              "apps/adm/src/styles.css"
-            ],
+            "assets": ["apps/adm/src/favicon.ico", "apps/adm/src/assets"],
+            "styles": ["apps/adm/src/styles.css"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -63,9 +58,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -88,19 +81,13 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/adm/jest.config.js"
+            "jestConfig": "apps/adm/jest.config.ts"
           },
-          "outputs": [
-            "coverage/apps/adm"
-          ]
+          "outputs": ["coverage/apps/adm"]
         }
       },
-      "tags": [
-        "type:app"
-      ],
-      "implicitDependencies": [
-        "api-model"
-      ]
+      "tags": ["type:app"],
+      "implicitDependencies": ["api-model"]
     },
     "adm-e2e": {
       "root": "apps/adm-e2e",
@@ -121,12 +108,8 @@
           }
         }
       },
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "adm"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["adm"]
     },
     "api": {
       "root": "apps/api",
@@ -136,15 +119,15 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:webpack",
+          "builder": "@nrwl/webpack:webpack",
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ],
-            "buildLibsFromSource": true
+            "assets": ["apps/api/src/assets"],
+            "buildLibsFromSource": true,
+            "target": "node",
+            "compiler": "tsc"
           },
           "configurations": {
             "production": {
@@ -159,9 +142,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:node",
@@ -172,11 +153,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/api/jest.config.js"
+            "jestConfig": "apps/api/jest.config.ts"
           },
-          "outputs": [
-            "coverage/apps/api"
-          ]
+          "outputs": ["coverage/apps/api"]
         }
       },
       "tags": []
@@ -199,12 +178,8 @@
           }
         }
       },
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "adm"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["adm"]
     },
     "api-model": {
       "root": "libs/api-model",
@@ -215,11 +190,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/api-model/jest.config.js"
+            "jestConfig": "libs/api-model/jest.config.ts"
           },
-          "outputs": [
-            "coverage/libs/api-model"
-          ]
+          "outputs": ["coverage/libs/api-model"]
         }
       },
       "tags": []
@@ -233,11 +206,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/simpl/jest.config.js"
+            "jestConfig": "libs/simpl/jest.config.ts"
           },
-          "outputs": [
-            "coverage/libs/simpl"
-          ]
+          "outputs": ["coverage/libs/simpl"]
         }
       },
       "schematics": {
@@ -255,15 +226,15 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@nrwl/node:webpack",
+          "builder": "@nrwl/webpack:webpack",
           "options": {
             "outputPath": "dist/apps/ssr",
             "main": "apps/ssr/src/main.ts",
             "tsConfig": "apps/ssr/tsconfig.app.json",
-            "assets": [
-              "apps/ssr/src/assets"
-            ],
-            "buildLibsFromSource": true
+            "assets": ["apps/ssr/src/assets"],
+            "buildLibsFromSource": true,
+            "target": "node",
+            "compiler": "tsc"
           },
           "configurations": {
             "production": {
@@ -278,9 +249,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ]
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "@nrwl/node:node",
@@ -291,11 +260,9 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/ssr/jest.config.js"
+            "jestConfig": "apps/ssr/jest.config.ts"
           },
-          "outputs": [
-            "coverage/apps/ssr"
-          ]
+          "outputs": ["coverage/apps/ssr"]
         }
       },
       "tags": []
@@ -320,13 +287,8 @@
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.app.json",
             "preserveSymlinks": true,
-            "assets": [
-              "apps/www/src/favicon.ico",
-              "apps/www/src/assets"
-            ],
-            "styles": [
-              "apps/www/src/styles.scss"
-            ],
+            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
+            "styles": ["apps/www/src/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "apps/www/src/",
@@ -391,9 +353,7 @@
               ]
             }
           },
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "defaultConfiguration": ""
         },
         "serve": {
@@ -419,7 +379,7 @@
           }
         },
         "deploy": {
-          "builder": "@nrwl/workspace:run-commands",
+          "builder": "nx:run-commands",
           "options": {
             "commands": [
               {
@@ -429,7 +389,7 @@
           }
         },
         "trads": {
-          "builder": "@nrwl/workspace:run-commands",
+          "builder": "nx:run-commands",
           "options": {
             "commands": [
               {
@@ -445,22 +405,13 @@
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.spec.json",
             "karmaConfig": "apps/www/karma.conf.js",
-            "styles": [
-              "apps/www/src/styles.scss"
-            ],
-            "assets": [
-              "apps/www/src/favicon.ico",
-              "apps/www/src/assets"
-            ],
+            "styles": ["apps/www/src/styles.scss"],
+            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/sass"
-              ]
+              "includePaths": ["src/sass"]
             }
           },
-          "outputs": [
-            "coverage/apps/www"
-          ]
+          "outputs": ["coverage/apps/www"]
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
@@ -510,18 +461,14 @@
           "options": {
             "browserTarget": "www:build:production",
             "serverTarget": "www:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
           }
         }
       },
-      "tags": [
-        "type:app"
-      ]
+      "tags": ["type:app"]
     },
     "www-e2e": {
       "root": "e2e/",
@@ -541,12 +488,8 @@
           }
         }
       },
-      "tags": [
-        "type:e2e"
-      ],
-      "implicitDependencies": [
-        "www"
-      ]
+      "tags": ["type:e2e"],
+      "implicitDependencies": ["www"]
     }
   }
 }

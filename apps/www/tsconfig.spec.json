@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "target": "es2020"
   },
   "files": ["setupJest.ts", "polyfills.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"],

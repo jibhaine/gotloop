@@ -1,8 +1,9 @@
-module.exports = {
+/* eslint-disable */
+export default {
   preset: '../../jest.preset.js',
-  coverageDirectory: '../../coverage/libs/simpl',
+  coverageDirectory: '../../coverage/apps/adm',
 
-  displayName: 'simpl',
+  displayName: 'adm',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js',
