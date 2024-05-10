@@ -13,10 +13,6 @@ import { ContentPageComponent } from './components/content-page/content-page.com
 import { CardContentComponent } from './components/card/card-content.component';
 import { CardFooterComponent } from './components/card/card-footer.component';
 import { CardHeaderComponent } from './components/card/card-header.component';
-import { StoreModule } from '@ngrx/store';
-import * as fromShell from './reducers/shell.reducer';
-import { EffectsModule } from '@ngrx/effects';
-import { ShellEffects } from './effects/shell.effects';
 
 @NgModule({
   declarations: [
@@ -45,8 +41,6 @@ import { ShellEffects } from './effects/shell.effects';
     CommonModule,
     FormsModule,
     RouterModule,
-    StoreModule.forFeature('shell', fromShell.reducer),
-    EffectsModule.forFeature([ShellEffects]),
   ],
 })
 export class ShellModule {}
