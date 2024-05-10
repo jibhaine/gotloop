@@ -3,7 +3,7 @@
   width: $size;
   height: $size;
   line-height: $size;
-  border-radius: $size/2;
+  border-radius: $size*0.5;
   padding: 0;
   text-align: center;
   background-color: transparent;
@@ -16,8 +16,8 @@
   width: $size;
   height: $size;
   line-height: $size;
-  border-radius: $size/2;
-  transform-origin: $size/2 $size/2;
+  border-radius: $size*0.5;
+  transform-origin: $size*0.5 $size*0.5;
   padding: 0;
   background-color: $color;
   // border: solid 1px $color;
