@@ -4,6 +4,7 @@
   "sourceRoot": "apps/www/src",
   "projectType": "application",
   "prefix": "glp",
+  "tags": ["type:app"],
   "generators": {
     "@ngrx/schematics:component": {
       "styleext": "scss"
@@ -91,23 +92,23 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "www:build",
-        "proxyConfig": "apps/www/proxy.conf.json"
+        "proxyConfig": "apps/www/proxy.conf.json",
+        "buildTarget": "www:build"
       },
       "configurations": {
         "production": {
-          "browserTarget": "www:build:production"
+          "buildTarget": "www:build:production"
         },
         "hmr": {
           "hmr": true,
-          "browserTarget": "www:build:hmr"
+          "buildTarget": "www:build:hmr"
         }
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "www:build"
+        "buildTarget": "www:build"
       }
     },
     "deploy": {
@@ -159,7 +160,8 @@
           ]
         },
         "sourceMap": true,
-        "optimization": false
+        "optimization": false,
+        "buildOptimizer": false
       },
       "configurations": {
         "production": {
@@ -170,7 +172,8 @@
             }
           ],
           "sourceMap": false,
-          "optimization": true
+          "optimization": true,
+          "buildOptimizer": true
         }
       },
       "defaultConfiguration": "",
@@ -186,7 +189,7 @@
       }
     },
     "serve-ssr": {
-      "executor": "@nguniversal/builders:ssr-dev-server",
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
       "options": {
         "browserTarget": "www:build",
         "serverTarget": "www:server"
@@ -199,7 +202,7 @@
       }
     },
     "prerender": {
-      "executor": "@nguniversal/builders:prerender",
+      "executor": "@angular-devkit/build-angular:prerender",
       "options": {
         "browserTarget": "www:build:production",
         "serverTarget": "www:server:production",
@@ -209,6 +212,5 @@
         "production": {}
       }
     }
-  },
-  "tags": ["type:app"]
+  }
 }

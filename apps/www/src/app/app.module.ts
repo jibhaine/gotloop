@@ -27,7 +27,7 @@ import { EffectsModule } from '@ngrx/effects';
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
-    }),
+    connectInZone: true}),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),
   ],

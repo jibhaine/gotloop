@@ -2,9 +2,11 @@
   "name": "adm",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "generators": {},
   "sourceRoot": "apps/adm/src",
   "prefix": "gotloop",
+  "tags": ["type:app"],
+  "implicitDependencies": ["api-model"],
+  "generators": {},
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -61,28 +63,27 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "adm:build"
+        "buildTarget": "adm:build"
       },
       "configurations": {
         "production": {
-          "browserTarget": "adm:build:production"
+          "buildTarget": "adm:build:production"
         }
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "adm:build"
+        "buildTarget": "adm:build"
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/adm/jest.config.ts"
+        "jestConfig": "apps/adm/jest.config.ts",
+        "passWithNoTests": false
       },
       "outputs": ["{workspaceRoot}/coverage/apps/adm"]
     }
-  },
-  "tags": ["type:app"],
-  "implicitDependencies": ["api-model"]
+  }
 }

@@ -3,9 +3,11 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/adm-e2e/src",
   "projectType": "application",
+  "tags": ["type:e2e"],
+  "implicitDependencies": ["adm"],
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "apps/adm-e2e/cypress.json",
         "tsConfig": "apps/adm-e2e/tsconfig.e2e.json",
@@ -17,7 +19,5 @@
         }
       }
     }
-  },
-  "tags": ["type:e2e"],
-  "implicitDependencies": ["adm"]
+  }
 }
