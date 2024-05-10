@@ -1,9 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[gotloopCheckbox]',
+  selector: '[uiCheckbox]',
   standalone: true,
 })
-export class CheckboxDirective {
-  constructor() {}
-}
+export class CheckboxDirective {}

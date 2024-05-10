@@ -1,13 +1,12 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { ShellModule } from './shell/shell.module';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule, ShellModule, AppComponent],
+      imports: [AppComponent],
+      providers: [provideRouter([])],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

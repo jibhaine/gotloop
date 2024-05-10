@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommentModel } from '@gotloop/api-model';
 import { LoopCommentComponent } from '../loop-comment/loop-comment.component';
 import { NgFor } from '@angular/common';
@@ -10,11 +10,7 @@ import { NgFor } from '@angular/common';
   standalone: true,
   imports: [NgFor, LoopCommentComponent],
 })
-export class LoopCommentsComponent implements OnInit {
+export class LoopCommentsComponent {
   @Input()
-  comments: CommentModel[] = [];
-
-  constructor() {}
-
-  ngOnInit() {}
+  comments?: CommentModel[] = [];
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { RouterLink } from '@angular/router';
 import { HeaderSearchComponent } from '../header-search/header-search.component';
@@ -11,8 +11,4 @@ import { NgIf } from '@angular/common';
   standalone: true,
   imports: [NgIf, HeaderSearchComponent, RouterLink, IconComponent],
 })
-export class HeaderComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class HeaderComponent {}

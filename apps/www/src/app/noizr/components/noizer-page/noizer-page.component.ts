@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IconComponent } from '../../../shell/components/icon/icon.component';
 
 @Component({
@@ -8,18 +8,20 @@ import { IconComponent } from '../../../shell/components/icon/icon.component';
   standalone: true,
   imports: [IconComponent],
 })
-export class NoizerPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-
+export class NoizerPageComponent {
   createSettings() {
     throw new Error('Method not implemented.');
   }
 
-  openSettings() {}
+  openSettings() {
+    throw new Error('Method not implemented.');
+  }
 
-  deleteSettings() {}
+  deleteSettings() {
+    throw new Error('Method not implemented.');
+  }
 
-  handleAddSource() {}
+  handleAddSource() {
+    throw new Error('Method not implemented.');
+  }
 }

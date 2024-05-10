@@ -1,38 +1,31 @@
-import { JsonProperty, JsonObject } from 'json2typescript';
+import { nanoid } from 'nanoid';
 
 import { CommentModel } from './comment.model';
+import { UserModel } from './user.model';
 
 /**
  * Loop is our main model class.
  */
-@JsonObject('LoopModel')
-export class LoopModel {
-  @JsonProperty('title')
-  public title: string;
-  @JsonProperty('desc')
-  public description: string;
-  @JsonProperty('bpm')
-  public bpm: number;
-  @JsonProperty('count')
-  public count: number;
-  @JsonProperty('dur')
-  public duration: number;
-  @JsonProperty('tags')
-  public tags?: string[];
-  @JsonProperty('com')
-  public isCommentable: boolean;
-
-  public comments?: CommentModel[] = [];
-  @JsonProperty('shar')
-  public isSharable?: boolean;
-  @JsonProperty('dat')
-  public creationDate?: number;
+export interface LoopModel {
+  id: string;
+  author?: UserModel;
+  title: string;
+  description: string;
+  bpm: number;
+  count: number;
+  duration: number;
+  tags?: string[];
+  isCommentable: boolean;
+  comments?: CommentModel[];
+  isSharable?: boolean;
+  creationDate?: Date;
 }
 
 export function loopFactory(): LoopModel {
   return {
+    id: nanoid(),
     bpm: 123,
-    creationDate: Date.now(),
+    creationDate: new Date(),
     description: '',
     duration: 0.0,
     count: 0,

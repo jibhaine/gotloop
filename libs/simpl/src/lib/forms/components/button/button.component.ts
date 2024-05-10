@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'glp-button',
+  selector: 'ui-button, a[ui-button], button[ui-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   standalone: true,
 })
-export class ButtonComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class ButtonComponent {}

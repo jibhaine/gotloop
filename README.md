@@ -24,18 +24,18 @@ and now this... fuck.
 
 ## Architecturics
 
-| package | description                            |
-| ------- | -------------------------------------- |
-| lib     | data transfer objects and shared utils |
-| api     | rest api for backend                   |
-| www     | main site, angular universal app       |
-| e2e     | test container, runs integration tests |
+| package        | description                            |
+| -------------- | -------------------------------------- |
+| libs/api-model | data transfer objects and shared utils |
+| apps/api       | rest api for backend                   |
+| apps/www       | main site, angular universal app       |
+| tests          | test container, runs integration tests |
 
 ## Technologics
 
 - [Typescript](https://www.typescriptlang.org/docs/home.html)
 - [Angular](https://angular.io/docs)
-- [Nest](https://docs.nestjs.com/)
+- [Fastify](https://fastify.io)
 - [Jest](https://jestjs.io/docs/)
 - [ToneJS](https://tonejs.github.io/)
 - [midi](https://galactic.ink/midi-js/)
@@ -113,11 +113,11 @@ loop renders
 
 1. fill your /etc/hosts file
 
-   127.0.0.1 \*.gotloop
-   127.0.0.1 api.gotloop
-   127.0.0.1 api.gotloop
-   127.0.0.1 api.gotloop
-   127.0.0.1 api.gotloop
+   127.0.0.1 \*.gotloop.local
+   127.0.0.1 api.gotloop.local
+   127.0.0.1 www.gotloop.local
+   127.0.0.1 adm.gotloop.local
+   127.0.0.1 bin.gotloop.local
 
 2. launch it with docker-compose
 

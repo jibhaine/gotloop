@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContentPageComponent } from '../../../shell/components/content-page/content-page.component';
 
 @Component({
@@ -8,13 +8,9 @@ import { ContentPageComponent } from '../../../shell/components/content-page/con
   standalone: true,
   imports: [ContentPageComponent],
 })
-export class ErrorPageComponent implements OnInit {
+export class ErrorPageComponent {
   /**
    * Displayed error.
    */
-  public error: Error;
-
-  constructor() {}
-
-  ngOnInit() {}
+  public error?: Error;
 }

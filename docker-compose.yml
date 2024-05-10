@@ -1,18 +1,12 @@
-version: '3.1'
-
 services:
   # external data sources
 
   # Database for objects data.
   dat:
-    image: mariadb
+    image: mongo
     restart: always
     environment:
       VIRTUAL_HOST: dat.gotloop
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: gotloop
-      MYSQL_USER: gotloop
-      MYSQL_PASSWORD: gotloop
     ports:
       - 3306:3306
     volumes:
@@ -25,8 +19,8 @@ services:
     command: server /export
     environment:
       VIRTUAL_HOST: bin.gotloop
-      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
-      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      MINIO_ACCESS_KEY: $(MINIO_ACCESS_KEY)
+      MINIO_SECRET_KEY: $(MINIO_SECRET_KEY)
     ports:
       - '9001:9000'
     volumes:
@@ -37,23 +31,23 @@ services:
 
   # REST api (nest.js + typeorm)
   api:
-    build: ./
+    build:
+      context: .
+      target: api
     restart: always
     environment:
       VIRTUAL_HOST: api.gotloop
-    volumes:
-      - .:/usr/src/app
-    working_dir: /usr/src/app
-    entrypoint: node dist/api/main.js
     ports:
-      - 6060:4000
+      - 6060:3000
     depends_on:
       - dat
       - bin
 
   # Main server. (web/universal + angular)
   www:
-    build: .
+    build:
+      context: .
+      target: www
     restart: always
     ports:
       - 6070:4200

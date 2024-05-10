@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ErrorPageComponent } from './error-page.component';
-import { ShellModule } from 'src/app/shell/shell.module';
 
 describe('ErrorPageComponent', () => {
   let component: ErrorPageComponent;
@@ -9,7 +8,7 @@ describe('ErrorPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ShellModule, ErrorPageComponent],
+      imports: [ErrorPageComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'glp-box',
+  selector: 'ui-box',
   templateUrl: './box.component.html',
   styleUrls: ['./box.component.scss'],
   standalone: true,
 })
-export class BoxComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class BoxComponent {}

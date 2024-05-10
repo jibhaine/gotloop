@@ -1,8 +1,13 @@
-import Box from './box.model';
+import { BoxUI } from './box.model';
 
 describe('Box', () => {
   test('constructor', () => {
-    let box = new Box();
+    const box: BoxUI = {
+      x: 0,
+      y: 0,
+      w: 120,
+      h: 120,
+    };
     expect(box).toBeDefined();
   });
 });

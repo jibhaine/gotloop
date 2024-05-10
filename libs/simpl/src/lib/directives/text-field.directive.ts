@@ -1,9 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[gotloopTextField]',
+  selector: '[uiTextField]',
   standalone: true,
 })
-export class TextFieldDirective {
-  constructor() {}
-}
+export class TextFieldDirective {}

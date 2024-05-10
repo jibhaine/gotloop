@@ -16,7 +16,11 @@ body {
     linear-gradient(0deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, rgba(0, 0, 0, 0) 1px),
     rgb(34, 102, 153);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
   background-repeat: repeat;
 }
 

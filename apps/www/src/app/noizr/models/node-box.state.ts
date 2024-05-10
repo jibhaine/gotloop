@@ -17,5 +17,5 @@ export interface NoizerState {
   currentState: 'loading' | 'dragging' | 'playing' | 'idle';
   cables?: { [id: string]: CableState };
   boxes?: { [id: string]: BoxState };
-  presets?: {};
+  presets?: Record<string, object>;
 }

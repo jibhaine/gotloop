@@ -7,12 +7,12 @@ import {
 } from '@ngneat/falso';
 import { nanoid } from 'nanoid';
 import { Injectable } from '@angular/core';
+import { CommentModel, LoopModel } from '@gotloop/api-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RandomFactoryService {
-  constructor() {}
   /**
    * returns a random user.
    */
@@ -30,7 +30,7 @@ export class RandomFactoryService {
   /**
    * returns a random comment.
    */
-  public randomComment() {
+  public randomComment(): CommentModel {
     return {
       uuid: nanoid(),
       author: this.randomUser(),
@@ -42,7 +42,7 @@ export class RandomFactoryService {
   /**
    * returns a random loop.
    */
-  public randomLoop() {
+  public randomLoop(): LoopModel {
     const nbComments = Math.floor(randNumber({ max: 12 })),
       tempComments = [];
     for (let i = 0; i < nbComments; i++) {
@@ -50,15 +50,16 @@ export class RandomFactoryService {
       tempComments.push(this.randomComment());
     }
     return {
-      uuid: nanoid,
-      name: randUser().username,
+      id: nanoid(),
       title: randSentence(),
       description: randParagraph(),
       author: this.randomUser(),
       bpm: Math.floor(randNumber({ max: 192 })) + 42,
       comments: tempComments,
-      loopCount: 0,
-      createdAt: randRecentDate(),
+      count: 0,
+      duration: randNumber({ max: 12 }),
+      isCommentable: true,
+      creationDate: randRecentDate(),
     };
   }
 }

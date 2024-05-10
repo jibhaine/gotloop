@@ -1,0 +1,12 @@
+node_modules
+.git
+.gitignore
+*.md
+dist
+
+# Ignore all files in the root to avoid rebuilding the image if not needed
+docker-compose.yml
+Dockerfile
+jest.preset.js
+jest.config.ts
+tsconfig.base.json

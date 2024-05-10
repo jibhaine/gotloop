@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-footer',
@@ -6,11 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   standalone: true,
 })
-export class FooterComponent implements OnInit {
-  public year: string;
-  constructor() {}
-
-  ngOnInit() {
-    this.year = `${new Date().getFullYear()}`;
-  }
+export class FooterComponent {
+  public year = `${new Date().getFullYear()}`;
 }
