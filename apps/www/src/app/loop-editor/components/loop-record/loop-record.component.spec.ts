@@ -8,9 +8,9 @@ describe('LoopRecordComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopRecordComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [LoopRecordComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

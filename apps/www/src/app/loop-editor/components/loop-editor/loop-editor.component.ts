@@ -14,6 +14,7 @@ export enum LoopEditorSteps {
   selector: 'glp-loop-editor',
   templateUrl: './loop-editor.component.html',
   styleUrls: ['./loop-editor.component.scss'],
+  standalone: true,
 })
 export class LoopEditorComponent implements OnInit {
   constructor() {}

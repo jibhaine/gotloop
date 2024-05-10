@@ -12,10 +12,14 @@ describe('LoopListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopListComponent, LoopsLoaderComponent],
-    imports: [LoopModule, ShellModule],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [
+        LoopModule,
+        ShellModule,
+        LoopListComponent,
+        LoopsLoaderComponent,
+      ],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

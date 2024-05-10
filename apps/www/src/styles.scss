@@ -158,15 +158,15 @@ $loader-border-width: 1px;
     color: $main-color;
     width: $loader-size;
     height: $loader-size;
-    border-radius: $loader-size*0.5;
-    transform-origin: $loader-size*0.5 $loader-size*0.5;
+    border-radius: $loader-size * 0.5;
+    transform-origin: $loader-size * 0.5 $loader-size * 0.5;
     transform: scale(1);
     animation: circle-grow 3s infinite;
     position: absolute;
     left: 0;
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
-        animation-delay: #{$i*0.5}s;
+        animation-delay: #{$i * 0.5}s;
       }
     }
   }
@@ -188,12 +188,12 @@ $loader-border-width: 1px;
 
 @font-face {
   font-family: 'Batch';
-  src: url('assets/font/batch-icons-webfont.eot');
-  src: url('assets/font/batch-icons-webfont.eot?#iefix')
+  src: url('/assets/font/batch-icons-webfont.eot');
+  src: url('/assets/font/batch-icons-webfont.eot?#iefix')
       format('embedded-opentype'),
-    url('assets/font/batch-icons-webfont.woff') format('woff'),
-    url('assets/font/batch-icons-webfont.ttf') format('truetype'),
-    url('assets/font/batch-icons-webfont.svg#batchregular') format('svg');
+    url('/assets/font/batch-icons-webfont.woff') format('woff'),
+    url('/assets/font/batch-icons-webfont.ttf') format('truetype'),
+    url('/assets/font/batch-icons-webfont.svg#batchregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

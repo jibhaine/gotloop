@@ -8,9 +8,9 @@ describe('LoopCutterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopCutterComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [LoopCutterComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

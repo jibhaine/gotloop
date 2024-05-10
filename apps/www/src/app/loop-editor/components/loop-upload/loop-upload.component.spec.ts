@@ -8,9 +8,9 @@ describe('LoopUploadComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopUploadComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [LoopUploadComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

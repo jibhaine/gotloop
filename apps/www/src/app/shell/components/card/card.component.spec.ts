@@ -22,20 +22,21 @@ import { CardContentComponent } from './card-content.component';
       <glp-card-footer>Footer</glp-card-footer>
     </glp-card>
   `,
+  standalone: true,
 })
 class CardTestComponent {}
 describe('CardComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [
+      imports: [
         CardComponent,
         CardHeaderComponent,
         CardFooterComponent,
         CardContentComponent,
         CardTestComponent,
-    ],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      ],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   describe('Usage with templates', () => {

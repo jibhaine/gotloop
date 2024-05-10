@@ -8,9 +8,9 @@ describe('SynthNodeComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [SynthNodeComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      declarations: [SynthNodeComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -8,9 +8,9 @@ describe('FooterComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [FooterComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [FooterComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

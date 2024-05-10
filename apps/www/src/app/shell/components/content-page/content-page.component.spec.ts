@@ -8,9 +8,9 @@ describe('ContentPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [ContentPageComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [ContentPageComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {
