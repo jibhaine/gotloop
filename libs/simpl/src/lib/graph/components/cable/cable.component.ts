@@ -1,13 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'glp-cable',
+  selector: 'ui-cable',
   templateUrl: './cable.component.html',
   styleUrls: ['./cable.component.scss'],
   standalone: true,
 })
-export class CableComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class CableComponent {}

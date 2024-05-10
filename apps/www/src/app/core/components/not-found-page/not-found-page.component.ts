@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-not-found-page',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found-page.component.scss'],
   standalone: true,
 })
-export class NotFoundPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class NotFoundPageComponent {}

@@ -1,20 +1,43 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultProject": "www",
+  "plugins": [
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
   "generators": {
     "@nx/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "scss",
+      "unitTestRunner": "jest"
     },
     "@nx/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "scss",
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "skipTests": false,
+      "standalone": true
     }
   },
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
-    "build": {
+    "@angular-devkit/build-angular:application": {
+      "cache": true,
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": true
+      "inputs": ["production", "^production"]
     },
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
@@ -24,9 +47,18 @@
       "inputs": ["default", "^default"],
       "cache": true
     },
-    "@nx/jest:jest": {
-      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"],
+    "@nx/eslint:lint": {
       "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    },
+    "@nx/jest:jest": {
+      "cache": true,
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
         "passWithNoTests": true
       },
@@ -36,6 +68,11 @@
           "codeCoverage": true
         }
       }
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -50,5 +87,5 @@
   },
   "parallel": 1,
   "useInferencePlugins": false,
-  "defaultBase": "master"
+  "defaultBase": "main"
 }

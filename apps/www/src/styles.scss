@@ -189,7 +189,8 @@ $loader-border-width: 1px;
 @font-face {
   font-family: 'Batch';
   src: url('/assets/font/batch-icons-webfont.eot');
-  src: url('/assets/font/batch-icons-webfont.eot?#iefix')
+  src:
+    url('/assets/font/batch-icons-webfont.eot?#iefix')
       format('embedded-opentype'),
     url('/assets/font/batch-icons-webfont.woff') format('woff'),
     url('/assets/font/batch-icons-webfont.ttf') format('truetype'),

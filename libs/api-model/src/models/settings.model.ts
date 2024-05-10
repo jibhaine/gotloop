@@ -1,25 +1,18 @@
-import { JsonProperty, JsonObject } from 'json2typescript';
-
-@JsonObject('SettingsNode')
-export class SettingsNode {
+export interface SettingsNode {
   inputs?: SettingsLink[];
   outputs?: SettingsLink[];
   params: [];
 }
 
-@JsonObject('SettingsLink')
-export class SettingsLink {}
+export interface SettingsLink {}
 
-@JsonObject('SettingsParam')
-export class SettingsParam {
+export interface SettingsParam {
   key: string;
   val: string;
 }
 
-@JsonObject('Settings')
-export class Settings {
-  @JsonProperty()
-  public uuid: string;
-  public nodes: SettingsNode[] = [];
-  public connections: SettingsLink = [];
+export interface Settings {
+  uuid: string;
+  nodes: SettingsNode[];
+  connections: SettingsLink[];
 }

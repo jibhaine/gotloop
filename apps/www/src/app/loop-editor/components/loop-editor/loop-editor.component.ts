@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export enum LoopEditorSteps {
   Import,
@@ -16,8 +16,4 @@ export enum LoopEditorSteps {
   styleUrls: ['./loop-editor.component.scss'],
   standalone: true,
 })
-export class LoopEditorComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoopEditorComponent {}

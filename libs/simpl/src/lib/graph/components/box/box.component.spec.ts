@@ -8,7 +8,7 @@ describe('BoxComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [BoxComponent],
+      imports: [BoxComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-loops-loader',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loops-loader.component.scss'],
   standalone: true,
 })
-export class LoopsLoaderComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoopsLoaderComponent {}

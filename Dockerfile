@@ -1,16 +1,25 @@
-FROM node:16
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-# Install common tools
-RUN npm i -g nodemon ts-node typescript @angular/cli @nestjs/cli @nrwl/cli pm2 serverless http-server
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-# Create app directory
-WORKDIR /usr/src/app
+FROM base AS build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm exec nx run-many -t build
 
-COPY package.json .
-COPY package-lock.json .
+FROM base as api
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/dist/apps/api /app/dist/apps/api
+EXPOSE 3000
+CMD [ "node", "dist/apps/api/main.js" ]
 
-RUN npm install
-
-RUN nx build
-
-COPY dist/ .
+FROM base as web
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/dist /app/dist
+EXPOSE 4200
+CMD [ "node", "dist/apps/www/main.js" ]

@@ -1,21 +1,11 @@
-import { JsonProperty, JsonObject } from 'json2typescript';
-
 import { UserModel } from './user.model';
 
 /**
  * Modelize a user comment on a loop.
  */
-@JsonObject('CommentModel')
-export class CommentModel {
-  @JsonProperty('uuid')
-  public uuid: string;
-
-  @JsonProperty('date')
-  public createdAt: Date;
-
-  @JsonProperty('author')
-  public author: UserModel;
-
-  @JsonProperty('content')
-  public content: string;
+export interface CommentModel {
+  uuid: string;
+  createdAt: Date;
+  author: UserModel;
+  content: string;
 }

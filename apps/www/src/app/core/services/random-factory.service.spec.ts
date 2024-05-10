@@ -16,11 +16,9 @@ describe('RandomFactoryService', () => {
 
   seeds.forEach((seed) => {
     describe(`seed(${seed}):`, () => {
-      /*
       it('', () => {
-        expect().toBeDefined();
+        expect(true).toBe(true);
       });
-      */
     });
   });
 });

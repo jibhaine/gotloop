@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardContentComponent } from '../../../shell/components/card/card-content.component';
 import { CardHeaderComponent } from '../../../shell/components/card/card-header.component';
 import { CardComponent } from '../../../shell/components/card/card.component';
@@ -16,8 +16,4 @@ import { ContentPageComponent } from '../../../shell/components/content-page/con
     CardContentComponent,
   ],
 })
-export class HomePageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class HomePageComponent {}

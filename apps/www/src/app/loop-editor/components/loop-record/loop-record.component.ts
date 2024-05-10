@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-loop-record',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loop-record.component.scss'],
   standalone: true,
 })
-export class LoopRecordComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoopRecordComponent {}

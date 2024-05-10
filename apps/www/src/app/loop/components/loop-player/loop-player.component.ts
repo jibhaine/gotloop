@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { LoopModel } from '@gotloop/api-model';
 import { CardFooterComponent } from '../../../shell/components/card/card-footer.component';
@@ -20,13 +20,9 @@ import { CardComponent } from '../../../shell/components/card/card.component';
     CardFooterComponent,
   ],
 })
-export class LoopPlayerComponent implements OnInit {
+export class LoopPlayerComponent {
   @Input()
-  public loop: LoopModel;
-
-  constructor() {}
-
-  ngOnInit() {}
+  public loop!: LoopModel;
 
   play() {
     // todo Webaudio play sample

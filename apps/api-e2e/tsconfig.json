@@ -1,7 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
   "compilerOptions": {
-    "types": ["cucumber", "node"]
-  },
-  "include": ["**/*.ts", "**/*.js"]
+    "esModuleInterop": true
+  }
 }

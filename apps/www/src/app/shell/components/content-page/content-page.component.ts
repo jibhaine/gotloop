@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-content-page',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-page.component.scss'],
   standalone: true,
 })
-export class ContentPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class ContentPageComponent {}

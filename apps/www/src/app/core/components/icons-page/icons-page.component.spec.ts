@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { IconsPageComponent } from './icons-page.component';
-import { IconComponent } from 'src/app/shell/components/icon/icon.component';
 
 describe('IconsPageComponent', () => {
   let component: IconsPageComponent;
@@ -9,7 +8,7 @@ describe('IconsPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IconsPageComponent, IconComponent],
+      imports: [IconsPageComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

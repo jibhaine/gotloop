@@ -12,14 +12,14 @@
   },
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/www",
         "index": "apps/www/src/index.html",
-        "main": "apps/www/src/main.ts",
-        "polyfills": "apps/www/src/polyfills.ts",
+        "browser": "apps/www/src/main.ts",
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/www/tsconfig.app.json",
-        "preserveSymlinks": true,
         "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
         "styles": ["apps/www/src/styles.scss"],
         "stylePreprocessorOptions": {
@@ -30,35 +30,15 @@
           ]
         },
         "scripts": [],
-        "allowedCommonJsDependencies": [
-          "@angularclass/hmr",
-          "json2typescript",
-          "faker"
-        ],
-        "aot": false,
-        "vendorChunk": true,
-        "extractLicenses": false,
-        "buildOptimizer": false,
-        "sourceMap": true,
-        "optimization": false,
-        "namedChunks": true
+        "allowedCommonJsDependencies": ["json2typescript"],
+        "server": "apps/www/src/main.server.ts",
+        "prerender": false,
+        "ssr": {
+          "entry": "apps/www/server.ts"
+        }
       },
       "configurations": {
         "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/www/src/environments/environment.ts",
-              "with": "apps/www/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "aot": true,
-          "extractLicenses": true,
-          "vendorChunk": false,
-          "buildOptimizer": true,
           "budgets": [
             {
               "type": "initial",
@@ -71,23 +51,13 @@
             }
           ]
         },
-        "hmr": {
-          "budgets": [
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "6kb"
-            }
-          ],
-          "fileReplacements": [
-            {
-              "replace": "apps/www/src/environments/environment.ts",
-              "with": "apps/www/src/environments/environment.hmr.ts"
-            }
-          ]
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
         }
       },
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": ""
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
@@ -99,11 +69,11 @@
         "production": {
           "buildTarget": "www:build:production"
         },
-        "hmr": {
-          "hmr": true,
-          "buildTarget": "www:build:hmr"
+        "development": {
+          "buildTarget": "www:build:development"
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -111,105 +81,14 @@
         "buildTarget": "www:build"
       }
     },
-    "deploy": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          {
-            "command": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/deploy --siteName nrwl-nx-examples-products --outputPath dist/apps/products"
-          }
-        ]
-      }
-    },
-    "trads": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          {
-            "command": "npx ts-node --project tools/tsconfig.tools.json tools/scripts/translate-sync"
-          }
-        ]
-      }
+    "lint": {
+      "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "main": "apps/www/src/test.ts",
-        "polyfills": "apps/www/src/polyfills.ts",
-        "tsConfig": "apps/www/tsconfig.spec.json",
-        "karmaConfig": "apps/www/karma.conf.js",
-        "styles": ["apps/www/src/styles.scss"],
-        "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
-        "stylePreprocessorOptions": {
-          "includePaths": ["src/sass"]
-        }
-      },
-      "outputs": ["{workspaceRoot}/coverage/apps/www"]
-    },
-    "server": {
-      "executor": "@angular-devkit/build-angular:server",
-      "options": {
-        "outputPath": "dist/apps/www-server",
-        "main": "apps/www/server.ts",
-        "tsConfig": "apps/www/tsconfig.server.json",
-        "stylePreprocessorOptions": {
-          "includePaths": [
-            "apps/www/src/",
-            "apps/www/src/styles",
-            "node_modules/"
-          ]
-        },
-        "sourceMap": true,
-        "optimization": false,
-        "buildOptimizer": false
-      },
-      "configurations": {
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/www/src/environments/environment.ts",
-              "with": "apps/www/src/environments/environment.prod.ts"
-            }
-          ],
-          "sourceMap": false,
-          "optimization": true,
-          "buildOptimizer": true
-        }
-      },
-      "defaultConfiguration": "",
-      "production": {
-        "fileReplacements": [
-          {
-            "replace": "apps/www/src/environments/environment.ts",
-            "with": "apps/www/src/environments/environment.prod.ts"
-          }
-        ],
-        "sourceMap": false,
-        "optimization": true
-      }
-    },
-    "serve-ssr": {
-      "executor": "@angular-devkit/build-angular:ssr-dev-server",
-      "options": {
-        "browserTarget": "www:build",
-        "serverTarget": "www:server"
-      },
-      "configurations": {
-        "production": {
-          "browserTarget": "www:build:production",
-          "serverTarget": "www:server:production"
-        }
-      }
-    },
-    "prerender": {
-      "executor": "@angular-devkit/build-angular:prerender",
-      "options": {
-        "browserTarget": "www:build:production",
-        "serverTarget": "www:server:production",
-        "routes": ["/"]
-      },
-      "configurations": {
-        "production": {}
+        "jestConfig": "apps/www/jest.config.ts"
       }
     }
   }

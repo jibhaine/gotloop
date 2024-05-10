@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { CommentModel } from '@gotloop/api-model';
 
@@ -8,10 +8,7 @@ import { CommentModel } from '@gotloop/api-model';
   styleUrls: ['./loop-comment.component.scss'],
   standalone: true,
 })
-export class LoopCommentComponent implements OnInit {
+export class LoopCommentComponent {
   @Input()
-  public comment: CommentModel;
-  constructor() {}
-
-  ngOnInit() {}
+  public comment!: CommentModel;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [FormsModule],
 })
-export class HeaderSearchComponent implements OnInit {
+export class HeaderSearchComponent {
   /** text seached by the user */
-  public searchText: string;
-
-  constructor() {}
-
-  ngOnInit() {}
+  public searchText = '';
 }

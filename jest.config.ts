@@ -1,3 +1,11 @@
-const { getJestProjects } = require('@nx/jest');
+import { getJestProjectsAsync } from '@nx/jest';
 
-export default { projects: getJestProjects() };
+const esModules = ['@angular', 'nanoid'].join('|');
+
+export default async () => ({
+  projects: await getJestProjectsAsync(),
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
+  },
+  transformIgnorePatterns: [`node_modules/(?!${esModules})`],
+});

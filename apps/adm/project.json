@@ -6,70 +6,56 @@
   "prefix": "gotloop",
   "tags": ["type:app"],
   "implicitDependencies": ["api-model"],
-  "generators": {},
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/adm",
         "index": "apps/adm/src/index.html",
-        "main": "apps/adm/src/main.ts",
-        "polyfills": "apps/adm/src/polyfills.ts",
+        "browser": "apps/adm/src/main.ts",
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/adm/tsconfig.app.json",
-        "aot": false,
+        "inlineStyleLanguage": "css",
         "assets": ["apps/adm/src/favicon.ico", "apps/adm/src/assets"],
         "styles": ["apps/adm/src/styles.css"],
-        "scripts": [],
-        "vendorChunk": true,
-        "extractLicenses": false,
-        "buildOptimizer": false,
-        "sourceMap": true,
-        "optimization": false,
-        "namedChunks": true
+        "scripts": []
       },
       "configurations": {
         "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/adm/src/environments/environment.ts",
-              "with": "apps/adm/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "aot": true,
-          "extractLicenses": true,
-          "vendorChunk": false,
-          "buildOptimizer": true,
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "2mb",
-              "maximumError": "5mb"
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "6kb",
-              "maximumError": "10kb"
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
-          ]
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
         }
       },
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": ""
+      "defaultConfiguration": "production"
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
-      "options": {
-        "buildTarget": "adm:build"
-      },
       "configurations": {
         "production": {
           "buildTarget": "adm:build:production"
+        },
+        "development": {
+          "buildTarget": "adm:build:development"
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -77,13 +63,15 @@
         "buildTarget": "adm:build"
       }
     },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
     "test": {
       "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/adm/jest.config.ts",
-        "passWithNoTests": false
-      },
-      "outputs": ["{workspaceRoot}/coverage/apps/adm"]
+        "jestConfig": "apps/adm/jest.config.ts"
+      }
     }
   }
 }

@@ -12,11 +12,9 @@ import { NgFor } from '@angular/common';
   imports: [NgFor, IconComponent],
 })
 export class IconsPageComponent implements OnInit {
-  icons: IconCode;
+  icons!: IconCode;
 
   iconKeys: string[] = [];
-
-  constructor() {}
 
   ngOnInit() {
     this.iconKeys = Object.keys(IconCode);

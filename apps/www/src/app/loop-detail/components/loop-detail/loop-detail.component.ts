@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-loop-detail',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loop-detail.component.scss'],
   standalone: true,
 })
-export class LoopDetailComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoopDetailComponent {}

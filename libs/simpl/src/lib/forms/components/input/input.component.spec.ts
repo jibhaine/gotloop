@@ -8,7 +8,7 @@ describe('InputComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [InputComponent],
+      imports: [InputComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

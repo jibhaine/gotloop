@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { RandomFactoryService } from '../../core/services/random-factory.service';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-// import { LoopModel } from '@gotloop/api-model';
+import { LoopModel } from '@gotloop/api-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoopsService {
-  public loops$: BehaviorSubject<any[]>;
+  public loops$: BehaviorSubject<LoopModel[]>;
 
-  private loops: any[] = [];
+  private loops: LoopModel[] = [];
 
   constructor(private rng: RandomFactoryService) {
     for (let i = 0; i < 10; i++) {
       this.loops.push(this.rng.randomLoop());
     }
-    this.loops$ = new BehaviorSubject<any[]>(this.loops);
+    this.loops$ = new BehaviorSubject<LoopModel[]>(this.loops);
   }
 
   addTenMoreLoops() {

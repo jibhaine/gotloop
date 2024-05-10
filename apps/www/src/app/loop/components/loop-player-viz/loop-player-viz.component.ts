@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'glp-loop-player-viz',
@@ -6,8 +6,4 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loop-player-viz.component.scss'],
   standalone: true,
 })
-export class LoopPlayerVizComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoopPlayerVizComponent {}

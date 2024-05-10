@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
-import { ShellModule } from 'src/app/shell/shell.module';
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -9,7 +8,7 @@ describe('HomePageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ShellModule, HomePageComponent],
+      imports: [HomePageComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

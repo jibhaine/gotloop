@@ -8,7 +8,7 @@ describe('CableComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [CableComponent],
+      imports: [CableComponent],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));

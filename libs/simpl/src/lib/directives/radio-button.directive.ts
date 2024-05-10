@@ -1,9 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[gotloopRadioButton]',
+  selector: '[uiRadioButton]',
   standalone: true,
 })
-export class RadioButtonDirective {
-  constructor() {}
-}
+export class RadioButtonDirective {}

@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
-import { HeaderSearchComponent } from '../header-search/header-search.component';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { provideRouter } from '@angular/router';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,7 +10,7 @@ describe('HeaderComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [HeaderComponent],
-      schemas: [NO_ERRORS_SCHEMA],
+      providers: [provideRouter([])],
       teardown: { destroyAfterEach: false },
     }).compileComponents();
   }));
