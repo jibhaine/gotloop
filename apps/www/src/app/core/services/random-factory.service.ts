@@ -1,6 +1,12 @@
-import * as faker from 'faker';
+import {
+  randUser,
+  randRecentDate,
+  randParagraph,
+  randNumber,
+  randSentence,
+} from '@ngneat/falso';
+import { nanoid } from 'nanoid';
 import { Injectable } from '@angular/core';
-import { v4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +17,13 @@ export class RandomFactoryService {
    * returns a random user.
    */
   public randomUser() {
+    const user = randUser();
     return {
-      uuid: faker.random.uuid(),
-      name: faker.internet.userName(),
-      email: faker.internet.email(),
-      avatar: faker.internet.avatar(),
-      color: faker.internet.color(),
-      description: faker.lorem.sentence(faker.random.number(40)),
+      uuid: nanoid(),
+      name: user.username,
+      email: user.email,
+      avatar: `https://i.pravatar.cc/${randNumber({ max: 200 })}`,
+      description: randParagraph(),
     };
   }
 
@@ -26,10 +32,10 @@ export class RandomFactoryService {
    */
   public randomComment() {
     return {
-      uuid: faker.random.uuid(),
+      uuid: nanoid(),
       author: this.randomUser(),
-      content: faker.lorem.sentence(),
-      createdAt: faker.date.recent(),
+      content: randParagraph(),
+      createdAt: randRecentDate(),
     };
   }
 
@@ -37,22 +43,22 @@ export class RandomFactoryService {
    * returns a random loop.
    */
   public randomLoop() {
-    const nbComments = Math.floor(faker.random.number(12)),
+    const nbComments = Math.floor(randNumber({ max: 12 })),
       tempComments = [];
     for (let i = 0; i < nbComments; i++) {
       i++;
       tempComments.push(this.randomComment());
     }
     return {
-      uuid: faker.random.uuid() || v4(),
-      name: faker.internet.userName(),
-      title: faker.lorem.sentence(faker.random.number(10)),
-      description: faker.lorem.sentence(),
+      uuid: nanoid,
+      name: randUser().username,
+      title: randSentence(),
+      description: randParagraph(),
       author: this.randomUser(),
-      bpm: Math.floor(faker.random.number(192)) + 42,
+      bpm: Math.floor(randNumber({ max: 192 })) + 42,
       comments: tempComments,
       loopCount: 0,
-      createdAt: faker.date.recent(),
+      createdAt: randRecentDate(),
     };
   }
 }
