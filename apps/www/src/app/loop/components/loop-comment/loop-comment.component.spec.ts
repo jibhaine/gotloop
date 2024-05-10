@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { v4 } from 'uuid';
 
 import { CommentModel } from '@gotloop/api-model';
 
 import { LoopCommentComponent } from './loop-comment.component';
+import { nanoid } from 'nanoid';
 
 describe('LoopCommentComponent', () => {
   let component: LoopCommentComponent;
   let fixture: ComponentFixture<LoopCommentComponent>;
   const comment: CommentModel = {
-    uuid: v4(),
+    uuid: nanoid(),
     author: {
       name: 'test user',
       avatar: '1.png',
