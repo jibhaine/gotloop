@@ -3,6 +3,8 @@
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "",
+  "tags": ["type:e2e"],
+  "implicitDependencies": ["adm"],
   "targets": {
     "e2e": {
       "executor": "@angular-devkit/build-angular:protractor",
@@ -16,7 +18,5 @@
         }
       }
     }
-  },
-  "tags": ["type:e2e"],
-  "implicitDependencies": ["adm"]
+  }
 }

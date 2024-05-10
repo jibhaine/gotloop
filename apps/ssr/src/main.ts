@@ -1,7 +1,7 @@
 import 'zone.js/node';
 import { enableProdMode } from '@angular/core';
 // Express Engine
-import { ngExpressEngine } from '@nguniversal/express-engine';
+import { ngExpressEngine } from '@angular/ssr';
 // Import module map for lazy loading
 import * as express from 'express';
 import { join } from 'path';

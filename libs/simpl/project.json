@@ -4,19 +4,20 @@
   "projectType": "library",
   "sourceRoot": "libs/simpl/src",
   "prefix": "gotloop",
-  "targets": {
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "options": {
-        "jestConfig": "libs/simpl/jest.config.ts"
-      },
-      "outputs": ["{workspaceRoot}/coverage/libs/simpl"]
-    }
-  },
+  "tags": [],
   "generators": {
-    "@nrwl/angular:component": {
+    "@nx/angular:component": {
       "styleext": "scss"
     }
   },
-  "tags": []
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "libs/simpl/jest.config.ts",
+        "passWithNoTests": false
+      },
+      "outputs": ["{workspaceRoot}/coverage/libs/simpl"]
+    }
+  }
 }
