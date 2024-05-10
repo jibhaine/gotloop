@@ -5,38 +5,48 @@ import { ErrorPageComponent } from './core/components/error-page/error-page.comp
 import { NotFoundPageComponent } from './core/components/not-found-page/not-found-page.component';
 import { HomePageComponent } from './core/components/home-page/home-page.component';
 
-const routes: Routes = [
-  /*{
-    path: '/',
-    component: HomePage,
-  },*/
+export const routes: Routes = [
+  /*
   {
-    path: 'loops',
-    loadChildren: () =>
-      import('./loops/loops.module').then((m) => m.LoopsModule),
+    path: '/',
+    loadComponent: () =>
+      import('./core/components/home-page/home-page.component').then(
+        (m) => m.HomePageComponent,
+      ),
+  },
+  */
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'loops',
   },
   {
-    path: 'user',
-    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    path: 'loops',
+    loadComponent: () =>
+      import('./loops/components/loop-list/loop-list.component').then(
+        (m) => m.LoopListComponent,
+      ),
   },
   {
     path: 'loop/:id',
     loadChildren: () =>
-      import('./loop-detail/loop-detail.module').then(
-        (m) => m.LoopDetailModule,
+      import('./loop-detail/components/loop-detail/loop-detail.component').then(
+        (m) => m.LoopDetailComponent,
       ),
   },
   {
     path: 'loop/:id/edit',
-    loadChildren: () =>
-      import('./loop-editor/loop-editor.module').then(
-        (m) => m.LoopEditorModule,
+    loadComponent: () =>
+      import('./loop-editor/components/loop-editor/loop-editor.component').then(
+        (m) => m.LoopEditorComponent,
       ),
   },
   {
     path: 'noizr',
-    loadChildren: () =>
-      import('./noizr/noizr.module').then((m) => m.NoizerModule),
+    loadComponent: () =>
+      import('./noizr/components/noizer-page/noizer-page.component').then(
+        (m) => m.NoizerPageComponent,
+      ),
   },
   {
     path: 'icons',
@@ -56,13 +66,3 @@ const routes: Routes = [
     pathMatch: 'full',
   },
 ];
-
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-}),
-  ],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}

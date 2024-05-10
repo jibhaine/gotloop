@@ -19,9 +19,9 @@ describe('LoopCommentComponent', () => {
   };
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopCommentComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [LoopCommentComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'glp-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
+  standalone: true,
 })
 export class FooterComponent implements OnInit {
   public year: string;

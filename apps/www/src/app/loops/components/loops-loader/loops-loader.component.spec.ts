@@ -8,9 +8,9 @@ describe('LoopsLoaderComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [LoopsLoaderComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [LoopsLoaderComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {

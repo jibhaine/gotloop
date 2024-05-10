@@ -5,6 +5,7 @@ import { IconCode } from './icon-code.enum';
   selector: 'glp-icon',
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
+  standalone: true,
 })
 export class IconComponent implements OnInit {
   @Input()

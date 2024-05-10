@@ -27,15 +27,15 @@ $loader-border-width: 1px;
     color: $main-color;
     width: $loader-size;
     height: $loader-size;
-    border-radius: $loader-size*0.5;
-    transform-origin: $loader-size*0.5 $loader-size*0.5;
+    border-radius: $loader-size * 0.5;
+    transform-origin: $loader-size * 0.5 $loader-size * 0.5;
     transform: scale(1);
     animation: circle-grow 3s infinite;
     position: absolute;
     left: 0;
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
-        animation-delay: #{$i*0.5}s;
+        animation-delay: #{$i * 0.5}s;
       }
     }
   }

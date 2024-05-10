@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'glp-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  standalone: true,
 })
 export class ButtonComponent implements OnInit {
   constructor() {}

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'glp-not-found-page',
   templateUrl: './not-found-page.component.html',
   styleUrls: ['./not-found-page.component.scss'],
+  standalone: true,
 })
 export class NotFoundPageComponent implements OnInit {
   constructor() {}

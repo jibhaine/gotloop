@@ -4,13 +4,12 @@
 
 @font-face {
   font-family: 'Batch';
-  src: url('#{$font-path}/batch-icons-webfont.eot');
-  src: url('#{$font-path}/batch-icons-webfont.eot?#iefix')
+  src: url('/assets/fonts/batch-icons-webfont.eot');
+  src: url('/assets/fonts/batch-icons-webfont.eot?#iefix')
       format('embedded-opentype'),
-    url('#{$font-path}/batch-icons-webfont.woff') format('woff'),
-    url('#{$font-path}/batch-icons-webfont.ttf') format('truetype'),
-    url('#{$font-path}/batch-icons-webfont.svg') format('svg');
-  //  src: url('@{FontAwesomePath}/FontAwesome.otf') format('opentype'); // used when developing fonts
+    url('/assets/fonts/batch-icons-webfont.woff') format('woff'),
+    url('/assets/fonts/batch-icons-webfont.ttf') format('truetype'),
+    url('/assets/fonts/batch-icons-webfont.svg') format('svg');
 
   font-weight: normal;
   font-style: normal;

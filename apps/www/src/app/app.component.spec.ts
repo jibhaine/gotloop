@@ -7,10 +7,9 @@ import { ShellModule } from './shell/shell.module';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, CoreModule, ShellModule],
-    declarations: [AppComponent],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [RouterTestingModule, CoreModule, ShellModule, AppComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   it('should create the app', () => {

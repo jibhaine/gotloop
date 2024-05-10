@@ -17,7 +17,7 @@
       "path": "./apps/www/tsconfig.server.json"
     },
     {
-      "path": "./e2e/tsconfig.e2e.json"
+      "path": "./e2e/tsconfig.json"
     },
     {
       "path": "./libs/api-model/tsconfig.spec.json"

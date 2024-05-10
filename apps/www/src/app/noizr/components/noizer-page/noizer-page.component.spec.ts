@@ -9,10 +9,9 @@ describe('NoizerPageComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [NoizerPageComponent],
-    imports: [ShellModule],
-    teardown: { destroyAfterEach: false }
-}).compileComponents();
+      imports: [ShellModule, NoizerPageComponent],
+      teardown: { destroyAfterEach: false },
+    }).compileComponents();
   }));
 
   beforeEach(() => {
